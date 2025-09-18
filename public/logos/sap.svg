@@ -1,0 +1,15 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+    <!-- SAP blue background -->
+    <rect x="10" y="10" width="45" height="20" fill="#0FAAFF"/>
+    <!-- SAP white text -->
+    <text x="32.5" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">SAP</text>
+    <!-- Tagline -->
+    <text x="60" y="25" font-family="Arial, sans-serif" font-size="8" fill="#0FAAFF">The Best-Run Businesses Run SAP</text>
+  </g>
+  <defs>
+    <clipPath id="clip0">
+      <rect width="120" height="40" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

@@ -1,0 +1,266 @@
+'use client';
+
+import Link from 'next/link';
+import { ArrowLeft, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Header } from '@/components/header';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+
+export default function PrivacyPage() {
+  const [activeSection, setActiveSection] = useState('collection');
+
+  const sections = [
+    { id: 'collection', title: 'Information Collection' },
+    { id: 'usage', title: 'Information Usage' },
+    { id: 'sharing', title: 'Information Sharing' },
+    { id: 'government', title: 'Government Relations' },
+    { id: 'security', title: 'Data Security' },
+    { id: 'transfers', title: 'International Transfers' },
+    { id: 'rights', title: 'Your Privacy Rights' },
+    { id: 'cookies', title: 'Cookie Policy' },
+    { id: 'retention', title: 'Data Retention' },
+    { id: 'gdpr', title: 'GDPR Compliance' },
+    { id: 'changes', title: 'Policy Changes' },
+    { id: 'contact', title: 'Contact Information' },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Check if we're at the bottom of the page
+      if (window.scrollY + windowHeight >= documentHeight - 50) {
+        // Set to the last section when at bottom
+        setActiveSection(sections[sections.length - 1].id);
+        return;
+      }
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [sections]);
+
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      <div className="py-12 pt-32">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="mb-8">
+          <Link href="/">
+            <Button variant="ghost" className="mb-6">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+          <h1 className="text-4xl font-light text-foreground mb-4">Privacy Policy</h1>
+          <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+        </div>
+
+        <div className="flex gap-12">
+          <div className="w-80 shrink-0">
+            <div className="sticky top-8 max-h-[calc(100vh-8rem)] overflow-y-auto">
+              <div className="bg-card border border-border rounded-lg p-6">
+                <h3 className="font-medium text-foreground mb-4">Table of Contents</h3>
+                <nav className="space-y-2">
+                  {sections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`block w-full text-left px-3 py-2 rounded text-sm transition-colors ${
+                        activeSection === section.id
+                          ? 'bg-vietnam-red text-white'
+                          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      }`}
+                    >
+                      {section.title}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 prose prose-neutral dark:prose-invert max-w-none">
+            <section id="collection" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">1. Information Collection</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                The Association of Professional Kiều Bào collects information that you provide directly to us when engaging with our services.
+              </p>
+            </section>
+
+            <section id="usage" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">2. Information Usage</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We use your information for legitimate organizational purposes aligned with our mission as recognized under Resolution 36-NQ/TW.
+              </p>
+            </section>
+
+            <section id="sharing" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">3. Information Sharing</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We maintain strict confidentiality standards while enabling legitimate organizational activities.
+              </p>
+            </section>
+
+            <section id="government" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">4. Government Relations</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                As an organization formally recognized by Resolution 36-NQ/TW, we maintain transparent relationships with Vietnamese government entities.
+              </p>
+            </section>
+
+            <section id="security" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">5. Data Security</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We implement comprehensive security measures to protect your personal information.
+              </p>
+            </section>
+
+            <section id="transfers" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">6. International Transfers</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Given our global network spanning 13 international hubs, your information may be transferred internationally.
+              </p>
+            </section>
+
+            <section id="rights" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">7. Your Privacy Rights</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                You have comprehensive rights regarding your personal information.
+              </p>
+            </section>
+
+            <section id="cookies" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">8. Cookie Policy</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Our website uses cookies and similar technologies to enhance functionality.
+              </p>
+            </section>
+
+            <section id="retention" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">9. Data Retention</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We retain personal information for as long as necessary to fulfill organizational purposes.
+              </p>
+            </section>
+
+            <section id="gdpr" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">10. GDPR Compliance</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For members and contacts in the European Union, we comply with the General Data Protection Regulation.
+              </p>
+            </section>
+
+            <section id="changes" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">11. Policy Changes</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We may update this Privacy Policy periodically to reflect changes in our practices.
+              </p>
+            </section>
+
+            <section id="contact" className="mb-12">
+              <h2 className="text-2xl font-medium text-foreground mb-4">12. Contact Information</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                For questions about this Privacy Policy, please contact us at contact@akieubao.com.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-16 pt-8 border-t border-border bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              {/* Organization Info */}
+              <div className="mb-6">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <Image
+                    src="/AKB.png"
+                    alt="AKB Logo"
+                    width={56}
+                    height={56}
+                    className="object-contain"
+                  />
+                  <h4 className="font-semibold text-foreground">Association of Professional Kiều Bào</h4>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  Connecting Vietnamese professionals worldwide to advance Vietnam's development through expertise and global partnerships.
+                </p>
+              </div>
+
+              {/* Contact Button */}
+              <div className="mb-6">
+                <Link href="/contact">
+                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Social Media Links */}
+              <div>
+                <p className="text-sm font-medium text-foreground mb-3">Follow Our Journey</p>
+                <div className="flex justify-center gap-3">
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-9 h-9 bg-singapore-blue/10 hover:bg-singapore-blue/20 rounded-lg text-singapore-blue hover:text-singapore-blue/80 transition-all duration-200 hover:scale-105"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-9 h-9 bg-pink-500/10 hover:bg-pink-500/20 rounded-lg text-pink-500 hover:text-pink-500/80 transition-all duration-200 hover:scale-105"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center justify-center w-9 h-9 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg text-blue-600 hover:text-blue-600/80 transition-all duration-200 hover:scale-105"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="text-center pt-6 border-t border-border">
+              <p className="text-muted-foreground text-sm mb-2">
+                © 2025 Association of Professional Kiều Bào. All rights reserved.
+              </p>
+              <div className="flex justify-center gap-4 text-xs text-muted-foreground">
+                <a href="/terms" className="hover:text-vietnam-red transition-colors">Terms of Service</a>
+                <span>•</span>
+                <a href="/privacy" className="hover:text-vietnam-red transition-colors">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  );
+}
