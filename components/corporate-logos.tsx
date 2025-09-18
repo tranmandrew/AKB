@@ -81,38 +81,76 @@ export function CorporateLogos({
             Members and sponsors from leading global corporations
           </p>
         )}
-        <div className="flex flex-wrap justify-center items-center gap-8 max-w-6xl mx-auto">
-          {displayLogos.map((logo, index) => (
-            <div
-              key={logo.name}
-              className="flex-shrink-0 hover:scale-110 cursor-pointer relative transition-all duration-300 flex items-center justify-center w-36 h-20 bg-white/5 rounded-lg border border-white/10"
-              onMouseEnter={() => setHoveredLogo(logo.name)}
-              onMouseLeave={() => setHoveredLogo(null)}
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={120}
-                height={50}
-                className={`object-contain transition-all duration-300 ${
-                  logo.name === 'Microsoft' || logo.name === 'Bosch'
-                    ? 'max-h-40 max-w-80'
-                    : logo.name === 'Grab' || logo.name === 'Visa'
-                    ? 'max-h-7 max-w-20'
-                    : 'max-h-10 max-w-28'
-                }`}
-                priority={index < 6}
-              />
-              {hoveredLogo === logo.name && (
-                <div className="absolute mt-2 bg-executive-navy text-white px-2 py-1 rounded text-xs opacity-90 pointer-events-none z-10 left-1/2 transform -translate-x-1/2">
-                  {logo.name}
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="space-y-3">
+          {/* First row - Main logos */}
+          <div className="flex justify-start items-center gap-2 w-full">
+            {displayLogos.filter(logo => !['SAP', 'Bosch', 'UBS', 'Grab'].includes(logo.name)).map((logo, index) => (
+              <div
+                key={logo.name}
+                className="flex-1 hover:scale-110 cursor-pointer relative transition-all duration-300 flex items-center justify-center h-14 max-w-[120px]"
+                onMouseEnter={() => setHoveredLogo(logo.name)}
+                onMouseLeave={() => setHoveredLogo(null)}
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={50}
+                  className={`object-contain transition-all duration-300 ${
+                    logo.name === 'Microsoft' || logo.name === 'Bosch'
+                      ? 'max-h-40 max-w-80'
+                      : logo.name === 'Grab' || logo.name === 'Visa'
+                      ? 'max-h-7 max-w-20'
+                      : 'max-h-10 max-w-28'
+                  }`}
+                  priority={index < 6}
+                />
+                {hoveredLogo === logo.name && (
+                  <div className="absolute mt-2 bg-executive-navy text-white px-2 py-1 rounded text-xs opacity-90 pointer-events-none z-10 left-1/2 transform -translate-x-1/2">
+                    {logo.name}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Second row - SAP, Bosch, UBS */}
+          <div className="flex justify-start items-center gap-2 w-full">
+            {displayLogos.filter(logo => ['SAP', 'Bosch', 'UBS', 'Grab'].includes(logo.name)).map((logo, index) => (
+              <div
+                key={logo.name}
+                className="hover:scale-110 cursor-pointer relative transition-all duration-300 flex items-center justify-center h-14 w-[120px]"
+                onMouseEnter={() => setHoveredLogo(logo.name)}
+                onMouseLeave={() => setHoveredLogo(null)}
+                style={{
+                  animationDelay: `${(index + 7) * 0.1}s`,
+                }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={50}
+                  className={`object-contain transition-all duration-300 ${
+                    logo.name === 'Microsoft' || logo.name === 'Bosch'
+                      ? 'max-h-40 max-w-80'
+                      : logo.name === 'Grab' || logo.name === 'Visa'
+                      ? 'max-h-7 max-w-20'
+                      : 'max-h-10 max-w-28'
+                  }`}
+                  priority={false}
+                />
+                {hoveredLogo === logo.name && (
+                  <div className="absolute mt-2 bg-executive-navy text-white px-2 py-1 rounded text-xs opacity-90 pointer-events-none z-10 left-1/2 transform -translate-x-1/2">
+                    {logo.name}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )

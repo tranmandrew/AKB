@@ -24,46 +24,48 @@ export function FooterSection() {
                   />
                   <h4 className="font-semibold text-foreground">Association of Professional Kiều Bào</h4>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                   Connecting Vietnamese professionals worldwide to advance Vietnam's development through expertise and global partnerships.
                 </p>
               </div>
 
-              {/* Social Links & Newsletter */}
+              {/* Newsletter */}
               <div>
-                <h4 className="font-semibold text-foreground mb-4">Follow Our Journey</h4>
-                <div className="flex gap-4 mb-4">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-10 h-10 bg-singapore-blue/10 hover:bg-singapore-blue/20 rounded-lg text-singapore-blue hover:text-singapore-blue/80 transition-all duration-200 hover:scale-105"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-10 h-10 bg-pink-500/10 hover:bg-pink-500/20 rounded-lg text-pink-500 hover:text-pink-500/80 transition-all duration-200 hover:scale-105"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-10 h-10 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg text-blue-600 hover:text-blue-600/80 transition-all duration-200 hover:scale-105"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="h-5 w-5" />
-                  </a>
+                <h5 className="text-sm font-medium text-foreground mb-3">Newsletter</h5>
+                <div className="flex gap-2">
+                  <Input placeholder="Enter your email" className="flex-1 h-9 text-sm" />
+                  <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground h-9 px-4 text-sm">
+                    Subscribe
+                  </Button>
                 </div>
-                <div>
-                  <h5 className="text-sm font-medium text-foreground mb-2">Newsletter</h5>
-                  <div className="flex gap-2">
-                    <Input placeholder="Enter your email" className="flex-1 h-8 text-xs" />
-                    <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground h-8 px-3 text-xs">
-                      Subscribe
-                    </Button>
-                  </div>
-                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="mb-8">
+              <h4 className="font-semibold text-foreground mb-4">Follow Our Journey</h4>
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="flex items-center justify-center w-10 h-10 bg-singapore-blue/10 hover:bg-singapore-blue/20 rounded-lg text-singapore-blue hover:text-singapore-blue/80 transition-all duration-200 hover:scale-105"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="flex items-center justify-center w-10 h-10 bg-pink-500/10 hover:bg-pink-500/20 rounded-lg text-pink-500 hover:text-pink-500/80 transition-all duration-200 hover:scale-105"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="#"
+                  className="flex items-center justify-center w-10 h-10 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg text-blue-600 hover:text-blue-600/80 transition-all duration-200 hover:scale-105"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
               </div>
             </div>
 

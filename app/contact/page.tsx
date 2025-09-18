@@ -35,7 +35,14 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <div className="py-12 pt-32">
+      {/* Professional contact header background */}
+      <div className="relative py-12 pt-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-emerald-900/5 to-red-900/5"></div>
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230369a1' fill-opacity='0.06'%3E%3Cpath d='M30 15l15 15-15 15-15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+        <div className="relative z-10">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="mb-8">
           <Link href="/">
@@ -125,6 +132,7 @@ export default function ContactPage() {
             </form>
           </CardContent>
         </Card>
+      </div>
       </div>
       </div>
 

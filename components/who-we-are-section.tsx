@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Building2, Users, Globe, Handshake } from "lucide-react"
 import { CorporateLogos } from "./corporate-logos"
 import Image from "next/image"
+import { ResolutionTooltip } from "./resolution-tooltip"
 
 export function WhoWeAreSection() {
   const companies = [
@@ -24,16 +25,16 @@ export function WhoWeAreSection() {
   ]
 
   const countries = [
-    "Singapore",
-    "Canada",
-    "United States",
-    "France",
-    "United Kingdom",
-    "Germany",
-    "Russia",
-    "Czech Republic",
-    "Romania",
-    "Japan",
+    { name: "Singapore", code: "SG" },
+    { name: "Canada", code: "CA" },
+    { name: "United States", code: "US" },
+    { name: "France", code: "FR" },
+    { name: "United Kingdom", code: "GB" },
+    { name: "Germany", code: "DE" },
+    { name: "Russia", code: "RU" },
+    { name: "Czech Republic", code: "CZ" },
+    { name: "Romania", code: "RO" },
+    { name: "Japan", code: "JP" },
   ]
 
   const governmentEngagements = [
@@ -63,7 +64,17 @@ export function WhoWeAreSection() {
   ]
 
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="relative py-24 overflow-hidden">
+      {/* Professional business background with Vietnamese flag accent */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 via-yellow-50/30 to-emerald-50/30 dark:from-red-950/10 dark:via-yellow-950/10 dark:to-emerald-950/10"></div>
+
+      {/* Global network pattern overlay */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.06'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Cpath d='M20 20l20 20-20 20-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        backgroundSize: '80px 80px'
+      }}></div>
+
+      <div className="relative z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -72,7 +83,7 @@ export function WhoWeAreSection() {
               <span className="font-medium text-vietnam-red">Vietnamese National Community</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Recognized by Resolution 36-NQ/TW of the Politburo as a vital bridge for global affairs, leveraging collective expertise for Vietnam's robust growth and stability.
+              Recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip> of the Politburo as a vital bridge for global affairs, leveraging collective expertise for Vietnam's robust growth and stability.
             </p>
           </div>
 
@@ -152,9 +163,40 @@ export function WhoWeAreSection() {
                   <h4 className="text-sm font-medium text-foreground mb-3">INTERNATIONAL PRESENCE</h4>
                   <div className="flex flex-wrap gap-2">
                     {countries.map((country, index) => (
-                      <span key={index} className="px-3 py-1 bg-muted text-muted-foreground text-sm rounded-full">
-                        {country}
-                      </span>
+                      <div
+                        key={index}
+                        className="relative px-3 py-2 h-10 bg-card text-muted-foreground text-xs rounded-lg overflow-hidden hover:scale-105 transition-all duration-300 border border-border/50 hover:border-golden-yellow/40 hover:shadow-lg group"
+                      >
+                        {/* Flag background */}
+                        <div className="absolute inset-0 opacity-15 group-hover:opacity-25 flex items-center justify-center transition-opacity duration-300">
+                          <Image
+                            src={`https://flagcdn.com/w80/${country.code.toLowerCase()}.png`}
+                            alt={`${country.name} flag`}
+                            width={40}
+                            height={30}
+                            className="object-cover w-full h-full scale-125"
+                            style={{
+                              filter: 'blur(0.5px) brightness(0.7)',
+                            }}
+                          />
+                        </div>
+                        {/* Small flag icon in corner */}
+                        <div className="absolute top-1 right-1 w-4 h-3 rounded-sm overflow-hidden opacity-70 group-hover:opacity-90 transition-opacity duration-300">
+                          <Image
+                            src={`https://flagcdn.com/w20/${country.code.toLowerCase()}.png`}
+                            alt={`${country.name} flag`}
+                            width={16}
+                            height={12}
+                            className="object-cover w-full h-full"
+                          />
+                        </div>
+                        {/* Country name overlay - positioned at bottom */}
+                        <div className="relative z-10 flex items-end h-full">
+                          <span className="font-medium text-foreground group-hover:text-golden-yellow transition-colors duration-300">
+                            {country.name}
+                          </span>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -200,6 +242,7 @@ export function WhoWeAreSection() {
             </Card>
           </div>
         </div>
+      </div>
       </div>
     </section>
   )
