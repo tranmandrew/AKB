@@ -64,7 +64,7 @@ export function WhoWeAreSection() {
   ]
 
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
+    <section id="who-we-are" className="relative py-24 overflow-hidden">
       {/* Professional business background with Vietnamese flag accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 via-yellow-50/30 to-emerald-50/30 dark:from-red-950/10 dark:via-yellow-950/10 dark:to-emerald-950/10"></div>
 

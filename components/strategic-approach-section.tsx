@@ -24,7 +24,7 @@ export function StrategicApproachSection() {
   ]
 
   return (
-    <section id="mission" className="relative py-24 bg-muted/30 overflow-hidden">
+    <section id="strategy" className="relative py-24 bg-muted/30 overflow-hidden">
       {/* Strategic architecture background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50/60 via-blue-50/60 to-indigo-50/60 dark:from-slate-950/20 dark:via-blue-950/20 dark:to-indigo-950/20"></div>
 
