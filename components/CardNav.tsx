@@ -80,6 +80,7 @@ const CardNav: React.FC<CardNavProps> = ({
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const hamburgerRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLDivElement | null>(null);
   const buttonsRef = useRef<HTMLDivElement | null>(null);
 
   const calculateHeight = () => {
@@ -216,9 +217,10 @@ const CardNav: React.FC<CardNavProps> = ({
   useLayoutEffect(() => {
     const container = containerRef.current;
     const hamburger = hamburgerRef.current;
+    const logo = logoRef.current;
     const buttons = buttonsRef.current;
 
-    if (!container || !hamburger || !buttons) return;
+    if (!container || !hamburger || !logo || !buttons) return;
 
     // Animate container width, opacity, and element positions
     const tl = gsap.timeline();
@@ -231,6 +233,11 @@ const CardNav: React.FC<CardNavProps> = ({
     }, 0)
     .to(hamburger, {
       x: isScrolled ? 60 : 0,
+      duration: 0.8,
+      ease: 'power2.inOut'
+    }, 0)
+    .to(logo, {
+      x: isScrolled ? -60 : 0,
       duration: 0.8,
       ease: 'power2.inOut'
     }, 0)
@@ -303,7 +310,10 @@ const CardNav: React.FC<CardNavProps> = ({
             />
           </div>
 
-          <div className="logo-container flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div
+            ref={(el) => { if (el) logoRef.current = el; }}
+            className="logo-container flex items-center absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 right-2 top-1/2 -translate-y-1/2"
+          >
             <a href="/" className="flex items-center">
               <img src={logo} alt={logoAlt} className="logo h-[28px] cursor-pointer hover:opacity-80 transition-opacity duration-300" />
             </a>

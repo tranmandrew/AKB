@@ -32,38 +32,37 @@ export function HeroSection() {
       <div className="container mx-auto px-4 py-32 relative z-20">
         <div className="flex items-center min-h-[60vh]">
           {/* Left side - Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8 w-full max-w-full">
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight break-words">
               Vietnam's Global{" "}
               <span className="font-medium text-vietnam-red">Professional Network</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-black leading-relaxed max-w-lg">
+            <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed max-w-full md:max-w-lg break-words">
               Connecting Vietnamese leaders from Google, Amazon, UBS, and other Fortune 500 companies with Vietnam's government to drive national development through expertise and investment.
             </p>
 
-
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/contact">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
+              <a href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-8 py-6 text-lg hover-elevate"
+                  className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg hover-elevate w-full sm:w-auto"
                 >
                   Apply for Membership
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </Button>
               </a>
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-6 text-lg bg-white/70 border-2 hover-elevate hover:bg-white/80"
+                className="px-4 md:px-8 py-4 md:py-6 text-sm md:text-lg bg-white/70 border-2 hover-elevate hover:bg-white/80 w-full sm:w-auto whitespace-nowrap"
                 onClick={() => {
                   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Explore Our Impact
+                Explore Impact
               </Button>
             </div>
 
