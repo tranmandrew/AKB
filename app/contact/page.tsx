@@ -51,7 +51,7 @@ export default function ContactPage() {
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-light text-foreground mb-4">Contact Us</h1>
+          <h1 className="heading-primary text-4xl text-foreground mb-4">Contact Us</h1>
           <p className="text-muted-foreground">
             Ready to join the founding movement? Let's start the conversation.
           </p>
@@ -62,7 +62,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
                     First Name <span className="text-vietnam-red">*</span>
                   </label>
                   <Input
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Last Name</label>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Last Name</label>
                   <Input
                     name="lastName"
                     value={formData.lastName}
@@ -85,7 +85,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
                   Email <span className="text-vietnam-red">*</span>
                 </label>
                 <Input
@@ -99,7 +99,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">Phone</label>
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Phone</label>
                 <Input
                   type="tel"
                   name="phone"
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
                   Message <span className="text-vietnam-red">*</span>
                 </label>
                 <Textarea
@@ -123,7 +123,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <Button
+              <Button className="font-montserrat"
                 type="submit"
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
               >
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     height={56}
                     className="object-contain"
                   />
-                  <h4 className="font-semibold text-foreground">Association of Professional Kiều Bào</h4>
+                  <h4 className="font-montserrat font-semibold text-foreground">Association of Professional Kiều Bào</h4>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                   Connecting Vietnamese professionals worldwide to advance Vietnam's development through expertise and global partnerships.
@@ -160,7 +160,7 @@ export default function ContactPage() {
 
               {/* Social Media Links */}
               <div>
-                <p className="text-sm font-medium text-foreground mb-3">Follow Our Journey</p>
+                <p className="font-montserrat text-sm font-medium text-foreground mb-3">Follow Our Journey</p>
                 <div className="flex justify-center gap-3">
                   <a
                     href="#"

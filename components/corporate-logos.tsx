@@ -203,7 +203,7 @@ export function CorporateLogos({
   return (
     <div className={`${className}`}>
       {showTitle && (
-        <h3 className="text-lg font-semibold text-foreground mb-6 text-center">
+        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-6 text-center">
           Trusted by Industry Leaders
         </h3>
       )}

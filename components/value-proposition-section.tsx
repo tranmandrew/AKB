@@ -43,8 +43,8 @@ export function ValuePropositionSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">
-              Our Strategic <span className="font-medium text-accent">Value Proposition</span>
+            <h2 className="heading-primary text-3xl md:text-5xl text-foreground mb-6 text-balance">
+              Our Strategic <span className="heading-primary text-accent">Value Proposition</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               As recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, Kiều Bào are a vital resource for Vietnam's national development through three key areas
@@ -77,7 +77,7 @@ export function ValuePropositionSection() {
                       <service.icon className="h-8 w-8 text-slate-700 dark:text-slate-300" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">{service.title}</h3>
+                  <h3 className="font-montserrat text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">{service.title}</h3>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>

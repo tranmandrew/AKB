@@ -51,8 +51,8 @@ export function LeadershipSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">
-              Founding <span className="font-medium text-accent">Board Members</span>
+            <h2 className="heading-primary text-3xl md:text-5xl text-foreground mb-6 text-balance">
+              Founding <span className="heading-primary text-accent">Board Members</span>
             </h2>
           </div>
 
@@ -71,8 +71,8 @@ export function LeadershipSection() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-medium text-foreground mb-2">{leader.name}</h3>
-                    <p className="text-vietnam-red text-sm font-medium mb-3">{leader.role}</p>
+                    <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">{leader.name}</h3>
+                    <p className="font-montserrat text-vietnam-red text-sm font-medium mb-3">{leader.role}</p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{leader.description}</p>
                   </CardContent>
                 </Card>
@@ -93,8 +93,8 @@ export function LeadershipSection() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-medium text-foreground mb-2">{leader.name}</h3>
-                    <p className="text-vietnam-red text-sm font-medium mb-3">{leader.role}</p>
+                    <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">{leader.name}</h3>
+                    <p className="font-montserrat text-vietnam-red text-sm font-medium mb-3">{leader.role}</p>
                     <p className="text-muted-foreground text-sm leading-relaxed">{leader.description}</p>
                   </CardContent>
                 </Card>

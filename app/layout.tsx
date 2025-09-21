@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import { Inter, Noto_Sans } from "next/font/google"
+import { Inter, Noto_Sans, Montserrat } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
@@ -18,6 +18,13 @@ const notoSans = Noto_Sans({
   subsets: ["latin", "vietnamese"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-noto-sans",
+  display: "swap",
+})
+
+const montserrat = Montserrat({
+  subsets: ["latin", "vietnamese", "cyrillic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
   display: "swap",
 })
 
@@ -51,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${notoSans.variable} ${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${montserrat.variable} ${notoSans.variable} ${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

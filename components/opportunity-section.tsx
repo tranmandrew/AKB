@@ -177,8 +177,8 @@ export function OpportunitySection() {
       <div className="relative z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">
-            Vietnam's Moment is <span className="font-medium text-accent">Now</span>
+          <h2 className="heading-primary text-3xl md:text-5xl text-foreground mb-6 text-balance">
+            Vietnam's Moment is <span className="heading-primary text-accent">Now</span>
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             Vietnam's rapid economic growth and global integration creates unprecedented opportunities for international
@@ -196,10 +196,10 @@ export function OpportunitySection() {
                     <stat.icon className="h-6 w-6 text-accent" />
                   </div>
                 </div>
-                <div className="text-2xl lg:text-3xl font-light text-foreground mb-2 transition-all duration-300">
+                <div className="font-montserrat text-2xl lg:text-3xl font-semibold text-foreground mb-2 transition-all duration-300">
                   {hasAnimated[index] ? stat.value : formatValue(index, stat)}
                 </div>
-                <div className="text-sm font-medium text-foreground mb-2">{stat.label}</div>
+                <div className="font-montserrat text-sm font-medium text-foreground mb-2">{stat.label}</div>
                 <div className="text-xs text-muted-foreground leading-relaxed">{stat.description}</div>
               </CardContent>
             </Card>

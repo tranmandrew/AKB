@@ -48,7 +48,7 @@ export function HeroSection() {
               <a href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg hover-elevate w-full sm:w-auto"
+                  className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg hover-elevate w-full sm:w-auto"
                 >
                   Apply for Membership
                   <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
@@ -57,9 +57,9 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="px-4 md:px-8 py-4 md:py-6 text-sm md:text-lg bg-white/70 border-2 hover-elevate hover:bg-white/80 w-full sm:w-auto whitespace-nowrap"
+                className="font-montserrat px-4 md:px-8 py-4 md:py-6 text-sm md:text-lg bg-white/70 border-2 hover-elevate hover:bg-white/80 w-full sm:w-auto whitespace-nowrap"
                 onClick={() => {
-                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('strategy')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 Explore Impact

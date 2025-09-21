@@ -21,7 +21,7 @@ export function FooterSection() {
                 className="object-contain"
               />
               <div>
-                <h4 className="font-semibold text-foreground text-sm whitespace-nowrap">Association of Professional Kiều Bào</h4>
+                <h4 className="font-montserrat font-semibold text-foreground text-sm whitespace-nowrap">Association of Professional Kiều Bào</h4>
                 <p className="text-xs text-muted-foreground">
                   Connecting Vietnamese professionals worldwide
                 </p>
@@ -55,10 +55,10 @@ export function FooterSection() {
 
             {/* Newsletter */}
             <div>
-              <h5 className="text-sm font-medium text-foreground mb-2">Newsletter</h5>
+              <h5 className="font-montserrat text-sm font-medium text-foreground mb-2">Newsletter</h5>
               <div className="flex gap-2">
                 <Input placeholder="Enter email" className="flex-1 h-8 text-xs" />
-                <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground h-8 px-3 text-xs">
+                <Button size="sm" className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground h-8 px-3 text-xs">
                   Subscribe
                 </Button>
               </div>

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Check } from "lucide-react"
+import Image from "next/image"
 
 export function JoinMovementSection() {
   const benefits = [
@@ -13,14 +14,28 @@ export function JoinMovementSection() {
   ]
 
   return (
-    <section id="join" className="py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section id="join" className="relative py-16 md:py-20 overflow-hidden">
+      {/* Hanoi Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/HanoiStock.jpeg"
+          alt="Hanoi cityscape"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
+
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">
-            Be Part of <span className="font-medium text-accent">Vietnam's Future</span>
+          <h2 className="heading-primary text-3xl md:text-5xl text-white mb-6 text-balance">
+            Be Part of <span className="heading-primary text-accent">Vietnam's Future</span>
           </h2>
 
-          <p className="text-lg text-muted-foreground mb-12 text-pretty leading-relaxed">
+          <p className="text-lg text-white/90 mb-12 text-pretty leading-relaxed">
             This is a once-in-a-generation opportunity to be a founding member of an organization that will shape
             Vietnam's next chapter. We seek distinguished Vietnamese professionals ready to leverage their global
             success for our homeland's prosperity.
@@ -28,7 +43,7 @@ export function JoinMovementSection() {
 
           <Card className="glass-card border-0 mb-12">
             <CardContent className="p-8">
-              <h3 className="text-xl font-medium text-foreground mb-6">Founding Member Benefits</h3>
+              <h3 className="font-montserrat text-xl font-semibold text-foreground mb-6">Founding Member Benefits</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start text-left">
@@ -46,7 +61,7 @@ export function JoinMovementSection() {
             <a href="/contact">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
+                className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
               >
                 Apply for Founding Membership
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -56,7 +71,7 @@ export function JoinMovementSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-6 text-lg bg-transparent"
+                className="font-montserrat px-8 py-6 text-lg bg-transparent"
               >
                 Schedule a Consultation
               </Button>

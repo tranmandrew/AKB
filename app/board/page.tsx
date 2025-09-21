@@ -70,15 +70,15 @@ function BoardMembersSection() {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="font-montserrat text-lg font-semibold text-gray-900">
                       {member.name}
                     </h3>
-                    <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
+                    <span className="font-montserrat inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-700">
                       {member.country}
                     </span>
                   </div>
 
-                  <h4 className="text-sm font-medium text-vietnam-red mb-3">
+                  <h4 className="font-montserrat text-sm font-medium text-vietnam-red mb-3">
                     {member.title}
                   </h4>
 
@@ -115,7 +115,7 @@ export default function BoardPage() {
           />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-6xl font-bold text-white mb-8">
+          <h1 className="heading-primary text-6xl text-white mb-8">
             Founding Board Members
           </h1>
           <p className="text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed">

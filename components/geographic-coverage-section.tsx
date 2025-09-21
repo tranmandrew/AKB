@@ -67,7 +67,7 @@ export function GeographicCoverageSection() {
     <section id="geographic-coverage" className="py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">
+          <h2 className="heading-primary text-4xl text-gray-900 mb-3">
             Geographic Coverage
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -164,7 +164,7 @@ export function GeographicCoverageSection() {
 
           {/* Vietnam Info and Data Cards Section - 1/4 width */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="font-montserrat text-xl font-bold text-gray-900 mb-4">
               Vietnam's Moment is Now
             </h3>
 
@@ -178,10 +178,10 @@ export function GeographicCoverageSection() {
                 className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-rotate-1 hover:scale-105"
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-vietnam-red mb-1">
+                  <div className="font-montserrat text-2xl font-bold text-vietnam-red mb-1">
                     {card.value}
                   </div>
-                  <h4 className="text-base font-semibold text-gray-900 mb-1">
+                  <h4 className="font-montserrat text-base font-semibold text-gray-900 mb-1">
                     {card.title}
                   </h4>
                   <p className="text-gray-600 text-xs">
