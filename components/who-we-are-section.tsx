@@ -64,7 +64,7 @@ export function WhoWeAreSection() {
   ]
 
   return (
-    <section id="who-we-are" className="relative py-24 overflow-hidden">
+    <section id="who-we-are" className="relative py-16 md:py-20 overflow-hidden">
       {/* Professional business background with Vietnamese flag accent */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 via-yellow-50/30 to-emerald-50/30 dark:from-red-950/10 dark:via-yellow-950/10 dark:to-emerald-950/10"></div>
 
@@ -77,19 +77,19 @@ export function WhoWeAreSection() {
       <div className="relative z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-4xl font-light text-foreground mb-4 text-balance">
               An Integral Part of the{" "}
               <span className="font-medium text-vietnam-red">Vietnamese National Community</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip> of the Politburo as a vital bridge for global affairs, leveraging collective expertise for Vietnam's robust growth and stability.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
             <Card className="executive-card hover-elevate">
-              <CardContent className="p-8">
+              <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Users className="h-6 w-6 text-vietnam-red" />
                   <h3 className="text-xl font-medium text-foreground">KIỀU BÀO DEFINITION</h3>
@@ -121,7 +121,7 @@ export function WhoWeAreSection() {
             </Card>
 
             <Card className="executive-card hover-elevate">
-              <CardContent className="p-8">
+              <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Building2 className="h-6 w-6 text-singapore-blue" />
                   <h3 className="text-xl font-medium text-foreground">GOVERNMENT ENGAGEMENT</h3>
@@ -143,9 +143,9 @@ export function WhoWeAreSection() {
             </Card>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card className="executive-card hover-elevate">
-              <CardContent className="p-8">
+              <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Globe className="h-6 w-6 text-golden-yellow" />
                   <h3 className="text-xl font-medium text-foreground">GLOBAL CORPORATE NETWORK</h3>
@@ -204,7 +204,7 @@ export function WhoWeAreSection() {
             </Card>
 
             <Card className="executive-card hover-elevate">
-              <CardContent className="p-8">
+              <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-6">
                   <Handshake className="h-6 w-6 text-jade-green" />
                   <h3 className="text-xl font-medium text-foreground">CHAMBERS OF COMMERCE</h3>

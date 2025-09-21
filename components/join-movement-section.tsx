@@ -13,7 +13,7 @@ export function JoinMovementSection() {
   ]
 
   return (
-    <section id="join" className="py-24">
+    <section id="join" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-light text-foreground mb-6 text-balance">

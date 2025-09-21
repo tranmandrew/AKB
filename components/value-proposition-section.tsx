@@ -29,7 +29,7 @@ export function ValuePropositionSection() {
   ]
 
   return (
-    <section id="value-proposition" className="relative py-24 overflow-hidden">
+    <section id="value-proposition" className="relative py-16 md:py-20 overflow-hidden">
       {/* Professional subtle background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50/30 to-slate-100/30 dark:from-slate-900/30 dark:to-slate-800/30"></div>
 

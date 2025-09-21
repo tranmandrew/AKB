@@ -9,8 +9,8 @@ export function Header() {
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: "Who We Are", href: "#who-we-are", ariaLabel: "About our organization" },
-        { label: "Global Coverage", href: "#geographic-coverage", ariaLabel: "Our global presence" }
+        { label: "Who We Are", href: "/#who-we-are", ariaLabel: "About our organization" },
+        { label: "Global Coverage", href: "/#geographic-coverage", ariaLabel: "Our global presence" }
       ]
     },
     {

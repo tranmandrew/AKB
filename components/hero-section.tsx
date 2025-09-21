@@ -29,18 +29,18 @@ export function HeroSection() {
       {/* Enhanced gradient overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40 z-10"></div>
 
-      <div className="container mx-auto px-4 py-32 relative z-20">
-        <div className="flex items-center min-h-[60vh]">
+      <div className="container mx-auto px-4 py-20 md:py-24 relative z-20">
+        <div className="flex items-center min-h-[50vh] md:min-h-[55vh]">
           {/* Left side - Content */}
           <div className="space-y-6 md:space-y-8 w-full max-w-full">
             {/* Main headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight break-words">
-              Vietnam's Global{" "}
-              <span className="font-medium text-vietnam-red">Professional Network</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-tight break-words tracking-tight font-noto-sans">
+              Association of Professional{" "}
+              <span className="font-black text-vietnam-red text-shadow-sm">Kiều Bào</span>
             </h1>
 
             <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed max-w-full md:max-w-lg break-words">
-              Connecting Vietnamese leaders from Google, Amazon, UBS, and other Fortune 500 companies with Vietnam's government to drive national development through expertise and investment.
+              A distinguished organization of Vietnamese diaspora professionals acting as a vital bridge for global affairs, harnessing collective expertise from Google, Mastercard, UBS, SAP, BOSCH, and Amazon to support Vietnam's robust growth and stability.
             </p>
 
             {/* CTA buttons */}

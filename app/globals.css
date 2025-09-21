@@ -93,7 +93,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-noto-sans), var(--font-inter), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -173,6 +173,15 @@
     font-size: 1.125rem; /* 18px for better executive readability */
     line-height: 1.7;
     font-weight: 400;
+  }
+
+  /* Vietnamese font support */
+  .font-inter {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .font-noto-sans {
+    font-family: var(--font-noto-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   /* Professional links */

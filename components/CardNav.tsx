@@ -222,6 +222,9 @@ const CardNav: React.FC<CardNavProps> = ({
 
     if (!container || !hamburger || !logo || !buttons) return;
 
+    // Check if we're on mobile
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
     // Animate container width, opacity, and element positions
     const tl = gsap.timeline();
 
@@ -236,16 +239,20 @@ const CardNav: React.FC<CardNavProps> = ({
       duration: 0.8,
       ease: 'power2.inOut'
     }, 0)
-    .to(logo, {
-      x: isScrolled ? -60 : 0,
-      duration: 0.8,
-      ease: 'power2.inOut'
-    }, 0)
     .to(buttons, {
       x: isScrolled ? -60 : 0,
       duration: 0.8,
       ease: 'power2.inOut'
     }, 0);
+
+    // Only animate logo on mobile
+    if (isMobile) {
+      tl.to(logo, {
+        x: isScrolled ? -60 : 0,
+        duration: 0.8,
+        ease: 'power2.inOut'
+      }, 0);
+    }
   }, [isScrolled]);
 
   const toggleMenu = () => {
@@ -312,7 +319,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
           <div
             ref={(el) => { if (el) logoRef.current = el; }}
-            className="logo-container flex items-center absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 right-2 top-1/2 -translate-y-1/2"
+            className="logo-container flex items-center absolute top-1/2 -translate-y-1/2 right-2 md:right-auto md:left-1/2 md:-translate-x-1/2"
           >
             <a href="/" className="flex items-center">
               <img src={logo} alt={logoAlt} className="logo h-[28px] cursor-pointer hover:opacity-80 transition-opacity duration-300" />
