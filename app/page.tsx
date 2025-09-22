@@ -2,8 +2,9 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { OpportunitySection } from "@/components/opportunity-section"
 import { WhoWeAreSection } from "@/components/who-we-are-section"
-import { StrategicApproachSection } from "@/components/strategic-approach-section"
 import { GeographicCoverageSection } from "@/components/geographic-coverage-section"
+import { StrategicApproachSection } from "@/components/strategic-approach-section"
+import { ActivitiesSection } from "@/components/activities-section"
 import { JoinMovementSection } from "@/components/join-movement-section"
 import { FooterSection } from "@/components/footer-section"
 
@@ -15,6 +16,7 @@ export default function HomePage() {
       <WhoWeAreSection />
       <GeographicCoverageSection />
       <StrategicApproachSection />
+      <ActivitiesSection />
       <JoinMovementSection />
       <FooterSection />
     </main>

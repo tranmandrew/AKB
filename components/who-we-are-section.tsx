@@ -120,31 +120,36 @@ export function WhoWeAreSection() {
   return (
     <>
       <section id="who-we-are" className="relative py-16 md:py-20 overflow-hidden">
-        {/* Professional business background with Vietnamese flag accent */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 via-yellow-50/30 to-emerald-50/30 dark:from-red-950/10 dark:via-yellow-950/10 dark:to-emerald-950/10"></div>
+        {/* Da Nang Golden Hands Bridge Background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/DanangGolendHandsBridge.jpg"
+            alt="Da Nang Golden Hands Bridge"
+            fill
+            className="object-cover grayscale"
+            priority
+          />
+        </div>
 
-        {/* Global network pattern overlay */}
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.06'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Cpath d='M20 20l20 20-20 20-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: '80px 80px'
-        }}></div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60 z-[1]"></div>
 
-        <div className="relative z-10">
+        <div className="relative z-[2]">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="heading-secondary text-2xl md:text-3xl text-foreground mb-3 text-balance">
-                  An Integral Part of the{" "}
-                  <span className="heading-secondary text-vietnam-red">Vietnamese National Community</span>
+                <h2 className="heading-secondary text-2xl md:text-3xl text-white mb-3 text-balance">
+                  A Vital Bridge for a{" "}
+                  <span className="heading-secondary text-vietnam-red">Prosperous Vietnam</span>
                 </h2>
-                <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-                  Recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip> of the Politburo as a vital bridge for global affairs.
+                <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed">
+                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to harness collective expertise to build a stronger, more independent, and prosperous Vietnam on the global stage.
                 </p>
               </div>
 
               {/* Horizontal Stacked Cards Design */}
               <div className="space-y-3">
-                {/* Distinguished Organization Card */}
+                {/* Global Professional Network Card */}
                 <div className="hover-elevate border-l-4 border-l-vietnam-red bg-transparent">
                   <div className="p-4">
                     <div className="flex items-start gap-4">
@@ -152,9 +157,9 @@ export function WhoWeAreSection() {
                         <Users className="h-5 w-5 text-vietnam-red" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Distinguished Organization</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          Accomplished professionals from major multinational corporations across Singapore, Canada, USA, France, UK, Germany, Russia, Czech Republic, Romania, and Japan.
+                        <h3 className="font-montserrat text-lg font-semibold text-white mb-2">An Elite Global Network</h3>
+                        <p className="text-sm text-white/80 leading-relaxed">
+                          Our members are accomplished leaders and innovators from key international hubs, including the United States, United Kingdom, Singapore, Japan, and the European Union.
                         </p>
                       </div>
                     </div>
@@ -169,9 +174,9 @@ export function WhoWeAreSection() {
                         <Building2 className="h-5 w-5 text-golden-yellow" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Global Corporate Excellence</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3 break-words">
-                          Executive expertise from Google, Mastercard, UBS, SAP, BOSCH, Amazon, Microsoft, JPMorgan, Grab, and Visa.
+                        <h3 className="font-montserrat text-lg font-semibold text-white mb-2">Expertise Forged at Industry Leaders</h3>
+                        <p className="text-sm text-white/80 leading-relaxed mb-3 break-words">
+                          We bring a wealth of collective knowledge from experiences at world-renowned corporations such as Google, Microsoft, JPMorgan, Visa, and Amazon.
                         </p>
                         <div className="bg-muted/30 rounded-lg p-3 overflow-hidden w-full max-w-full">
                           <div className="animate-slide-logos flex items-center gap-8">
@@ -259,9 +264,9 @@ export function WhoWeAreSection() {
                         <Globe className="h-5 w-5 text-jade-green" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-montserrat text-lg font-semibold text-foreground mb-2">Vital Bridge for Global Affairs</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          Leveraging collective expertise to support Vietnam's growth through international cooperation and impactful knowledge sharing.
+                        <h3 className="font-montserrat text-lg font-semibold text-white mb-2">A Catalyst for National Progress</h3>
+                        <p className="text-sm text-white/80 leading-relaxed">
+                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, and accelerate Vietnam's growth.
                         </p>
                       </div>
                     </div>
@@ -284,7 +289,7 @@ export function WhoWeAreSection() {
                 showBorder={false}
                 className="heading-primary text-2xl md:text-3xl tracking-tight"
               >
-                Partnered with Vietnam's Leading<br />Chambers of Commerce
+                Partnered with Vietnam's Leading<br /><span className="font-bold">Chambers of Commerce</span>
               </GradientText>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-items-center">

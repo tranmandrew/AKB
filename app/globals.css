@@ -588,3 +588,48 @@ html {
   scroll-snap-align: center;
   scroll-margin-top: 0;
 }
+
+/* Diagonal Design Elements */
+.diagonal-top {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.diagonal-both {
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.diagonal-top-reverse {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.diagonal-bottom-reverse {
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.diagonal-top-bottom {
+  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+  background-attachment: local;
+  min-height: 100%;
+}
+
+.wave-top {
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.wave-bottom {
+  clip-path: ellipse(150% 100% at 50% 100%);
+}

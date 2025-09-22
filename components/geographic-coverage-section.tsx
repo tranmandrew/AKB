@@ -9,7 +9,7 @@ interface CountryTooltip {
   y: number // percentage from top
 }
 
-// Coordinates for the 10 specified red countries based on the map image
+// Coordinates for the specified red countries based on the map image
 const redCountries: CountryTooltip[] = [
   { name: "Singapore", x: 72, y: 71 },
   { name: "Canada", x: 23, y: 43 },
@@ -20,11 +20,17 @@ const redCountries: CountryTooltip[] = [
   { name: "Russia", x: 70, y: 39 },
   { name: "Czech Republic", x: 52, y: 48 },
   { name: "Romania", x: 54, y: 50 },
-  { name: "Japan", x: 80, y: 54 }
+  { name: "Japan", x: 80, y: 54 },
+  { name: "Korea", x: 77.5, y: 55 },
+  { name: "Switzerland", x: 50, y: 49 },
+  { name: "China", x: 72, y: 56 },
+  { name: "Thailand", x: 71.5, y: 65 },
+  { name: "Australia", x: 79, y: 82 },
+  { name: "New Zealand", x: 88, y: 91 }
 ]
 
 // Vietnam location (home country) - gets a special star marker
-const vietnamLocation = { name: "Vietnam", x: 73, y: 64 }
+const vietnamLocation = { name: "Vietnam", x: 72.5, y: 62 }
 
 interface DataCard {
   title: string
@@ -54,7 +60,7 @@ const dataCards: DataCard[] = [
   },
   {
     title: "International Hubs",
-    value: "13",
+    value: "16",
     description: "Global network of Vietnamese professionals",
     icon: ""
   }
@@ -64,15 +70,14 @@ export function GeographicCoverageSection() {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
 
   return (
-    <section id="geographic-coverage" className="scroll-snap-section py-12 md:py-16 bg-gray-50 min-h-screen">
+    <section id="geographic-coverage" className="scroll-snap-section py-12 md:py-16 bg-gray-50 min-h-screen diagonal-bottom">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="heading-primary text-4xl text-gray-900 mb-3">
             Geographic Coverage
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Connecting Vietnamese professionals across the globe through our extensive network
-            of Kiều Bào communities in major countries worldwide.
+            Connecting Vietnamese professionals worldwide through our extensive network of Kiều Bào communities.
           </p>
         </div>
 
@@ -156,7 +161,7 @@ export function GeographicCoverageSection() {
               {/* Country list under the map */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-black">
-                  Vietnam, Singapore, Canada, the United States, France, the UK, Germany, Russia, Czech Republic, Romania, and Japan
+                  Vietnam, Singapore, Canada, the United States, France, the UK, Germany, Russia, Czech Republic, Romania, Japan, Korea, Switzerland, China, Thailand, Australia, and New Zealand
                 </p>
               </div>
             </div>

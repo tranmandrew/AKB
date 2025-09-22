@@ -30,46 +30,32 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/40 z-10"></div>
 
       <div className="container mx-auto px-4 py-20 md:py-24 relative z-20">
-        <div className="flex items-center min-h-[50vh] md:min-h-[55vh]">
+        <div className="flex items-center min-h-[60vh] md:min-h-[65vh]">
           {/* Left side - Content */}
-          <div className="space-y-6 md:space-y-8 w-full max-w-full">
+          <div className="space-y-4 md:space-y-6 w-full max-w-full">
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-tight break-words tracking-tight font-noto-sans">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight break-words tracking-tight font-noto-sans">
               Association of Professional{" "}
               <span className="font-black text-vietnam-red text-shadow-sm">Kiều Bào</span>
             </h1>
 
-            <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed max-w-full md:max-w-lg break-words">
-              A distinguished organization of Vietnamese diaspora professionals acting as a vital bridge for global affairs, harnessing collective expertise from Google, Mastercard, UBS, SAP, BOSCH, and Amazon to support Vietnam's robust growth and stability.
+            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-4xl">
+              Collective expertise from global Vietnamese professionals influencing policy and strengthening Vietnam's development
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
-              <a href="/contact" className="w-full sm:w-auto">
+            {/* Single CTA button */}
+            <div className="pt-4">
+              <a href="/membership" className="inline-block">
                 <Button
                   size="lg"
-                  className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg hover-elevate w-full sm:w-auto"
+                  className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-8 py-6 text-lg hover-elevate"
                 >
                   Apply for Membership
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-montserrat px-4 md:px-8 py-4 md:py-6 text-sm md:text-lg bg-white/70 border-2 hover-elevate hover:bg-white/80 w-full sm:w-auto whitespace-nowrap"
-                onClick={() => {
-                  document.getElementById('strategy')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Explore Impact
-              </Button>
             </div>
 
-            {/* Trust indicators */}
-            <div className="pt-8">
-              <CorporateLogos variant="hero" showTitle={false} className="justify-start" />
-            </div>
           </div>
 
         </div>

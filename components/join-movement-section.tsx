@@ -13,8 +13,15 @@ export function JoinMovementSection() {
     "Legacy as a founding architect of Vietnam's global integration",
   ]
 
+  const membershipInfo = [
+    "Referral is required for membership",
+    "Directory of professionals with sector expertise",
+    "Newsletter featuring government programs open for Kiều Bào",
+    "Professional highlights and exciting developments"
+  ]
+
   return (
-    <section id="join" className="relative py-16 md:py-20 overflow-hidden">
+    <section id="join" className="relative py-16 md:py-20 overflow-hidden diagonal-top pt-32 z-10">
       {/* Hanoi Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -35,30 +42,35 @@ export function JoinMovementSection() {
             Be Part of <span className="heading-primary text-accent">Vietnam's Future</span>
           </h2>
 
-          <p className="text-lg text-white/90 mb-12 text-pretty leading-relaxed">
-            This is a once-in-a-generation opportunity to be a founding member of an organization that will shape
-            Vietnam's next chapter. We seek distinguished Vietnamese professionals ready to leverage their global
-            success for our homeland's prosperity.
+          <p className="text-lg text-white/90 mb-8 text-pretty leading-relaxed">
+            Once-in-a-generation opportunity for founding membership. Distinguished Vietnamese professionals leveraging global success for homeland prosperity.
           </p>
 
-          <Card className="glass-card border-0 mb-12">
-            <CardContent className="p-8">
-              <h3 className="font-montserrat text-xl font-semibold text-foreground mb-6">Founding Member Benefits</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card className="glass-card border-0 mb-8 max-w-3xl mx-auto">
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start text-left">
-                    <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                      <Check className="h-3 w-3 text-accent" />
+                    <div className="w-4 h-4 bg-accent/10 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                      <Check className="h-2.5 w-2.5 text-accent" />
                     </div>
-                    <span className="text-muted-foreground text-sm">{benefit}</span>
+                    <span className="text-muted-foreground text-sm leading-tight">{benefit}</span>
                   </div>
                 ))}
+              </div>
+
+              <hr className="my-4 border-gray-200" />
+
+              <div className="text-center">
+                <p className="text-xs text-muted-foreground mb-3">
+                  <strong>Referral required</strong> • Professional directory • Government program updates
+                </p>
               </div>
             </CardContent>
           </Card>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact">
+            <a href="/membership">
               <Button
                 size="lg"
                 className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"

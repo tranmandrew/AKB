@@ -18,6 +18,7 @@ export function Header() {
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
+        { label: "Membership", href: "/membership", ariaLabel: "Join our network" },
         { label: "Board", href: "/board", ariaLabel: "Board members" }
       ]
     },
