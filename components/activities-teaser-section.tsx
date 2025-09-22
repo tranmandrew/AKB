@@ -60,7 +60,7 @@ export function ActivitiesTeaserSection() {
               // Use specific images for other activities
               let imageSrc = "";
               if (index === 1) { // Global Advocacy & Influence
-                imageSrc = "/sector.avif";
+                imageSrc = "/sector.jpg";
               } else if (index === 2) { // Specialized Sector Leadership
                 imageSrc = "/Boardroom.jpeg";
               }
