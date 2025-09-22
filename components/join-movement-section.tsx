@@ -71,7 +71,7 @@ export function JoinMovementSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="font-montserrat px-8 py-6 text-lg bg-transparent"
+                className="font-montserrat px-8 py-6 text-lg bg-white text-black border-white hover:bg-white/90"
               >
                 Schedule a Consultation
               </Button>

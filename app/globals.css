@@ -572,3 +572,19 @@
   font-weight: 400;
   line-height: 1.6;
 }
+
+/* Scroll snap utility classes */
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-margin-top: 0;
+}
+
+.scroll-snap-section-center {
+  scroll-snap-align: center;
+  scroll-margin-top: 0;
+}

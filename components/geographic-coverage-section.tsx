@@ -64,7 +64,7 @@ export function GeographicCoverageSection() {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null)
 
   return (
-    <section id="geographic-coverage" className="py-12 md:py-16 bg-gray-50">
+    <section id="geographic-coverage" className="scroll-snap-section py-12 md:py-16 bg-gray-50 min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="heading-primary text-4xl text-gray-900 mb-3">

@@ -24,7 +24,7 @@ export function StrategicApproachSection() {
   ]
 
   return (
-    <section id="strategy" className="relative py-16 md:py-20 bg-black overflow-hidden">
+    <section id="strategy" className="scroll-snap-section relative py-16 md:py-20 bg-black overflow-hidden min-h-screen">
       {/* Dark architectural pattern overlay */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='45' y='0' width='10' height='100'/%3E%3Crect x='0' y='45' width='100' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,

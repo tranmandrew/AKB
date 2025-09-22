@@ -1,6 +1,5 @@
 import { Header } from "@/components/header"
 import { FooterSection } from "@/components/footer-section"
-import DitherFallback from "@/components/DitherFallback"
 
 interface BoardMember {
   name: string
@@ -101,21 +100,9 @@ export default function BoardPage() {
       <Header />
 
       {/* Hero Section for Board Page */}
-      <section className="pt-32 pb-20 relative">
-        <div className="absolute inset-0 w-full h-full">
-          <DitherFallback
-            waveColor={[0.5, 0.5, 0.5]}
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.3}
-            colorNum={4}
-            waveAmplitude={0.3}
-            waveFrequency={3}
-            waveSpeed={0.05}
-          />
-        </div>
+      <section className="pt-20 pb-20 relative bg-vietnam-red opacity-70">
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="heading-primary text-6xl text-white mb-8">
+          <h1 className="heading-primary text-4xl text-white mb-8">
             Founding Board Members
           </h1>
           <p className="text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed">

@@ -127,7 +127,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
     console.log('Creating timeline, cards:', cardsRef.current.length);
 
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
+    // Don't set height here - it's already set in useLayoutEffect
     gsap.set(cardsRef.current, { y: 50, opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
@@ -146,6 +146,13 @@ const CardNav: React.FC<CardNavProps> = ({
 
   useLayoutEffect(() => {
     console.log('useLayoutEffect called, creating timeline');
+    const navEl = navRef.current;
+    if (!navEl) return;
+
+    // Keep nav at collapsed height initially - don't auto-expand
+    gsap.set(navEl, { height: 48, overflow: 'hidden' });
+    gsap.set(cardsRef.current, { y: 50, opacity: 0 });
+
     const tl = createTimeline();
     tlRef.current = tl;
 
@@ -282,14 +289,14 @@ const CardNav: React.FC<CardNavProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`card-nav-container fixed left-1/2 -translate-x-1/2 w-[95%] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container fixed left-1/2 -translate-x-1/2 w-[95%] z-[99] top-[0.8em] md:top-[1.2em] ${className}`}
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
+        className={`card-nav ${isExpanded ? 'open' : ''} block h-[48px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 z-[2]">
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[48px] flex items-center justify-between p-2 z-[2]">
           <div
             ref={(el) => { if (el) hamburgerRef.current = el; }}
             className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px]`}
@@ -349,7 +356,7 @@ const CardNav: React.FC<CardNavProps> = ({
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+          className={`card-nav-content absolute left-0 right-0 top-[48px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
             isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
           } md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}
@@ -357,7 +364,7 @@ const CardNav: React.FC<CardNavProps> = ({
           {(items || []).slice(0, 3).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
+              className="nav-card select-none relative flex flex-col gap-2 p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[48px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
