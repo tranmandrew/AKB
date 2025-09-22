@@ -54,7 +54,7 @@ export function MembershipAccessSection() {
                       isFirst
                         ? 'bg-white'
                         : index % 2 === 1
-                          ? 'bg-gradient-to-r from-vietnam-red to-black diagonal-top-bottom'
+                          ? 'bg-gradient-to-r from-stone-200 from-10% via-vietnam-red/80 via-60% to-black diagonal-top-bottom'
                           : 'bg-white diagonal-bottom'
                     }`}
                   >
@@ -101,11 +101,12 @@ export function MembershipAccessSection() {
 
                             {/* Sector Leadership Text */}
                             {index === 1 && (
-                              <p className={`text-lg leading-relaxed body-text ${
-                                index % 2 === 1 ? 'text-white drop-shadow-md' : 'text-muted-foreground'
-                              }`}>
-                                Lead committees in <span className="text-vietnam-red font-semibold">Finance</span>, <span className="text-vietnam-red font-semibold">ESG</span>, <span className="text-vietnam-red font-semibold">Technology</span>, <span className="text-vietnam-red font-semibold">Education</span>, <span className="text-vietnam-red font-semibold">Governance</span>.
-                              </p>
+                              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                                <h4 className="text-xl font-bold text-amber-300 mb-2">Five Sector Committees:</h4>
+                                <p className="text-lg leading-relaxed">
+                                  Lead committees in <span className="text-amber-300 font-bold underline">Finance</span>, <span className="text-amber-300 font-bold underline">ESG</span>, <span className="text-amber-300 font-bold underline">Technology</span>, <span className="text-amber-300 font-bold underline">Education</span>, <span className="text-amber-300 font-bold underline">Governance</span>.
+                                </p>
+                              </div>
                             )}
                           </div>
 

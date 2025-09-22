@@ -40,7 +40,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-4xl">
-              Collective expertise from global Vietnamese professionals influencing policy and strengthening Vietnam's development
+              A vital global affairs bridge connecting Vietnamese professional excellence worldwide to build a stronger, independent, and prosperous Vietnam
             </p>
 
             {/* Single CTA button */}

@@ -65,7 +65,7 @@ export default function ContactPage() {
       </div>
 
       {/* Form section on white background */}
-      <div className="py-16 bg-white" style={{
+      <div className="py-24 bg-white" style={{
         marginTop: '-4vw'
       }}>
         <div className="container mx-auto px-4 max-w-4xl">

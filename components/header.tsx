@@ -10,6 +10,7 @@ export function Header() {
       textColor: "#fff",
       links: [
         { label: "Who We Are", href: "/#who-we-are", ariaLabel: "About our organization" },
+        { label: "Our Activities", href: "/activities", ariaLabel: "Our strategic activities" },
         { label: "Global Coverage", href: "/#geographic-coverage", ariaLabel: "Our global presence" }
       ]
     },

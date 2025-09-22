@@ -49,7 +49,7 @@ const dataCards: DataCard[] = [
   {
     title: "Global Vietnamese",
     value: "5M+",
-    description: "Professionals worldwide",
+    description: "Diaspora community we bridge to Vietnam",
     icon: ""
   },
   {
@@ -59,9 +59,9 @@ const dataCards: DataCard[] = [
     icon: ""
   },
   {
-    title: "International Hubs",
+    title: "International hubs of our network",
     value: "16",
-    description: "Global network of Vietnamese professionals",
+    description: "Countries Represented",
     icon: ""
   }
 ]

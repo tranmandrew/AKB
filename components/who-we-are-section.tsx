@@ -139,12 +139,19 @@ export function WhoWeAreSection() {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-8">
                 <h2 className="heading-secondary text-2xl md:text-3xl text-white mb-3 text-balance">
-                  A Vital Bridge for a{" "}
-                  <span className="heading-secondary text-vietnam-red">Prosperous Vietnam</span>
+                  A Vital Strategic Channel for{" "}
+                  <span className="heading-secondary text-vietnam-red">Independent Vietnam</span>
                 </h2>
-                <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
                   Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to harness collective expertise to build a stronger, more independent, and prosperous Vietnam on the global stage.
                 </p>
+
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-4xl mx-auto">
+                  <h3 className="font-montserrat text-lg font-semibold text-golden-yellow mb-3 text-center">Our Strategic Channel</h3>
+                  <p className="text-sm text-white/90 leading-relaxed text-center">
+                    We serve as a strategic channel, leveraging collective expertise from experiences with leading multinational corporations and local businesses to engage in direct dialogue, policy recommendations, and development activities with Vietnamese authorities.
+                  </p>
+                </div>
               </div>
 
               {/* Horizontal Stacked Cards Design */}

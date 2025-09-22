@@ -7,7 +7,9 @@
       "Bash(npm install:*)",
       "Bash(npm run dev:*)",
       "Bash(git add:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(dir \"C:\\Users\\user\\Documents\\kieu-bao-landing\\public\")",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

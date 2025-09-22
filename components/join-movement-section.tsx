@@ -63,7 +63,7 @@ export function JoinMovementSection() {
 
               <div className="text-center">
                 <p className="text-xs text-muted-foreground mb-3">
-                  <strong>Referral required</strong> • Professional directory • Government program updates
+                  <strong>Referral required</strong> • Professional directory access • Newsletter with government programs
                 </p>
               </div>
             </CardContent>

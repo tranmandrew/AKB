@@ -25,16 +25,15 @@ export function StrategicApproachSection() {
   ]
 
   return (
-    <section id="strategy" className="scroll-snap-section relative py-16 md:py-20 bg-black overflow-hidden h-screen diagonal-top-bottom flex items-center">
+    <section id="strategy" className="scroll-snap-section relative py-16 md:py-20 bg-black overflow-hidden min-h-screen md:h-screen diagonal-top-bottom flex items-center">
       {/* Dark architectural pattern overlay */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='45' y='0' width='10' height='100'/%3E%3Crect x='0' y='45' width='100' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         backgroundSize: '100px 100px'
       }}></div>
 
-      <div className="relative z-10">
-      <div className="w-full px-16 md:px-24 lg:px-32">
-        <div className="w-full">
+      <div className="relative z-10 w-full">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="heading-primary text-3xl md:text-5xl text-white mb-4 text-balance">
               Our Mandate: The Pillars of <span className="heading-primary text-accent">National Unity</span>
@@ -44,11 +43,13 @@ export function StrategicApproachSection() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center items-center gap-16 lg:gap-20 xl:gap-24 w-full">
+          {/* Pillars Container - Perfectly Centered */}
+          <div className="w-full flex justify-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
             {mandatePillars.map((pillar, index) => (
               <div
                 key={index}
-                className="relative group"
+                className="relative group flex-shrink-0"
               >
                 {/* Pillar Base */}
                 <div className="flex flex-col items-center">
@@ -78,17 +79,17 @@ export function StrategicApproachSection() {
                 </div>
 
                 {/* Content Card below pillar */}
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 text-center mt-6 group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300">
-                  <CardContent className="px-4 py-5">
-                    <h3 className="font-montserrat text-lg font-semibold text-red-500 mb-3">{pillar.title}</h3>
-                    <p className="text-white/80 leading-relaxed text-xs">{pillar.description}</p>
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 text-center mt-6 group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300 max-w-xs md:max-w-sm">
+                  <CardContent className="px-3 py-4 md:px-4 md:py-5">
+                    <h3 className="font-montserrat text-base md:text-lg font-semibold text-red-500 mb-2 md:mb-3">{pillar.title}</h3>
+                    <p className="text-white/80 leading-relaxed text-xs md:text-sm">{pillar.description}</p>
                   </CardContent>
                 </Card>
               </div>
             ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   )
