@@ -128,7 +128,7 @@ export function ActivitiesSection() {
                               <div className={`flex ${!isEven ? 'lg:justify-start' : 'lg:justify-end'}`}>
                                 <div className="relative">
                                   {/* Large decorative number */}
-                                  <div className={`text-8xl md:text-9xl font-black text-${accentColor}/60 leading-none select-none`}>
+                                  <div className="text-8xl md:text-9xl font-black text-white/40 leading-none select-none">
                                     {String(index + 1).padStart(2, '0')}
                                   </div>
                                 </div>

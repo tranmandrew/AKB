@@ -143,7 +143,7 @@ export function WhoWeAreSection() {
                   <span className="heading-secondary text-vietnam-red">Independent Vietnam</span>
                 </h2>
                 <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to harness collective expertise to build a stronger, more independent, and prosperous Vietnam on the global stage.
+                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to serve as a strategic channel leveraging collective expertise to strengthen independent Vietnam's sovereignty, economic development, and global influence.
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-4xl mx-auto">
@@ -273,7 +273,7 @@ export function WhoWeAreSection() {
                       <div className="flex-1">
                         <h3 className="font-montserrat text-lg font-semibold text-white mb-2">A Catalyst for National Progress</h3>
                         <p className="text-sm text-white/80 leading-relaxed">
-                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, and accelerate Vietnam's growth.
+                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, and accelerate independent Vietnam's economic sovereignty and global competitiveness.
                         </p>
                       </div>
                     </div>

@@ -121,11 +121,9 @@ const CardNav: React.FC<CardNavProps> = ({
   const createTimeline = () => {
     const navEl = navRef.current;
     if (!navEl) {
-      console.error('NavEl not found in createTimeline');
       return null;
     }
 
-    console.log('Creating timeline, cards:', cardsRef.current.length);
 
     // Don't set height here - it's already set in useLayoutEffect
     gsap.set(cardsRef.current, { y: 50, opacity: 0 });
@@ -140,12 +138,10 @@ const CardNav: React.FC<CardNavProps> = ({
 
     tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
 
-    console.log('Timeline created successfully');
     return tl;
   };
 
   useLayoutEffect(() => {
-    console.log('useLayoutEffect called, creating timeline');
     const navEl = navRef.current;
     if (!navEl) return;
 
@@ -156,13 +152,12 @@ const CardNav: React.FC<CardNavProps> = ({
     const tl = createTimeline();
     tlRef.current = tl;
 
-    console.log('Timeline set in ref:', !!tl);
 
     return () => {
       tl?.kill();
       tlRef.current = null;
     };
-  }, [ease, items]);
+  }, []);
 
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -232,29 +227,23 @@ const CardNav: React.FC<CardNavProps> = ({
     // Check if we're on mobile
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-    // Animate container width, opacity, and element positions
-    const tl = gsap.timeline();
+    // Only apply compression effect on desktop
+    if (!isMobile) {
+      // Animate container width, opacity, and element positions
+      const tl = gsap.timeline();
 
-    tl.to(container, {
-      width: isScrolled ? '60%' : '95%',
-      opacity: isScrolled ? 0.65 : 1,
-      duration: 0.8,
-      ease: 'power2.inOut'
-    }, 0)
-    .to(hamburger, {
-      x: isScrolled ? 60 : 0,
-      duration: 0.8,
-      ease: 'power2.inOut'
-    }, 0)
-    .to(buttons, {
-      x: isScrolled ? -60 : 0,
-      duration: 0.8,
-      ease: 'power2.inOut'
-    }, 0);
-
-    // Only animate logo on mobile
-    if (isMobile) {
-      tl.to(logo, {
+      tl.to(container, {
+        width: isScrolled ? '60%' : '95%',
+        opacity: isScrolled ? 0.65 : 1,
+        duration: 0.8,
+        ease: 'power2.inOut'
+      }, 0)
+      .to(hamburger, {
+        x: isScrolled ? 60 : 0,
+        duration: 0.8,
+        ease: 'power2.inOut'
+      }, 0)
+      .to(buttons, {
         x: isScrolled ? -60 : 0,
         duration: 0.8,
         ease: 'power2.inOut'
@@ -265,11 +254,9 @@ const CardNav: React.FC<CardNavProps> = ({
   const toggleMenu = () => {
     const tl = tlRef.current;
     if (!tl) {
-      console.error('Timeline not available');
       return;
     }
 
-    console.log('Toggle menu called, isExpanded:', isExpanded);
 
     if (!isExpanded) {
       setIsHamburgerOpen(true);
@@ -296,10 +283,10 @@ const CardNav: React.FC<CardNavProps> = ({
         className={`card-nav ${isExpanded ? 'open' : ''} block h-[48px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[48px] flex items-center justify-between p-2 z-[2]">
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[48px] flex items-center px-3 md:p-2 z-[2] relative">
           <div
             ref={(el) => { if (el) hamburgerRef.current = el; }}
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px]`}
+            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[4px] md:gap-[6px] w-[40px] md:w-auto`}
             onClick={toggleMenu}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -313,40 +300,40 @@ const CardNav: React.FC<CardNavProps> = ({
             style={{ color: menuColor || '#000' }}
           >
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+              className={`hamburger-line w-[24px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHamburgerOpen ? 'translate-y-[3px] md:translate-y-[4px] rotate-45' : ''
               } group-hover:opacity-75`}
             />
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+              className={`hamburger-line w-[24px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHamburgerOpen ? '-translate-y-[3px] md:-translate-y-[4px] -rotate-45' : ''
               } group-hover:opacity-75`}
             />
           </div>
 
           <div
             ref={(el) => { if (el) logoRef.current = el; }}
-            className="logo-container flex items-center absolute top-1/2 -translate-y-1/2 right-2 md:right-auto md:left-1/2 md:-translate-x-1/2"
+            className="logo-container flex items-center absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           >
             <a href="/" className="flex items-center">
-              <img src={logo} alt={logoAlt} className="logo h-[28px] cursor-pointer hover:opacity-80 transition-opacity duration-300" />
+              <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] cursor-pointer hover:opacity-80 transition-opacity duration-300" />
             </a>
           </div>
 
           <div
             ref={(el) => { if (el) buttonsRef.current = el; }}
-            className="hidden md:flex items-center gap-3"
+            className="flex items-center gap-3 ml-auto"
           >
             <button
               type="button"
-              className="linkedin-button inline-flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:opacity-70"
+              className="linkedin-button hidden md:inline-flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:opacity-70"
               onClick={() => window.open('https://linkedin.com', '_blank')}
             >
               <LinkedInIcon />
             </button>
             <button
               type="button"
-              className="card-nav-cta-button font-montserrat inline-flex items-center justify-center border-0 rounded-lg px-6 py-3 font-semibold text-sm cursor-pointer transition-colors duration-300 hover:opacity-80"
+              className="card-nav-cta-button font-montserrat inline-flex items-center justify-center border-0 rounded-lg px-3 md:px-6 py-1.5 md:py-3 font-semibold text-xs md:text-sm cursor-pointer transition-all duration-300 hover:opacity-80 hover:scale-105 shadow-sm hover:shadow-md"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
               onClick={() => window.location.href = '/contact'}
             >

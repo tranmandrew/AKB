@@ -27,13 +27,18 @@ export function MembershipAccessSection() {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 heading-primary">
-                Membership Provides
-                <span className="block text-vietnam-red">Privileged Access</span>
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 heading-primary">
+                Membership by
+                <span className="block text-vietnam-red">Referral Only</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text">
-                Promote Vietnamese national interests through exclusive networks and direct government influence.
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text mb-6">
+                Exclusive access to strengthen independent Vietnam through elite professional networks and direct government influence.
               </p>
+              <div className="bg-vietnam-red/10 border-l-4 border-vietnam-red rounded-lg p-6 max-w-2xl mx-auto">
+                <p className="text-lg font-semibold text-vietnam-red">
+                  Member referral required for all applications
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -101,10 +106,27 @@ export function MembershipAccessSection() {
 
                             {/* Sector Leadership Text */}
                             {index === 1 && (
-                              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                                <h4 className="text-xl font-bold text-amber-300 mb-2">Five Sector Committees:</h4>
-                                <p className="text-lg leading-relaxed">
-                                  Lead committees in <span className="text-amber-300 font-bold underline">Finance</span>, <span className="text-amber-300 font-bold underline">ESG</span>, <span className="text-amber-300 font-bold underline">Technology</span>, <span className="text-amber-300 font-bold underline">Education</span>, <span className="text-amber-300 font-bold underline">Governance</span>.
+                              <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-lg">
+                                <h4 className="text-2xl font-bold text-amber-300 mb-4 text-center">Five Strategic Sector Committees</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-center">
+                                  <div className="bg-amber-300/20 rounded-lg p-3">
+                                    <span className="text-amber-300 font-bold text-lg">Finance</span>
+                                  </div>
+                                  <div className="bg-amber-300/20 rounded-lg p-3">
+                                    <span className="text-amber-300 font-bold text-lg">ESG</span>
+                                  </div>
+                                  <div className="bg-amber-300/20 rounded-lg p-3">
+                                    <span className="text-amber-300 font-bold text-lg">Technology</span>
+                                  </div>
+                                  <div className="bg-amber-300/20 rounded-lg p-3">
+                                    <span className="text-amber-300 font-bold text-lg">Education</span>
+                                  </div>
+                                  <div className="bg-amber-300/20 rounded-lg p-3 md:col-span-2">
+                                    <span className="text-amber-300 font-bold text-lg">Governance</span>
+                                  </div>
+                                </div>
+                                <p className="text-white/90 mt-4 text-center text-lg">
+                                  Lead policy initiatives that strengthen independent Vietnam's strategic sectors
                                 </p>
                               </div>
                             )}

@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { ActivitiesSection } from '@/components/activities-section';
+import { FooterSection } from '@/components/footer-section';
 
 export default function ActivitiesPage() {
   return (
@@ -47,25 +48,7 @@ export default function ActivitiesPage() {
         <ActivitiesSection />
       </div>
 
-      {/* Footer */}
-      <div className="bg-black py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="pt-6 border-t border-white/20">
-                <p className="text-white/70 text-sm mb-2">
-                  © 2025 Association of Professional Kiều Bào. All rights reserved.
-                </p>
-                <div className="flex justify-center gap-4 text-xs text-white/60">
-                  <a href="/terms" className="hover:text-vietnam-red transition-colors">Terms of Service</a>
-                  <span>•</span>
-                  <a href="/privacy" className="hover:text-vietnam-red transition-colors">Privacy Policy</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FooterSection />
     </main>
   );
 }

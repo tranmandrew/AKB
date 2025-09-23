@@ -97,18 +97,10 @@ export function ActivitiesTeaserSection() {
             })}
           </div>
 
-          {/* Additional Activities Indicator */}
           <div className="text-center">
-            <div className="bg-white rounded-lg p-6 shadow-md mb-8 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4">
-                <Flag className="h-4 w-4 text-vietnam-red" />
-                <Target className="h-4 w-4 text-vietnam-red" />
-                <Users className="h-4 w-4 text-vietnam-red" />
-              </div>
-              <p className="text-muted-foreground">
-                <strong>+ Three Additional Core Activities:</strong> Promotion of Vietnamese National Interest, Active Contribution to National Priorities, Voice for Kiều Bào Leader Network
-              </p>
-            </div>
+            <p className="text-muted-foreground mb-8">
+              Advancing Vietnamese National Interests, Contributing to National Development Priorities, and Amplifying the Kiều Bào Leadership Voice
+            </p>
 
             <a href="/activities">
               <Button

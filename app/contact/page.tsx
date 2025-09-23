@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Header } from '@/components/header';
+import { FooterSection } from '@/components/footer-section';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -153,43 +154,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="bg-black py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center">
-              {/* Organization Info */}
-              <div className="mb-8">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Image
-                    src="/AKB.png"
-                    alt="AKB Logo"
-                    width={56}
-                    height={56}
-                    className="object-contain"
-                  />
-                  <h4 className="font-montserrat font-semibold text-white">Association of Professional Kiều Bào</h4>
-                </div>
-                <p className="text-sm text-white/80 leading-relaxed max-w-2xl mx-auto">
-                  Connecting Vietnamese professionals worldwide to advance Vietnam's development through expertise and global partnerships.
-                </p>
-              </div>
-
-              {/* Copyright */}
-              <div className="pt-6 border-t border-white/20">
-                <p className="text-white/70 text-sm mb-2">
-                  © 2025 Association of Professional Kiều Bào. All rights reserved.
-                </p>
-                <div className="flex justify-center gap-4 text-xs text-white/60">
-                  <a href="/terms" className="hover:text-vietnam-red transition-colors">Terms of Service</a>
-                  <span>•</span>
-                  <a href="/privacy" className="hover:text-vietnam-red transition-colors">Privacy Policy</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FooterSection />
     </main>
   );
 }

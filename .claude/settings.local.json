@@ -9,7 +9,11 @@
       "Bash(git add:*)",
       "WebSearch",
       "Bash(dir \"C:\\Users\\user\\Documents\\kieu-bao-landing\\public\")",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(npx next lint:*)",
+      "Bash(tree:*)",
+      "Bash(dir:*)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": [],
     "ask": []
