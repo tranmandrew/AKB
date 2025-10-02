@@ -21,7 +21,7 @@ export function JoinMovementSection() {
   ]
 
   return (
-    <section id="join" className="relative py-16 md:py-20 overflow-hidden diagonal-top pt-32 z-10">
+    <section id="join" className="relative py-16 md:py-20 overflow-hidden pt-32 z-10">
       {/* Hanoi Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

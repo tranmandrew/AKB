@@ -11,6 +11,11 @@ import { FooterSection } from '@/components/footer-section';
 import Image from 'next/image';
 import { useState } from 'react';
 
+export const metadata = {
+  title: 'Contact Us | AKB - Get in Touch',
+  description: 'Connect with AKB leadership for membership inquiries and strategic partnerships. Professional response within 48 hours.',
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     firstName: '',

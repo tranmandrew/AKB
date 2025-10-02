@@ -9,23 +9,29 @@ import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin", "vietnamese"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 const notoSans = Noto_Sans({
   subsets: ["latin", "vietnamese"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "600", "700", "900"],
   variable: "--font-noto-sans",
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 const montserrat = Montserrat({
-  subsets: ["latin", "vietnamese", "cyrillic"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 export const metadata: Metadata = {

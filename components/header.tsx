@@ -1,6 +1,8 @@
 "use client"
 
-import CardNav from './CardNav'
+import dynamic from 'next/dynamic'
+
+const CardNav = dynamic(() => import('./CardNav'), { ssr: false })
 
 export function Header() {
   const items = [

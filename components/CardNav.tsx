@@ -82,6 +82,7 @@ const CardNav: React.FC<CardNavProps> = ({
   const hamburgerRef = useRef<HTMLDivElement | null>(null);
   const logoRef = useRef<HTMLDivElement | null>(null);
   const buttonsRef = useRef<HTMLDivElement | null>(null);
+  const navLinksRef = useRef<HTMLDivElement | null>(null);
 
   const calculateHeight = () => {
     const navEl = navRef.current;
@@ -221,6 +222,7 @@ const CardNav: React.FC<CardNavProps> = ({
     const hamburger = hamburgerRef.current;
     const logo = logoRef.current;
     const buttons = buttonsRef.current;
+    const navLinks = navLinksRef.current;
 
     if (!container || !hamburger || !logo || !buttons) return;
 
@@ -248,8 +250,17 @@ const CardNav: React.FC<CardNavProps> = ({
         duration: 0.8,
         ease: 'power2.inOut'
       }, 0);
+
+      // Animate nav links opacity
+      if (navLinks) {
+        tl.to(navLinks, {
+          opacity: isScrolled || isExpanded ? 0 : 1,
+          duration: 0.8,
+          ease: 'power2.inOut'
+        }, 0);
+      }
     }
-  }, [isScrolled]);
+  }, [isScrolled, isExpanded]);
 
   const toggleMenu = () => {
     const tl = tlRef.current;
@@ -309,6 +320,22 @@ const CardNav: React.FC<CardNavProps> = ({
                 isHamburgerOpen ? '-translate-y-[3px] md:-translate-y-[4px] -rotate-45' : ''
               } group-hover:opacity-75`}
             />
+          </div>
+
+          <div
+            ref={(el) => { if (el) navLinksRef.current = el; }}
+            className="hidden md:flex items-center gap-6 ml-6"
+            style={{ color: menuColor || '#000' }}
+          >
+            {items.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={toggleMenu}
+                className="font-montserrat text-sm font-medium opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           <div

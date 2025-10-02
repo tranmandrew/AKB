@@ -182,82 +182,9 @@ export function WhoWeAreSection() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-montserrat text-lg font-semibold text-white mb-2">Expertise Forged at Industry Leaders</h3>
-                        <p className="text-sm text-white/80 leading-relaxed mb-3 break-words">
-                          We bring a wealth of collective knowledge from experiences at world-renowned corporations such as Google, Microsoft, JPMorgan, Visa, and Amazon.
+                        <p className="text-sm text-white/80 leading-relaxed break-words">
+                          We bring a wealth of collective knowledge from experiences at world-renowned corporations across technology, finance, consulting, and industry sectors.
                         </p>
-                        <div className="bg-muted/30 rounded-lg p-3 overflow-hidden w-full max-w-full">
-                          <div className="animate-slide-logos flex items-center gap-8">
-                            {/* First set */}
-                            {corporateLogos.map((logo, index) => (
-                              <div
-                                key={`first-${logo.name}`}
-                                className="flex-shrink-0 flex items-center justify-center h-12 w-28"
-                              >
-                                <Image
-                                  src={logo.src}
-                                  alt={logo.alt}
-                                  width={112}
-                                  height={48}
-                                  className={`object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
-                                    logo.name === 'Microsoft'
-                                      ? 'h-24 w-auto'
-                                      : logo.name === 'BOSCH'
-                                      ? 'h-8 w-auto'
-                                      : logo.name === 'Grab' || logo.name === 'Visa'
-                                      ? 'h-4 w-auto'
-                                      : 'h-6 w-auto'
-                                  }`}
-                                />
-                              </div>
-                            ))}
-                            {/* Second set for infinite loop */}
-                            {corporateLogos.map((logo, index) => (
-                              <div
-                                key={`second-${logo.name}`}
-                                className="flex-shrink-0 flex items-center justify-center h-12 w-28"
-                              >
-                                <Image
-                                  src={logo.src}
-                                  alt={logo.alt}
-                                  width={112}
-                                  height={48}
-                                  className={`object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
-                                    logo.name === 'Microsoft'
-                                      ? 'h-24 w-auto'
-                                      : logo.name === 'BOSCH'
-                                      ? 'h-8 w-auto'
-                                      : logo.name === 'Grab' || logo.name === 'Visa'
-                                      ? 'h-4 w-auto'
-                                      : 'h-6 w-auto'
-                                  }`}
-                                />
-                              </div>
-                            ))}
-                            {/* Third set for smoother infinite loop */}
-                            {corporateLogos.map((logo, index) => (
-                              <div
-                                key={`third-${logo.name}`}
-                                className="flex-shrink-0 flex items-center justify-center h-12 w-28"
-                              >
-                                <Image
-                                  src={logo.src}
-                                  alt={logo.alt}
-                                  width={112}
-                                  height={48}
-                                  className={`object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
-                                    logo.name === 'Microsoft'
-                                      ? 'h-24 w-auto'
-                                      : logo.name === 'BOSCH'
-                                      ? 'h-8 w-auto'
-                                      : logo.name === 'Grab' || logo.name === 'Visa'
-                                      ? 'h-4 w-auto'
-                                      : 'h-6 w-auto'
-                                  }`}
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>

@@ -7,6 +7,11 @@ import { Header } from '@/components/header';
 import { ActivitiesSection } from '@/components/activities-section';
 import { FooterSection } from '@/components/footer-section';
 
+export const metadata = {
+  title: 'Our Activities | AKB - Connecting Vietnamese Excellence',
+  description: 'Six core activities driving meaningful impact for Vietnam\'s development. Strategic channel for global expertise across critical sectors.',
+}
+
 export default function ActivitiesPage() {
   return (
     <main className="min-h-screen bg-background">
