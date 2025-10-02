@@ -93,9 +93,9 @@ export function ActivitiesSection() {
                           ? 'bg-gradient-to-r from-black to-gray-900'
                           : 'bg-gradient-to-r from-gray-900 to-black'
                       } ${
-                        index === 0 ? '' : isEven ? 'diagonal-top' : 'diagonal-top-flip'
+                        index === 0 ? '' : 'diagonal-top'
                       } ${
-                        isLast ? '' : isEven ? 'diagonal-bottom' : 'diagonal-bottom-flip'
+                        isLast ? '' : 'diagonal-bottom'
                       }`}>
                         <div className="container mx-auto px-4">
                           <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-7xl mx-auto ${!isEven ? 'lg:text-right' : ''}`}>
@@ -168,7 +168,7 @@ export function ActivitiesSection() {
               <div className="max-w-md mx-auto mb-8">
                 <a href="/membership" className="inline-block w-full">
                   <button className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 w-full text-lg">
-                    Apply for Founding Membership
+                    Apply for Membership
                   </button>
                 </a>
               </div>

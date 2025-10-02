@@ -59,7 +59,7 @@ export function MembershipAccessSection() {
                       isFirst
                         ? 'bg-white'
                         : index % 2 === 1
-                          ? 'bg-gradient-to-r from-stone-200 from-10% via-vietnam-red/80 via-60% to-black diagonal-top-bottom'
+                          ? 'bg-black diagonal-top-bottom'
                           : 'bg-white diagonal-bottom'
                     }`}
                   >

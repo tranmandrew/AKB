@@ -11,11 +11,6 @@ import { FooterSection } from '@/components/footer-section';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export const metadata = {
-  title: 'Contact Us | AKB - Get in Touch',
-  description: 'Connect with AKB leadership for membership inquiries and strategic partnerships. Professional response within 48 hours.',
-}
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -58,7 +53,7 @@ export default function ContactPage() {
               Back to Home
             </Button>
           </Link>
-          <h1 className="heading-primary text-4xl text-white mb-4">Get in Touch</h1>
+          <h1 className="heading-primary text-3xl md:text-4xl text-white mb-4">Get in Touch</h1>
           <p className="text-lg text-white/90 mb-2">
             Connect with AKB leadership for membership inquiries and strategic partnerships.
           </p>

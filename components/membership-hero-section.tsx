@@ -26,14 +26,12 @@ export function MembershipHeroSection() {
 
       <div className="container mx-auto px-4 py-20 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-relaxed mb-8 font-noto-sans max-w-4xl">
-            Trusted by Vietnamese executives, government advisors, and global leaders —
-            <span className="block text-vietnam-red mt-3">AKB is where strategic minds converge</span>
-            <span className="block mt-2">to strengthen Vietnam's future.</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            Join Vietnam's Elite Professional Network
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12 max-w-3xl mx-auto">
-            Global Vietnamese professionals, policy dialogue, international networks bridging Vietnam with the world.
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-12 max-w-2xl mx-auto">
+            Exclusive access for Vietnamese executives and global leaders driving Vietnam's strategic development through policy influence and international partnerships.
           </p>
 
           <a href="/contact" className="inline-block">

@@ -364,7 +364,7 @@ const CardNav: React.FC<CardNavProps> = ({
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
               onClick={() => window.location.href = '/contact'}
             >
-              Get Started
+              Apply for Membership
             </button>
           </div>
         </div>

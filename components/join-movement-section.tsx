@@ -75,7 +75,7 @@ export function JoinMovementSection() {
                 size="lg"
                 className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
               >
-                Apply for Founding Membership
+                Apply for Membership
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>

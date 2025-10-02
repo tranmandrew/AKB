@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 
-const CardNav = dynamic(() => import('./CardNav'), { ssr: false })
+const CardNav = dynamic(() => import('./card-nav'), { ssr: false })
 
 export function Header() {
   const items = [

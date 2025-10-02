@@ -92,10 +92,26 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+/**
+ * TYPOGRAPHY SYSTEM - Noto Sans Only
+ *
+ * Single font strategy for executive brand consistency
+ * Hierarchy achieved through weight & size variations
+ *
+ * H1 (Hero): font-black (900) + text-5xl to text-7xl
+ * H2: font-bold (700) + text-4xl to text-5xl
+ * H3: font-semibold (600) + text-2xl to text-3xl
+ * Body: font-normal (400) + text-base to text-lg
+ * CTAs: font-bold (700) + text-sm to text-base
+ *
+ * All classes default to Noto Sans with Vietnamese support
+ */
+
 @theme inline {
-  --font-sans: var(--font-inter), var(--font-noto-sans), var(--font-geist-sans);
-  --font-montserrat: var(--font-montserrat), var(--font-noto-sans), sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-noto-sans), system-ui, arial;
+  --font-noto-sans: var(--font-noto-sans), system-ui, arial;
+  --font-montserrat: var(--font-noto-sans), system-ui, arial;
+  --font-inter: var(--font-noto-sans), system-ui, arial;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -598,24 +614,6 @@ html {
 
 .diagonal-bottom {
   clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
-  background-attachment: local;
-  min-height: 100%;
-}
-
-.diagonal-both {
-  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
-  background-attachment: local;
-  min-height: 100%;
-}
-
-.diagonal-top-reverse {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
-  background-attachment: local;
-  min-height: 100%;
-}
-
-.diagonal-bottom-reverse {
-  clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
   background-attachment: local;
   min-height: 100%;
 }

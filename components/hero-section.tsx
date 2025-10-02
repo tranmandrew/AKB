@@ -36,7 +36,7 @@ export function HeroSection() {
           {/* Left side - Content */}
           <div className="space-y-3 md:space-y-6 w-full max-w-full">
             {/* Main headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight break-words tracking-tight font-noto-sans">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight break-words tracking-tight font-noto-sans">
               Association of Professional{" "}
               <span className="font-black text-vietnam-red text-shadow-sm">Kiều Bào</span>
             </h1>

@@ -1,34 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import { Inter, Noto_Sans, Montserrat } from "next/font/google"
+import { Noto_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-})
 
 const notoSans = Noto_Sans({
   subsets: ["latin", "vietnamese"],
   weight: ["400", "600", "700", "900"],
   variable: "--font-noto-sans",
-  display: "swap",
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-})
-
-const montserrat = Montserrat({
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
   display: "swap",
   preload: true,
   fallback: ['system-ui', 'arial'],
@@ -56,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${montserrat.variable} ${notoSans.variable} ${inter.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`${notoSans.className}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
