@@ -22,14 +22,14 @@ export function ActivitiesSection() {
       title: "Global Advocacy & Influence",
       description: "Serving as a unified voice for Kiều Bào leaders, we actively promote Vietnam's national interests on the international stage. We coordinate with Kiều Bào communities, overseas businesses, and leading Chambers of Commerce to build stronger global ties.",
       accent: "golden-yellow",
-      image: "/conference.png"
+      image: "/Conference.png"
     },
     {
       icon: Settings,
       title: "Specialized Sector Leadership",
       description: "Our Sector Committees, chaired by expert members, dive deep into critical areas like Finance, ESG, Technology, Education, and Governance. These committees develop strategic insights and provide sector-specific recommendations vital for Vietnam's long-term development.",
       accent: "jade-green",
-      image: "/esg.png"
+      image: "/ESG.png"
     },
     {
       icon: Flag,
