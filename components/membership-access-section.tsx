@@ -22,19 +22,19 @@ export function MembershipAccessSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Header Section */}
-      <div className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative">
+      <div className="py-12 md:py-14 bg-gradient-to-b from-gray-50 to-white relative">
         <div className="absolute inset-0 lotus-pattern opacity-30" />
         <div className="container mx-auto px-4 relative">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 heading-primary">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3 heading-primary">
                 Membership by
                 <span className="block text-vietnam-red">Referral Only</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text mb-6">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text mb-4">
                 Exclusive access to strengthen independent Vietnam through elite professional networks and direct government influence.
               </p>
-              <div className="bg-vietnam-red/10 border-l-4 border-vietnam-red rounded-lg p-6 max-w-2xl mx-auto">
+              <div className="bg-vietnam-red/10 border-l-4 border-vietnam-red rounded-lg p-4 max-w-2xl mx-auto">
                 <p className="text-lg font-semibold text-vietnam-red">
                   Member referral required for all applications
                 </p>
@@ -55,7 +55,7 @@ export function MembershipAccessSection() {
               return (
                 <div key={index} className="relative bg-gradient-to-b from-white to-gray-50">
                   <div
-                    className={`${isFirst ? 'py-12' : index % 2 === 1 ? 'py-28' : 'py-20'} relative w-full overflow-hidden ${
+                    className={`${isFirst ? 'py-8' : index % 2 === 1 ? 'py-16' : 'py-12'} relative w-full overflow-hidden ${
                       isFirst
                         ? 'bg-white'
                         : index % 2 === 1
@@ -66,7 +66,7 @@ export function MembershipAccessSection() {
                     <div className="container mx-auto px-4 relative z-10">
                       <div className={`flex flex-col ${
                         isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                      } items-center gap-12 lg:gap-16 max-w-7xl mx-auto`}>
+                      } items-center gap-8 lg:gap-12 max-w-7xl mx-auto`}>
                         {/* Visual Element */}
                         <div className="flex-1 relative">
                           <div className={`relative space-y-6 ${
@@ -91,14 +91,14 @@ export function MembershipAccessSection() {
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1 space-y-6">
-                          <div className="space-y-4">
-                            <h3 className={`text-3xl md:text-4xl font-bold heading-secondary leading-tight ${
+                        <div className="flex-1 space-y-4">
+                          <div className="space-y-3">
+                            <h3 className={`text-2xl md:text-3xl font-bold heading-secondary leading-tight ${
                               index % 2 === 1 ? 'text-white drop-shadow-lg' : 'text-foreground'
                             }`}>
                               {access.title}
                             </h3>
-                            <p className={`text-lg leading-relaxed body-text ${
+                            <p className={`text-base leading-relaxed body-text ${
                               index % 2 === 1 ? 'text-white drop-shadow-md' : 'text-muted-foreground'
                             }`}>
                               {access.description}
@@ -106,26 +106,26 @@ export function MembershipAccessSection() {
 
                             {/* Sector Leadership Text */}
                             {index === 1 && (
-                              <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 border border-white/30 shadow-lg">
-                                <h4 className="text-2xl font-bold text-amber-300 mb-4 text-center">Five Strategic Sector Committees</h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-center">
-                                  <div className="bg-amber-300/20 rounded-lg p-3">
-                                    <span className="text-amber-300 font-bold text-lg">Finance</span>
+                              <div className="bg-white/15 rounded-lg p-4 border border-white/30 shadow-lg">
+                                <h4 className="text-xl font-bold text-amber-300 mb-3 text-center">Five Strategic Sector Committees</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-center">
+                                  <div className="bg-amber-300/20 rounded-lg p-2">
+                                    <span className="text-amber-300 font-bold text-base">Finance</span>
                                   </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-3">
-                                    <span className="text-amber-300 font-bold text-lg">ESG</span>
+                                  <div className="bg-amber-300/20 rounded-lg p-2">
+                                    <span className="text-amber-300 font-bold text-base">ESG</span>
                                   </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-3">
-                                    <span className="text-amber-300 font-bold text-lg">Technology</span>
+                                  <div className="bg-amber-300/20 rounded-lg p-2">
+                                    <span className="text-amber-300 font-bold text-base">Technology</span>
                                   </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-3">
-                                    <span className="text-amber-300 font-bold text-lg">Education</span>
+                                  <div className="bg-amber-300/20 rounded-lg p-2">
+                                    <span className="text-amber-300 font-bold text-base">Education</span>
                                   </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-3 md:col-span-2">
-                                    <span className="text-amber-300 font-bold text-lg">Governance</span>
+                                  <div className="bg-amber-300/20 rounded-lg p-2 md:col-span-2">
+                                    <span className="text-amber-300 font-bold text-base">Governance</span>
                                   </div>
                                 </div>
-                                <p className="text-white/90 mt-4 text-center text-lg">
+                                <p className="text-white/90 mt-3 text-center text-base">
                                   Lead policy initiatives that strengthen independent Vietnam's strategic sectors
                                 </p>
                               </div>
@@ -148,62 +148,62 @@ export function MembershipAccessSection() {
       </div>
 
       {/* Referral Requirement */}
-      <div className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="py-12 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               {/* Left Content */}
-              <div className="flex-1 space-y-8">
-                <div className="space-y-6">
-                  <h3 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+              <div className="flex-1 space-y-5">
+                <div className="space-y-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
                     Membership by
                     <span className="block text-vietnam-red underline">Referral Only</span>
                   </h3>
 
-                  <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                     Exclusive network through member referrals only. Committed Vietnamese professionals dedicated to Vietnam's strategic development.
                   </p>
 
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
                     Members sponsor applicants aligned with strengthening Vietnam through global expertise and policy engagement.
                   </p>
                 </div>
 
-                <div className="pt-6">
+                <div className="pt-4">
                   <a href="/contact" className="inline-block">
                     <Button
                       size="lg"
-                      className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-12 py-6 text-xl hover-elevate"
+                      className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-10 py-5 text-lg hover-elevate"
                     >
                       Apply for Membership
-                      <ArrowRight className="ml-3 h-6 w-6" />
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </a>
-                  <p className="text-muted-foreground mt-4 text-sm">
+                  <p className="text-muted-foreground mt-3 text-sm">
                     Include your referring member's information in your application
                   </p>
                 </div>
               </div>
 
               {/* Right Benefits */}
-              <div className="flex-1 space-y-8">
-                <div className="space-y-6">
-                  <div className="space-y-4">
+              <div className="flex-1 space-y-5">
+                <div className="space-y-4">
+                  <div className="space-y-2">
                     <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-2xl font-bold text-foreground">Verified Professional Network</h4>
-                    <p className="text-lg text-muted-foreground">Senior Vietnamese executives across industries and continents</p>
+                    <h4 className="text-xl font-bold text-foreground">Verified Professional Network</h4>
+                    <p className="text-base text-muted-foreground">Senior Vietnamese executives across industries and continents</p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-2xl font-bold text-foreground">Sector Committee Leadership</h4>
-                    <p className="text-lg text-muted-foreground">Chair committees in Finance, ESG, Technology, Education, Governance</p>
+                    <h4 className="text-xl font-bold text-foreground">Sector Committee Leadership</h4>
+                    <p className="text-base text-muted-foreground">Chair committees in Finance, ESG, Technology, Education, Governance</p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-2xl font-bold text-foreground">Exclusive Global Access</h4>
-                    <p className="text-lg text-muted-foreground">16+ international hubs and multinational corporations</p>
+                    <h4 className="text-xl font-bold text-foreground">Exclusive Global Access</h4>
+                    <p className="text-base text-muted-foreground">16+ international hubs and multinational corporations</p>
                   </div>
                 </div>
               </div>

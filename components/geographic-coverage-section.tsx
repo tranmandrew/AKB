@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface CountryTooltip {
@@ -60,9 +60,75 @@ const dataCards: DataCard[] = [
 
 export function GeographicCoverageSection() {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [gdpValue, setGdpValue] = useState(0);
+  const [globalValue, setGlobalValue] = useState(0);
+  const [remittanceValue, setRemittanceValue] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Animate numbers when visible
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const animateValue = (
+      start: number,
+      end: number,
+      duration: number,
+      setter: (value: number) => void
+    ) => {
+      const startTime = performance.now();
+
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const current = start + (end - start) * easeOutQuart;
+
+        setter(Math.round(current * 10) / 10);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    };
+
+    // Animate each value
+    animateValue(0, 7.5, 2000, setGdpValue);
+    animateValue(0, 5, 2000, setGlobalValue);
+    animateValue(0, 17, 2000, setRemittanceValue);
+  }, [isVisible]);
 
   return (
-    <section id="geographic-coverage" className="scroll-snap-section py-8 md:py-12 bg-gray-50 diagonal-bottom">
+    <section ref={sectionRef} id="geographic-coverage" className="scroll-snap-section py-8 md:py-12 bg-gray-50 diagonal-bottom">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4 mt-8">
           <h2 className="heading-primary text-3xl md:text-4xl text-gray-900 mb-2">
@@ -88,11 +154,13 @@ export function GeographicCoverageSection() {
                 {redCountries.map((country, index) => (
                   <div
                     key={country.name}
-                    className="absolute cursor-pointer"
+                    className="absolute cursor-pointer transition-all duration-[1500ms] ease-out"
                     style={{
                       left: `${country.x}%`,
-                      top: `${country.y}%`,
-                      transform: "translate(-50%, -50%)"
+                      top: isVisible ? `${country.y}%` : '110%',
+                      transform: "translate(-50%, -50%)",
+                      opacity: isVisible ? 1 : 0,
+                      transitionDelay: `${index * 80}ms`
                     }}
                     onMouseEnter={() => setHoveredCountry(country.name)}
                     onMouseLeave={() => setHoveredCountry(null)}
@@ -114,11 +182,13 @@ export function GeographicCoverageSection() {
                 ))}
 
                 <div
-                  className="absolute cursor-pointer"
+                  className="absolute cursor-pointer transition-all duration-[1500ms] ease-out"
                   style={{
                     left: `${vietnamLocation.x}%`,
-                    top: `${vietnamLocation.y}%`,
-                    transform: "translate(-50%, -50%)"
+                    top: isVisible ? `${vietnamLocation.y}%` : '110%',
+                    transform: "translate(-50%, -50%)",
+                    opacity: isVisible ? 1 : 0,
+                    transitionDelay: `${redCountries.length * 80}ms`
                   }}
                   onMouseEnter={() => setHoveredCountry(vietnamLocation.name)}
                   onMouseLeave={() => setHoveredCountry(null)}
@@ -162,24 +232,47 @@ export function GeographicCoverageSection() {
             </div>
 
             <div className="space-y-3">
-              {dataCards.map((card, index) => (
-                <div
-                  key={card.title}
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-rotate-1 hover:scale-105 p-4"
-                >
-                  <div className="text-center">
-                    <div className="font-montserrat text-2xl font-bold text-vietnam-red mb-1">
-                      {card.value}
-                    </div>
-                    <h4 className="font-montserrat text-base font-semibold text-gray-900 mb-1">
-                      {card.title}
-                    </h4>
-                    <p className="text-gray-600 text-xs">
-                      {card.description}
-                    </p>
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-rotate-1 hover:scale-105 p-4">
+                <div className="text-center">
+                  <div className="font-montserrat text-2xl font-bold text-vietnam-red mb-1">
+                    {isVisible ? `${gdpValue.toFixed(1)}%` : '7.5%'}
                   </div>
+                  <h4 className="font-montserrat text-base font-semibold text-gray-900 mb-1">
+                    GDP Growth Rate
+                  </h4>
+                  <p className="text-gray-600 text-xs">
+                    Vietnam's robust economic expansion
+                  </p>
                 </div>
-              ))}
+              </div>
+
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-rotate-1 hover:scale-105 p-4">
+                <div className="text-center">
+                  <div className="font-montserrat text-2xl font-bold text-vietnam-red mb-1">
+                    {isVisible ? `${globalValue.toFixed(0)}M+` : '5M+'}
+                  </div>
+                  <h4 className="font-montserrat text-base font-semibold text-gray-900 mb-1">
+                    Global Vietnamese
+                  </h4>
+                  <p className="text-gray-600 text-xs">
+                    Diaspora community we bridge to Vietnam
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-rotate-1 hover:scale-105 p-4">
+                <div className="text-center">
+                  <div className="font-montserrat text-2xl font-bold text-vietnam-red mb-1">
+                    {isVisible ? `$${remittanceValue.toFixed(0)}B` : '$17B'}
+                  </div>
+                  <h4 className="font-montserrat text-base font-semibold text-gray-900 mb-1">
+                    Annual Remittances
+                  </h4>
+                  <p className="text-gray-600 text-xs">
+                    Economic contribution to Vietnam
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

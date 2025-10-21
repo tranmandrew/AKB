@@ -1,10 +1,15 @@
+'use client'
+
 import { Building2, Users, Globe, Handshake, DollarSign, Brain } from "lucide-react"
 import { CorporateLogos } from "./corporate-logos"
 import Image from "next/image"
 import { ResolutionTooltip } from "./resolution-tooltip"
 import GradientText from "./GradientText"
+import { useEffect, useRef, useState } from "react"
 
 export function WhoWeAreSection() {
+  const partnersRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
   // Corporate logos for the slider
   const corporateLogos = [
     {
@@ -117,6 +122,32 @@ export function WhoWeAreSection() {
     }
   ]
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px'
+      }
+    )
+
+    if (partnersRef.current) {
+      observer.observe(partnersRef.current)
+    }
+
+    return () => {
+      if (partnersRef.current) {
+        observer.unobserve(partnersRef.current)
+      }
+    }
+  }, [])
+
   return (
     <>
       <section id="who-we-are" className="relative py-16 md:py-20 overflow-hidden">
@@ -213,10 +244,19 @@ export function WhoWeAreSection() {
       </section>
 
       {/* Strategic Partnerships Section - Full Width */}
-      <section className="bg-stone-100 py-8 px-4 w-full">
+      <section
+        ref={partnersRef}
+        className={`bg-stone-100 py-8 px-4 w-full transition-all duration-1000 ease-out ${
+          isVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-10'
+        }`}
+      >
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className="heading-primary text-2xl md:text-3xl mb-6 tracking-tight">
+            <h2 className={`heading-primary text-2xl md:text-3xl mb-6 tracking-tight transition-all duration-1000 delay-100 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
               <GradientText
                 colors={["#EB2300", "#EAFF00", "#EB2300", "#EB2300", "#EB2300", "#EB2300", "#EB2300"]}
                 animationSpeed={3.5}
@@ -230,7 +270,10 @@ export function WhoWeAreSection() {
               {chambers.map((chamber, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-center"
+                  className={`flex items-center justify-center transition-all duration-1000 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${200 + index * 150}ms` }}
                 >
                   <Image
                     src={chamber.src}

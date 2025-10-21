@@ -79,7 +79,7 @@ export function StrategicApproachSection() {
                 </div>
 
                 {/* Content Card below pillar */}
-                <Card className="bg-white/10 backdrop-blur-md border border-white/20 text-center mt-6 group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300 max-w-xs md:max-w-sm">
+                <Card className="bg-white/10 border border-white/20 text-center mt-6 group-hover:scale-105 group-hover:bg-white/15 transition-all duration-300 max-w-xs md:max-w-sm">
                   <CardContent className="px-3 py-4 md:px-4 md:py-5">
                     <h3 className="font-montserrat text-base md:text-lg font-semibold text-red-500 mb-2 md:mb-3">{pillar.title}</h3>
                     <p className="text-white/80 leading-relaxed text-xs md:text-sm">{pillar.description}</p>

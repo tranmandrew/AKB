@@ -323,27 +323,11 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div
-            ref={(el) => { if (el) navLinksRef.current = el; }}
-            className="hidden md:flex items-center gap-6 ml-6"
-            style={{ color: menuColor || '#000' }}
-          >
-            {items.map((item, idx) => (
-              <button
-                key={idx}
-                onClick={toggleMenu}
-                className="font-montserrat text-sm font-medium opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <div
             ref={(el) => { if (el) logoRef.current = el; }}
             className="logo-container flex items-center absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
           >
             <a href="/" className="flex items-center">
-              <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] cursor-pointer hover:opacity-80 transition-opacity duration-300" />
+              <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] cursor-pointer hover:opacity-80 transition-all duration-300 hover:drop-shadow-lg" />
             </a>
           </div>
 

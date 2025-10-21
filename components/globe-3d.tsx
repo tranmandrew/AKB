@@ -184,15 +184,12 @@ export function Globe3D({ className = "" }: { className?: string }) {
   if (!mounted) {
     return (
       <div className={`absolute inset-0 ${className}`}>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
       </div>
     )
   }
 
   return (
     <div className={`absolute inset-0 ${className}`}>
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -170,8 +171,9 @@
   }
 
   h1 {
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 200; /* Ultra-light for elegance */
+    font-weight: 700;
     line-height: 1.1;
   }
 
@@ -592,7 +594,18 @@
 /* Scroll snap utility classes */
 html {
   scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Changed from smooth to auto for better JS control */
+}
+
+/* Ultra smooth scrolling optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  overscroll-behavior-y: none; /* Prevent bounce effect */
 }
 
 .scroll-snap-section {
