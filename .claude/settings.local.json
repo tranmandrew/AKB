@@ -13,7 +13,12 @@
       "Bash(npx next lint:*)",
       "Bash(tree:*)",
       "Bash(dir:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(del nul)",
+      "Bash(npm run build:*)",
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

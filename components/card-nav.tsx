@@ -86,7 +86,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
   const calculateHeight = () => {
     const navEl = navRef.current;
-    if (!navEl) return 260;
+    if (!navEl) return 300;
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     if (isMobile) {
@@ -104,7 +104,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
         contentEl.offsetHeight;
 
-        const topBar = 60;
+        const topBar = 80;
         const padding = 16;
         const contentHeight = contentEl.scrollHeight;
 
@@ -116,7 +116,7 @@ const CardNav: React.FC<CardNavProps> = ({
         return topBar + contentHeight + padding;
       }
     }
-    return 260;
+    return 300;
   };
 
   const createTimeline = () => {
@@ -147,7 +147,7 @@ const CardNav: React.FC<CardNavProps> = ({
     if (!navEl) return;
 
     // Keep nav at collapsed height initially - don't auto-expand
-    gsap.set(navEl, { height: 48, overflow: 'hidden' });
+    gsap.set(navEl, { height: 80, overflow: 'hidden' });
     gsap.set(cardsRef.current, { y: 50, opacity: 0 });
 
     const tl = createTimeline();
@@ -291,13 +291,13 @@ const CardNav: React.FC<CardNavProps> = ({
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open' : ''} block h-[48px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
+        className={`card-nav ${isExpanded ? 'open' : ''} block h-[80px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[48px] flex items-center px-3 md:p-2 z-[2] relative">
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[80px] flex items-center px-4 md:px-6 z-[2] relative">
           <div
             ref={(el) => { if (el) hamburgerRef.current = el; }}
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[4px] md:gap-[6px] w-[40px] md:w-auto`}
+            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group flex flex-col items-center justify-center cursor-pointer gap-[5px] md:gap-[6px] w-[44px] md:w-[48px] h-[44px] md:h-[48px] shrink-0`}
             onClick={toggleMenu}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -311,40 +311,43 @@ const CardNav: React.FC<CardNavProps> = ({
             style={{ color: menuColor || '#000' }}
           >
             <div
-              className={`hamburger-line w-[24px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? 'translate-y-[3px] md:translate-y-[4px] rotate-45' : ''
+              className={`hamburger-line w-[26px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHamburgerOpen ? 'translate-y-[3.5px] md:translate-y-[4px] rotate-45' : ''
               } group-hover:opacity-75`}
             />
             <div
-              className={`hamburger-line w-[24px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                isHamburgerOpen ? '-translate-y-[3px] md:-translate-y-[4px] -rotate-45' : ''
+              className={`hamburger-line w-[26px] md:w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
+                isHamburgerOpen ? '-translate-y-[3.5px] md:-translate-y-[4px] -rotate-45' : ''
               } group-hover:opacity-75`}
             />
           </div>
 
           <div
             ref={(el) => { if (el) logoRef.current = el; }}
-            className="logo-container flex items-center absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+            className="logo-container flex flex-col items-center gap-0.5 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 py-2"
           >
-            <a href="/" className="flex items-center">
-              <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px] cursor-pointer hover:opacity-80 transition-all duration-300 hover:drop-shadow-lg" />
+            <a href="/" className="flex flex-col items-center gap-0.5">
+              <img src={logo} alt={logoAlt} className="logo h-[28px] md:h-[32px] cursor-pointer hover:opacity-80 transition-all duration-300 hover:drop-shadow-lg" />
+              <span className="text-[9px] md:text-[10px] font-semibold tracking-tight whitespace-nowrap leading-none" style={{ color: menuColor || '#000' }}>
+                Association of Professional Kiều Bào
+              </span>
             </a>
           </div>
 
           <div
             ref={(el) => { if (el) buttonsRef.current = el; }}
-            className="flex items-center gap-3 ml-auto"
+            className="flex items-center gap-2 md:gap-3 ml-auto"
           >
             <button
               type="button"
-              className="linkedin-button hidden md:inline-flex items-center justify-center cursor-pointer transition-opacity duration-300 hover:opacity-70"
+              className="linkedin-button hidden md:inline-flex items-center justify-center w-[40px] h-[40px] cursor-pointer transition-opacity duration-300 hover:opacity-70"
               onClick={() => window.open('https://linkedin.com', '_blank')}
             >
               <LinkedInIcon />
             </button>
             <button
               type="button"
-              className="card-nav-cta-button font-montserrat inline-flex items-center justify-center border-0 rounded-lg px-3 md:px-6 py-1.5 md:py-3 font-semibold text-xs md:text-sm cursor-pointer transition-all duration-300 hover:opacity-80 hover:scale-105 shadow-sm hover:shadow-md"
+              className="card-nav-cta-button font-montserrat inline-flex items-center justify-center border-0 rounded-lg px-4 md:px-6 py-2 md:py-2.5 font-semibold text-xs md:text-sm cursor-pointer transition-all duration-300 hover:opacity-80 hover:scale-105 shadow-sm hover:shadow-md shrink-0"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
               onClick={() => window.location.href = '/contact'}
             >
@@ -355,7 +358,7 @@ const CardNav: React.FC<CardNavProps> = ({
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[48px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+          className={`card-nav-content absolute left-0 right-0 top-[80px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
             isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
           } md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}

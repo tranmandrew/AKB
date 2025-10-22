@@ -76,27 +76,24 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 py-16 md:py-20 relative z-20">
         <div className="flex items-center min-h-[70vh] md:min-h-[65vh] pt-16 md:pt-8">
-          {/* Left side - Content */}
-          <div className="space-y-6 md:space-y-8 w-full max-w-5xl bg-black/40 backdrop-blur-sm p-8 md:p-12 rounded-2xl">
-            {/* Main headline - Improved hierarchy */}
-            <div className="space-y-3 md:space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] break-words font-inter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-                Association of Professional{" "}
-                <span className="text-vietnam-red">Kiều Bào</span>
-              </h1>
-            </div>
+          {/* Hero Content - Clean, elegant design */}
+          <div className="w-full max-w-6xl space-y-12">
+            {/* Main headline - 2 lines only */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.2]"
+                style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
+              <span className="inline-block">Uniting Distinguished <span className="text-vietnam-red">Vietnamese</span> Professionals Worldwide</span>
+              <br />
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-white/95 inline-block">
+                To Strengthen Vietnam's Future
+              </span>
+            </h1>
 
-            {/* Subheadline - Better contrast */}
-            <p className="text-lg sm:text-xl md:text-2xl text-white/95 font-normal leading-relaxed max-w-3xl">
-              A strategic channel connecting Vietnamese professional excellence worldwide to strengthen independent Vietnam's global position and economic prosperity
-            </p>
-
-            {/* Single CTA button */}
-            <div className="pt-4 md:pt-6">
+            {/* CTA */}
+            <div className="pt-4">
               <a href="/membership" className="inline-block">
                 <Button
                   size="lg"
-                  className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-semibold hover-elevate shadow-xl"
+                  className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-10 md:px-12 py-6 md:py-7 text-lg md:text-xl font-semibold shadow-2xl transition-all duration-300 hover:scale-105"
                 >
                   Apply for Membership
                   <ArrowRight className="ml-2 h-5 w-5" />

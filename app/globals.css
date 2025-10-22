@@ -594,7 +594,7 @@
 /* Scroll snap utility classes */
 html {
   scroll-snap-type: y proximity;
-  scroll-behavior: auto; /* Changed from smooth to auto for better JS control */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 /* Ultra smooth scrolling optimizations */
