@@ -65,22 +65,23 @@ export function WhoWeAreSection() {
   ]
 
   const companies = [
-    "Google",
-    "Mastercard",
-    "UBS",
+    "Applied Materials",
+    "SEA Group",
     "SAP",
     "BOSCH",
+    "Nielsen",
+    "UBS",
+    "Standard Chartered",
+    "Siemens",
+    "Ant International",
+    "TMA solutions",
+    "Google",
+    "Mastercard",
     "Amazon",
     "Microsoft",
-    "DBS",
-    "Standard Chartered",
     "JPMorgan",
     "Visa",
-    "Applied Materials",
-    "UOB",
-    "Ant International",
     "Grab",
-    "ACCA",
   ]
 
   const countries = [
@@ -195,9 +196,9 @@ export function WhoWeAreSection() {
                         <Users className="h-5 w-5 text-vietnam-red" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-montserrat text-lg font-semibold text-white mb-2">An Elite Global Network</h3>
+                        <h3 className="font-montserrat text-lg font-semibold text-white mb-2">A Distinguished Global Network</h3>
                         <p className="text-sm text-white/80 leading-relaxed">
-                          Our members are accomplished leaders and innovators from key international hubs, including the United States, United Kingdom, Singapore, Japan, and the European Union.
+                          Our members are accomplished leaders and professionals from key international hubs from North America, Western & Eastern Europe, and the Asia Pacific regions.
                         </p>
                       </div>
                     </div>
@@ -214,7 +215,7 @@ export function WhoWeAreSection() {
                       <div className="flex-1 min-w-0">
                         <h3 className="font-montserrat text-lg font-semibold text-white mb-2">Expertise Forged at Industry Leaders</h3>
                         <p className="text-sm text-white/80 leading-relaxed break-words">
-                          We bring a wealth of collective knowledge from experiences at world-renowned corporations across technology, finance, consulting, and industry sectors.
+                          We bring a wealth of collective knowledge from experiences at world-renowned corporations across technology, ESG, finance, consulting, and various other industry sectors.
                         </p>
                       </div>
                     </div>
@@ -231,7 +232,7 @@ export function WhoWeAreSection() {
                       <div className="flex-1">
                         <h3 className="font-montserrat text-lg font-semibold text-white mb-2">A Catalyst for National Progress</h3>
                         <p className="text-sm text-white/80 leading-relaxed">
-                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, and accelerate independent Vietnam's economic sovereignty and global competitiveness.
+                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building to accelerate Vietnam's economic sovereignty and global competitiveness.
                         </p>
                       </div>
                     </div>

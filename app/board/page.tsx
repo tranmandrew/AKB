@@ -21,43 +21,34 @@ const boardMembers: BoardMember[] = [
     country: "Canada",
     countryFlag: "🇨🇦",
     initials: "KN",
-    description: "Prominent Canadian Vietnamese leader (Kiều Bào) with fintech and ESG expertise from UBS and Standard Chartered Ventures. Regularly advises government bodies and corporates across Vietnam and SEA, bridging Canadian-Vietnamese business relations for strategic development.",
+    description: "Canadian-Vietnamese with fintech and ESG expertise from UBS and Standard Chartered Ventures. Regularly advises government bodies and corporates across Vietnam and SEA, bridging international business relations for strategic development.",
     profileImage: "/profiles/kimble-ngo.jpg"
   },
   {
     name: "Tam Nguyen",
-    title: "Singaporean Founding Member",
-    country: "Singapore",
-    countryFlag: "🇸🇬",
+    title: "American Founding Member",
+    country: "United States",
+    countryFlag: "🇺🇸",
     initials: "TN",
-    description: "Distinguished professional contributing expertise to the Association's mission of connecting Vietnamese excellence globally for Vietnam's prosperity.",
+    description: "American-Vietnamese expert on circular economy (ESG) with The Alliance to End Plastic Waste (AEPW), covering Vietnam, Thailand, and China. His work with the Minister of Agriculture and Environment (VN) and Multi-national Organization (World Bank, UNDP, ADB, WEF) deploy capital and support policies that promote green development.",
     profileImage: "/profiles/tam-nguyen.jpg"
   },
   {
-    name: "Như",
-    title: "Malaysian Founding Member",
-    country: "Malaysia",
-    countryFlag: "🇲🇾",
-    initials: "N",
-    description: "Malaysian Vietnamese community leader bringing valuable insights from Southeast Asian markets and fostering Vietnam-Malaysia business partnerships for regional development.",
-    profileImage: "/profiles/nhu.jpg"
-  },
-  {
-    name: "Alex",
+    name: "Alexandre Ho Thanh",
     title: "French Founding Member",
     country: "France",
     countryFlag: "🇫🇷",
-    initials: "A",
-    description: "French Vietnamese professional with extensive European market experience, facilitating Vietnam-EU business relations and contributing to cross-continental strategic initiatives.",
+    initials: "AHT",
+    description: "French-Vietnamese is a Legal and Tax Advisor, as a Director of RBA Group, specializing in IP, M&A, and FDI investment. He is also an International Arbitrator at Vietnam Traders Arbitration Centre (VTA) and Myanmar International Arbitration Centre (MIAC)",
     profileImage: "/profiles/alex.jpg"
   },
   {
-    name: "Corina",
-    title: "Czech Founding Member",
-    country: "Czech Republic",
-    countryFlag: "🇨🇿",
-    initials: "C",
-    description: "Czech Vietnamese leader with deep Central European expertise, bridging Vietnam and EU markets while advancing collaborative opportunities in emerging European economies.",
+    name: "Corina Trang Luong",
+    title: "Romanian Founding Member",
+    country: "Romania",
+    countryFlag: "🇷🇴",
+    initials: "CTL",
+    description: "Romanian-Vietnamese seasoned business professional with over a decade of experience across the marketing, advertising, and technology sectors. She has built a dynamic career spanning multiple markets—including Europe, Southeast Asia, and Vietnam—driving growth and innovation for both global tech companies and startups. Her expertise lies in go-to-market strategy, digital media, and navigating fast-changing, high-growth markets.",
     profileImage: "/profiles/corina.jpg"
   }
 ]
@@ -113,6 +104,78 @@ function BoardMembersSection() {
   )
 }
 
+function AdvisoryCommitteeSection() {
+  const advisoryMembers = [
+    {
+      name: "Dr. Ngô Dương Hoàng Thao",
+      title: "Advisory Committee Chair",
+      country: "Denmark",
+      countryFlag: "🇩🇰",
+      initials: "DT",
+      description: "Chairman & Founder of GROUP GLOBAL ONE, Danish Kieu Bao, with over 35 years in ICT, Telecom, and Energy experience in Denmark, Germany, America, and Vietnam.",
+      profileImage: "/profiles/dr-thao.jpg"
+    },
+    {
+      name: "Thy Tang",
+      title: "Advisory Committee Member",
+      country: "United States",
+      countryFlag: "🇺🇸",
+      initials: "TT",
+      description: "FinTech innovator with 20+ years of experience building technology driven financial platforms across the U.S., UK, EU, Asia, and Vietnam. Co-Founder of Acquired.com and CTO of Qunit Group, a global Fintech Company.",
+      profileImage: "/profiles/thy-tang.jpg"
+    }
+  ]
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-primary text-3xl md:text-4xl text-foreground mb-3">
+              Advisory Committee
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Experienced leaders providing strategic guidance to AKB's mission and activities
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {advisoryMembers.map((member) => (
+              <div
+                key={member.name}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="flex items-center gap-5 mb-5">
+                  <div
+                    className="w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}
+                  >
+                    {member.initials}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-montserrat text-xl font-bold text-gray-900 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm flex items-center gap-1">
+                      <span className="text-lg">{member.countryFlag}</span>
+                      {member.country}
+                    </p>
+                  </div>
+                </div>
+                <h4 className="font-montserrat text-base font-semibold text-golden-yellow mb-4">
+                  {member.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {member.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function BoardPage() {
   return (
     <main className="min-h-screen bg-background">
@@ -144,6 +207,7 @@ export default function BoardPage() {
       </section>
 
       <BoardMembersSection />
+      <AdvisoryCommitteeSection />
       <FooterSection />
     </main>
   )

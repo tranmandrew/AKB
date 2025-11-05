@@ -8,7 +8,7 @@ import Image from "next/image"
 export function JoinMovementSection() {
   const benefits = [
     "Direct access to government-level dialogue",
-    "Exclusive networking with elite Vietnamese professionals",
+    "Professional networking with distinguished Vietnamese leaders",
     "Platform to drive meaningful policy and business initiatives",
     "Legacy as a founding architect of Vietnam's global integration",
   ]
@@ -39,11 +39,11 @@ export function JoinMovementSection() {
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-primary text-3xl md:text-5xl text-white mb-6 text-balance">
-            Be Part of <span className="heading-primary text-accent">Vietnam's Future</span>
+            Contribute to <span className="heading-primary text-accent">Vietnam's Future</span>
           </h2>
 
           <p className="text-lg text-white/90 mb-8 text-pretty leading-relaxed">
-            Once-in-a-generation opportunity for founding membership. Distinguished Vietnamese professionals leveraging global success for homeland prosperity.
+            Once-in-a-generation opportunity to be part of the conversation. We are a unique platform for like-minded individuals, with a shared heritage, to contribute in the growth and development of nation.
           </p>
 
           <Card className="glass-card border-0 mb-8 max-w-3xl mx-auto">

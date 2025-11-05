@@ -13,7 +13,7 @@ export function MembershipSection() {
               <span className="text-vietnam-red">Membership</span> & Professional Directory
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Join our exclusive network of Vietnamese professionals making an impact globally
+              Join our specialized network of Vietnamese professionals making an impact globally
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export function MembershipSection() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">Membership</h3>
-                    <p className="text-white/90">Exclusive access by referral</p>
+                    <p className="text-white/90">Access by referral</p>
                   </div>
                 </div>
               </div>

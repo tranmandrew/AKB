@@ -15,7 +15,7 @@ export function MembershipBenefitsSection() {
     {
       icon: Users,
       title: "Peer Network & Accountability",
-      description: "Confidential circles, private briefings, and exclusive gatherings with fellow Vietnamese professionals."
+      description: "Confidential circles, private briefings, and specialized gatherings with fellow Vietnamese professionals."
     },
     {
       icon: Globe,
@@ -52,7 +52,7 @@ export function MembershipBenefitsSection() {
     },
     {
       icon: Globe,
-      title: "Exclusive Events",
+      title: "Professional Events",
       description: "Member-only gatherings, policy briefings, and cultural events for deeper learning and meaningful connections."
     },
     {

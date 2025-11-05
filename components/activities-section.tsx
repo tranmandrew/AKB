@@ -209,7 +209,7 @@ export function ActivitiesSection() {
               Ready to Shape <span className="text-vietnam-red">Vietnam's Future</span>?
             </h3>
             <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed">
-              Join an elite network of professional leaders driving meaningful change for Vietnam's development on the global stage
+              Participate with a network of professional leaders driving meaningful change for Vietnam's development on the global stage
             </p>
 
             {/* Single CTA */}

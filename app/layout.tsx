@@ -17,7 +17,7 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   title: "Association of Professional Kiều Bào | Connecting Vietnamese Excellence Globally",
   description:
-    "Founding organization connecting elite Vietnamese diaspora professionals with Vietnam's development goals. Join distinguished professionals from Google, Mastercard, UBS, and more.",
+    "Founding organization connecting distinguished Vietnamese diaspora professionals with Vietnam's development goals. Join distinguished professionals from Google, Mastercard, UBS, and more.",
   generator: "v0.app",
   keywords: "Vietnamese professionals, Kiều Bào, Vietnam development, Vietnamese diaspora, professional network",
   icons: {

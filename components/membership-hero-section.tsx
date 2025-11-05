@@ -27,11 +27,11 @@ export function MembershipHeroSection() {
       <div className="container mx-auto px-4 py-16 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-            Join Vietnam's Elite Professional Network
+            Join the Association of Professional Kieu bao
           </h1>
 
           <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Exclusive access for Vietnamese executives and global leaders driving Vietnam's strategic development through policy influence and international partnerships.
+            Be a part of a cohort of like-minded Kieu Bao and leaders working to support Vietnam's strategic development through policy influence, investments, capacity building and international relations.
           </p>
 
           <a href="/contact" className="inline-block">

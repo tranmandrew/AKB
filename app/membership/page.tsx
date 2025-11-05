@@ -4,8 +4,8 @@ import { MembershipAccessSection } from "@/components/membership-access-section"
 import { FooterSection } from "@/components/footer-section"
 
 export const metadata = {
-  title: 'Membership | AKB - Join Elite Vietnamese Professionals',
-  description: 'Join the Association of Professional Kiều Bào. Exclusive network of Vietnamese diaspora professionals driving Vietnam\'s development.',
+  title: 'Membership | AKB - Join Distinguished Vietnamese Professionals',
+  description: 'Join the Association of Professional Kiều Bào. Specialized network of Vietnamese diaspora professionals driving Vietnam\'s development.',
 }
 
 export default function MembershipPage() {

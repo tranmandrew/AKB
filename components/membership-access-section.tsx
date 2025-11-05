@@ -15,7 +15,7 @@ export function MembershipAccessSection() {
       icon: MessageSquare,
       title: "Government Policy Influence & Sector Leadership",
       description: "Direct policy recommendations with Vietnamese authorities under Resolution 36-NQ/TW.",
-      features: ["Direct Ministry Access", "Sector Committee Leadership", "National Priority Development"]
+      features: ["Platform access to Vietnamese policy-makers", "Sector Committee Leadership", "National Priority Development"]
     }
   ]
 
@@ -32,7 +32,7 @@ export function MembershipAccessSection() {
                 <span className="block text-vietnam-red">Referral Only</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text mb-4">
-                Exclusive access to strengthen independent Vietnam through elite professional networks and direct government influence.
+                Access to strengthen independent Vietnam through professional networks and direct government influence.
               </p>
               <div className="bg-vietnam-red/10 border-l-4 border-vietnam-red rounded-lg p-4 max-w-2xl mx-auto">
                 <p className="text-lg font-semibold text-vietnam-red">
@@ -161,7 +161,7 @@ export function MembershipAccessSection() {
                   </h3>
 
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                    Exclusive network through member referrals only. Committed Vietnamese professionals dedicated to Vietnam's strategic development.
+                    Specialized network through member referrals only. Committed Vietnamese professionals dedicated to Vietnam's strategic development.
                   </p>
 
                   <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
@@ -202,7 +202,7 @@ export function MembershipAccessSection() {
 
                   <div className="space-y-2">
                     <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-xl font-bold text-foreground">Exclusive Global Access</h4>
+                    <h4 className="text-xl font-bold text-foreground">Specialized Global Access</h4>
                     <p className="text-base text-muted-foreground">16+ international hubs and multinational corporations</p>
                   </div>
                 </div>

@@ -12,32 +12,33 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const formData = new FormData(e.currentTarget);
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent('AKB Membership Application');
+    const body = encodeURIComponent(
+      `Name: ${formData.get('firstName')} ${formData.get('lastName')}\n` +
+      `Email: ${formData.get('email')}\n` +
+      `Phone: ${formData.get('phone')}\n` +
+      `LinkedIn Profile: ${formData.get('linkedInProfile')}\n\n` +
+      `Industry: ${formData.get('industry')}\n` +
+      `Area of Interest: ${formData.get('areaOfInterest')}\n` +
+      `Overseas Experience: ${formData.get('overseasExperience')}\n\n` +
+      `Referral Member: ${formData.get('referralMember')}\n\n` +
+      `Message:\n${formData.get('message')}`
+    );
+
+    window.location.href = `mailto:kimble@akieubao.com?subject=${subject}&body=${body}`;
   };
 
   return (
     <main className="min-h-screen bg-background">
       <Header />
       {/* Contact header with diagonal theme */}
-      <div className="relative py-12 pt-32 pb-20 overflow-hidden bg-black" style={{
+      <div className="relative py-12 pt-32 pb-16 overflow-hidden bg-black" style={{
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%)'
       }}>
         <div className="absolute inset-0 opacity-10" style={{
@@ -45,103 +46,173 @@ export default function ContactPage() {
           backgroundSize: '100px 100px'
         }}></div>
         <div className="relative z-10">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-6 text-white hover:text-white/80 hover:bg-white/10">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-          <h1 className="heading-primary text-3xl md:text-4xl text-white mb-4">Get in Touch</h1>
-          <p className="text-lg text-white/90 mb-2">
-            Connect with AKB leadership for membership inquiries and strategic partnerships.
-          </p>
-          <p className="text-sm text-white/70">
-            Response within 48 hours • Professional guidance
-          </p>
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h1 className="heading-primary text-3xl md:text-4xl text-white mb-3">Get in Touch</h1>
+            <p className="text-base text-white/90">
+              Connect with AKB leadership for membership inquiries and strategic partnerships.
+            </p>
+            <p className="text-sm text-white/70 mt-1">
+              Response within 48 hours • Professional guidance
+            </p>
+          </div>
         </div>
-      </div>
-      </div>
       </div>
 
       {/* Form section on white background */}
-      <div className="py-24 bg-white" style={{
+      <div className="py-16 bg-white" style={{
         marginTop: '-4vw'
       }}>
-        <div className="container mx-auto px-4 max-w-4xl">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
-                First Name <span className="text-vietnam-red">*</span>
-              </label>
-              <Input
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="Your first name"
-                required
-              />
+        <div className="container mx-auto px-4 max-w-3xl">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Personal Information Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200">
+              Personal Information
+            </h3>
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                    First Name <span className="text-vietnam-red">*</span>
+                  </label>
+                  <Input
+                    name="firstName"
+                    placeholder="Your first name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Last Name</label>
+                  <Input
+                    name="lastName"
+                    placeholder="Your last name"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                    Email <span className="text-vietnam-red">*</span>
+                  </label>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="your.email@company.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Phone</label>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your phone number"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                  LinkedIn Profile <span className="text-vietnam-red">*</span>
+                </label>
+                <Input
+                  type="url"
+                  name="linkedInProfile"
+                  placeholder="https://www.linkedin.com/in/yourprofile"
+                  required
+                />
+              </div>
             </div>
-            <div>
-              <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Last Name</label>
-              <Input
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Your last name"
-              />
+          </div>
+
+          {/* Professional Background Section */}
+          <div>
+            <h3 className="text-lg font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200">
+              Professional Background
+            </h3>
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                    Industry
+                  </label>
+                  <Input
+                    name="industry"
+                    placeholder="e.g., Finance, Technology, ESG, Consulting"
+                  />
+                </div>
+                <div>
+                  <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                    Area of Interest
+                  </label>
+                  <select
+                    name="areaOfInterest"
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    <option value="">Select an area...</option>
+                    <option value="policy">Policy Engagement</option>
+                    <option value="business">Business Development</option>
+                    <option value="networking">Professional Networking</option>
+                    <option value="finance">Finance & Investment</option>
+                    <option value="esg">ESG & Sustainability</option>
+                    <option value="technology">Technology</option>
+                    <option value="education">Education</option>
+                    <option value="governance">Governance</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                  Overseas Experience or Nationality (Country)
+                </label>
+                <Input
+                  name="overseasExperience"
+                  placeholder="e.g., United States, Singapore, United Kingdom"
+                />
+              </div>
             </div>
           </div>
 
+          {/* Membership Details Section */}
           <div>
-            <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
-              Email <span className="text-vietnam-red">*</span>
-            </label>
-            <Input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="your.email@company.com"
-              required
-            />
-          </div>
+            <h3 className="text-lg font-semibold text-foreground mb-4 pb-2 border-gray-200">
+              Membership Details
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                  Referral Member
+                </label>
+                <Input
+                  name="referralMember"
+                  placeholder="Full name of AKB member who referred you"
+                />
+              </div>
 
-          <div>
-            <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">Phone</label>
-            <Input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Your phone number"
-            />
-          </div>
+              <div>
+                <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
+                  Message <span className="text-vietnam-red">*</span>
+                </label>
+                <Textarea
+                  name="message"
+                  placeholder="Share your professional background, current role, and interest in AKB membership. Include any referring member information if applicable."
+                  rows={5}
+                  required
+                />
+              </div>
 
-          <div>
-            <label className="font-montserrat text-sm font-medium text-foreground mb-2 block">
-              Message <span className="text-vietnam-red">*</span>
-            </label>
-            <Textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Share your professional background, current role, and interest in AKB membership. Include any referring member information if applicable."
-              rows={6}
-              required
-            />
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-semibold text-sm text-blue-900 mb-2">What to Include:</h4>
-            <ul className="text-xs text-blue-800 space-y-1">
-              <li>• Your current professional role and company</li>
-              <li>• Areas of expertise relevant to Vietnam's development</li>
-              <li>• Referring AKB member (if applicable)</li>
-              <li>• Specific interest areas (policy, business, networking)</li>
-            </ul>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <h4 className="font-semibold text-sm text-blue-900 mb-1">What to Include:</h4>
+                <ul className="text-xs text-blue-800 space-y-0.5">
+                  <li>• Your current professional role and company</li>
+                  <li>• Areas of expertise relevant to Vietnam's development</li>
+                  <li>• Specific interest areas (policy, business, networking)</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <Button
