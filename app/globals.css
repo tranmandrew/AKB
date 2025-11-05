@@ -610,12 +610,12 @@ body {
 
 .scroll-snap-section {
   scroll-snap-align: start;
-  scroll-margin-top: 0;
+  scroll-margin-top: 50px;
 }
 
 .scroll-snap-section-center {
   scroll-snap-align: center;
-  scroll-margin-top: 0;
+  scroll-margin-top: 50px;
 }
 
 /* Diagonal Design Elements */

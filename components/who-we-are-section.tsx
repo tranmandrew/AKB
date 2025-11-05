@@ -151,7 +151,7 @@ export function WhoWeAreSection() {
 
   return (
     <>
-      <section id="who-we-are" className="relative py-16 md:py-20 overflow-hidden">
+      <section id="who-we-are" className="relative py-16 md:py-20 overflow-hidden scroll-mt-24">
         {/* Da Nang Golden Hands Bridge Background */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -159,7 +159,8 @@ export function WhoWeAreSection() {
             alt="Da Nang Golden Hands Bridge"
             fill
             className="object-cover grayscale"
-            priority
+            loading="lazy"
+            sizes="100vw"
           />
         </div>
 

@@ -128,7 +128,7 @@ export function GeographicCoverageSection() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} id="geographic-coverage" className="scroll-snap-section py-8 md:py-12 bg-gray-50 diagonal-bottom">
+    <section ref={sectionRef} id="geographic-coverage" className="scroll-snap-section py-8 md:py-12 bg-gray-50 diagonal-bottom scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4 mt-8">
           <h2 className="heading-primary text-3xl md:text-4xl text-gray-900 mb-2">

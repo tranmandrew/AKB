@@ -1,6 +1,5 @@
 'use client'
 
-import { Header } from "@/components/header"
 import { FooterSection } from "@/components/footer-section"
 import Image from "next/image"
 
@@ -179,8 +178,6 @@ function AdvisoryCommitteeSection() {
 export default function BoardPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
-
       {/* Hero Section for Board Page */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         {/* Background with gradient overlay */}

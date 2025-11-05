@@ -1,18 +1,17 @@
 "use client"
 
-import dynamic from 'next/dynamic'
-
-const CardNav = dynamic(() => import('./card-nav'), { ssr: false })
+import { useMemo } from 'react'
+import CardNav from './card-nav'
 
 export function Header() {
-  const items = [
+  const items = useMemo(() => [
     {
       label: "About",
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: "Who We Are", href: "#who-we-are", ariaLabel: "About our organization" },
-        { label: "Global Coverage", href: "#geographic-coverage", ariaLabel: "Our global presence" }
+        { label: "Who We Are", href: "/#who-we-are", ariaLabel: "About our organization" },
+        { label: "Global Coverage", href: "/#geographic-coverage", ariaLabel: "Our global presence" }
       ]
     },
     {
@@ -33,7 +32,7 @@ export function Header() {
         { label: "Contact Us", href: "/contact", ariaLabel: "Get in touch" }
       ]
     }
-  ];
+  ], []);
 
   return (
     <CardNav

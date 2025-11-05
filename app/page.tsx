@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 
 // Lazy load below-fold sections for faster initial load
@@ -13,7 +12,6 @@ const FooterSection = dynamic(() => import("@/components/footer-section").then(m
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       <HeroSection />
       <WhoWeAreSection />
       <GeographicCoverageSection />

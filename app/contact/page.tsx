@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Header } from '@/components/header';
 import { FooterSection } from '@/components/footer-section';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -36,7 +35,6 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       {/* Contact header with diagonal theme */}
       <div className="relative py-12 pt-32 pb-16 overflow-hidden bg-black" style={{
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%)'

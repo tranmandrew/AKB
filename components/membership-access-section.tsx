@@ -65,7 +65,7 @@ export function MembershipAccessSection() {
                   >
                     <div className="container mx-auto px-4 relative z-10">
                       <div className={`flex flex-col ${
-                        isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                        isEven ? 'lg:flex-row' : 'lg:flex-row'
                       } items-center gap-8 lg:gap-12 max-w-7xl mx-auto`}>
                         {/* Visual Element */}
                         <div className="flex-1 relative">

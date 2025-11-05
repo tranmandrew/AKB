@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Noto_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import { Header } from "@/components/header"
 import "./globals.css"
 
 const notoSans = Noto_Sans({
@@ -13,6 +14,12 @@ const notoSans = Noto_Sans({
   preload: true,
   fallback: ['system-ui', 'arial'],
 })
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   title: "Association of Professional Kiều Bào | Connecting Vietnamese Excellence Globally",
@@ -37,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notoSans.className}`}>
+        <Header />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

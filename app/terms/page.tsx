@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { ArrowLeft, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Header } from '@/components/header';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { ResolutionTooltip } from '@/components/resolution-tooltip';
@@ -61,7 +60,6 @@ export default function TermsPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       {/* Professional terms of service header background */}
       <div className="relative py-12 pt-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/5 via-slate-900/5 to-red-900/5"></div>

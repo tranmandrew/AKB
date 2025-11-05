@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import React, { useLayoutEffect, useRef, useState, useEffect, useCallback, memo } from 'react';
 import { gsap } from 'gsap';
 // use your own icon import if react-icons is not available
 // import { GoArrowUpRight } from 'react-icons/go';
@@ -61,7 +61,7 @@ export interface CardNavProps {
   buttonTextColor?: string;
 }
 
-const CardNav: React.FC<CardNavProps> = ({
+const CardNav: React.FC<CardNavProps> = memo(({
   logo,
   logoAlt = 'Logo',
   items,
@@ -161,30 +161,39 @@ const CardNav: React.FC<CardNavProps> = ({
   }, []);
 
   useLayoutEffect(() => {
+    let resizeTimeout: NodeJS.Timeout;
+
     const handleResize = () => {
-      if (!tlRef.current) return;
+      // Debounce resize events to reduce GSAP recalculations
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (!tlRef.current) return;
 
-      if (isExpanded) {
-        const newHeight = calculateHeight();
-        gsap.set(navRef.current, { height: newHeight });
+        if (isExpanded) {
+          const newHeight = calculateHeight();
+          gsap.set(navRef.current, { height: newHeight });
 
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          newTl.progress(1);
-          tlRef.current = newTl;
+          tlRef.current.kill();
+          const newTl = createTimeline();
+          if (newTl) {
+            newTl.progress(1);
+            tlRef.current = newTl;
+          }
+        } else {
+          tlRef.current.kill();
+          const newTl = createTimeline();
+          if (newTl) {
+            tlRef.current = newTl;
+          }
         }
-      } else {
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          tlRef.current = newTl;
-        }
-      }
+      }, 150); // Debounce by 150ms
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      clearTimeout(resizeTimeout);
+      window.removeEventListener('resize', handleResize);
+    };
   }, [isExpanded]);
 
   useEffect(() => {
@@ -262,7 +271,7 @@ const CardNav: React.FC<CardNavProps> = ({
     }
   }, [isScrolled, isExpanded]);
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     const tl = tlRef.current;
     if (!tl) {
       return;
@@ -278,7 +287,7 @@ const CardNav: React.FC<CardNavProps> = ({
       tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
       tl.reverse();
     }
-  };
+  }, [isExpanded]);
 
   const setCardRef = (i: number) => (el: HTMLDivElement | null) => {
     if (el) cardsRef.current[i] = el;
@@ -392,6 +401,8 @@ const CardNav: React.FC<CardNavProps> = ({
       </nav>
     </div>
   );
-};
+});
+
+CardNav.displayName = 'CardNav';
 
 export default CardNav;

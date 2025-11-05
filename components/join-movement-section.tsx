@@ -21,7 +21,7 @@ export function JoinMovementSection() {
   ]
 
   return (
-    <section id="join" className="relative py-16 md:py-20 overflow-hidden pt-32 z-10">
+    <section id="join" className="relative py-16 md:py-20 overflow-hidden pt-32 z-10 scroll-mt-24">
       {/* Hanoi Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -29,7 +29,8 @@ export function JoinMovementSection() {
           alt="Hanoi cityscape"
           fill
           className="object-cover"
-          priority
+          loading="lazy"
+          sizes="100vw"
         />
       </div>
 
