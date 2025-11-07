@@ -2,6 +2,7 @@
 
 import { FooterSection } from "@/components/footer-section"
 import Image from "next/image"
+import { Linkedin } from "lucide-react"
 
 interface BoardMember {
   name: string
@@ -11,6 +12,7 @@ interface BoardMember {
   description: string
   profileImage?: string
   initials: string
+  linkedinUrl?: string
 }
 
 const boardMembers: BoardMember[] = [
@@ -21,7 +23,8 @@ const boardMembers: BoardMember[] = [
     countryFlag: "🇨🇦",
     initials: "KN",
     description: "Canadian-Vietnamese with fintech and ESG expertise from UBS and Standard Chartered Ventures. Regularly advises government bodies and corporates across Vietnam and SEA, bridging international business relations for strategic development.",
-    profileImage: "/profiles/kimble-ngo.jpg"
+    profileImage: "/profiles/kimble-ngo.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/kimblengo/"
   },
   {
     name: "Tam Nguyen",
@@ -30,7 +33,8 @@ const boardMembers: BoardMember[] = [
     countryFlag: "🇺🇸",
     initials: "TN",
     description: "American-Vietnamese expert on circular economy (ESG) with The Alliance to End Plastic Waste (AEPW), covering Vietnam, Thailand, and China. His work with the Minister of Agriculture and Environment (VN) and Multi-national Organization (World Bank, UNDP, ADB, WEF) deploy capital and support policies that promote green development.",
-    profileImage: "/profiles/tam-nguyen.jpg"
+    profileImage: "/profiles/tam-nguyen.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/tamnguyen/"
   },
   {
     name: "Alexandre Ho Thanh",
@@ -39,7 +43,8 @@ const boardMembers: BoardMember[] = [
     countryFlag: "🇫🇷",
     initials: "AHT",
     description: "French-Vietnamese is a Legal and Tax Advisor, as a Director of RBA Group, specializing in IP, M&A, and FDI investment. He is also an International Arbitrator at Vietnam Traders Arbitration Centre (VTA) and Myanmar International Arbitration Centre (MIAC)",
-    profileImage: "/profiles/alex.jpg"
+    profileImage: "/profiles/alex.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/alexhothanh/"
   },
   {
     name: "Corina Trang Luong",
@@ -48,7 +53,8 @@ const boardMembers: BoardMember[] = [
     countryFlag: "🇷🇴",
     initials: "CTL",
     description: "Romanian-Vietnamese seasoned business professional with over a decade of experience across the marketing, advertising, and technology sectors. She has built a dynamic career spanning multiple markets—including Europe, Southeast Asia, and Vietnam—driving growth and innovation for both global tech companies and startups. Her expertise lies in go-to-market strategy, digital media, and navigating fast-changing, high-growth markets.",
-    profileImage: "/profiles/corina.jpg"
+    profileImage: "/profiles/corina.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/corinatrangluong/"
   }
 ]
 
@@ -61,13 +67,13 @@ function BoardMembersSection() {
             {boardMembers.map((member, index) => (
               <div
                 key={member.name}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Member Header */}
-                <div className="flex items-center gap-5 mb-5">
+                <div className="flex items-start gap-5 mb-5">
                   {/* Avatar with Initials */}
                   <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0"
+                    className="w-20 h-20 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0"
                     style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
                   >
                     {member.initials}
@@ -75,12 +81,25 @@ function BoardMembersSection() {
 
                   {/* Name and Location */}
                   <div className="flex-1">
-                    <h3 className="font-montserrat text-xl font-bold text-gray-900 mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-gray-600 text-sm flex items-center gap-1">
-                      <span className="text-lg">{member.countryFlag}</span>
-                      {member.country}
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-montserrat text-xl font-bold text-gray-900">
+                        {member.name}
+                      </h3>
+                      {member.linkedinUrl && (
+                        <a
+                          href={member.linkedinUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                          aria-label={`${member.name}'s LinkedIn profile`}
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-gray-600 text-sm flex items-center gap-2">
+                      <span className="text-xl" role="img" aria-label={`${member.country} flag`}>{member.countryFlag}</span>
+                      <span>{member.country}</span>
                     </p>
                   </div>
                 </div>
@@ -107,12 +126,13 @@ function AdvisoryCommitteeSection() {
   const advisoryMembers = [
     {
       name: "Dr. Ngô Dương Hoàng Thao",
-      title: "Advisory Committee Chair",
+      title: "Advisory Committee Member",
       country: "Denmark",
       countryFlag: "🇩🇰",
       initials: "DT",
       description: "Chairman & Founder of GROUP GLOBAL ONE, Danish Kieu Bao, with over 35 years in ICT, Telecom, and Energy experience in Denmark, Germany, America, and Vietnam.",
-      profileImage: "/profiles/dr-thao.jpg"
+      profileImage: "/profiles/dr-thao.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/drthaodhngo/"
     },
     {
       name: "Thy Tang",
@@ -121,7 +141,18 @@ function AdvisoryCommitteeSection() {
       countryFlag: "🇺🇸",
       initials: "TT",
       description: "FinTech innovator with 20+ years of experience building technology driven financial platforms across the U.S., UK, EU, Asia, and Vietnam. Co-Founder of Acquired.com and CTO of Qunit Group, a global Fintech Company.",
-      profileImage: "/profiles/thy-tang.jpg"
+      profileImage: "/profiles/thy-tang.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/thytang/"
+    },
+    {
+      name: "Joe Nguyen",
+      title: "Advisory Committee Member",
+      country: "Singapore",
+      countryFlag: "🇸🇬",
+      initials: "JN",
+      description: "Senior Strategic Advisor for Hakuhodo/DAC, served as Chair of the Interactive Advertising Bureau (IAB) Singapore and also currently on the Advisory Board of the Mobile Marketing Association (APAC), he is an expert in data analytics and marketing in consumer brands, online behaviour,  and advertising technology.",
+      profileImage: "/profiles/thy-tang.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/joenguyenht/"
     }
   ]
 
@@ -141,11 +172,11 @@ function AdvisoryCommitteeSection() {
             {advisoryMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white p-8 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-center gap-5 mb-5">
                   <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0"
+                    className="w-20 h-20 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0"
                     style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' }}
                   >
                     {member.initials}
@@ -186,7 +217,7 @@ export default function BoardPage() {
             src="/boardroomback.png"
             alt="Boardroom"
             fill
-            className="object-cover"
+            className="object-cover object-right"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>

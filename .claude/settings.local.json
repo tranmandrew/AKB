@@ -18,7 +18,10 @@
       "Bash(npm run build:*)",
       "Bash(rm:*)",
       "Bash(rmdir:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(pnpm install:*)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:vn.linkedin.com)"
     ],
     "deny": [],
     "ask": []

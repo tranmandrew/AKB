@@ -179,7 +179,7 @@ export function WhoWeAreSection() {
                   Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to serve as a strategic channel leveraging collective expertise to strengthen independent Vietnam's sovereignty, economic development, and global influence.
                 </p>
 
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 max-w-4xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20  p-6 max-w-4xl mx-auto">
                   <h3 className="font-montserrat text-lg font-semibold text-golden-yellow mb-3 text-center">Our Strategic Channel</h3>
                   <p className="text-sm text-white/90 leading-relaxed text-center">
                     We serve as a strategic channel, leveraging collective expertise from experiences with leading multinational corporations and local businesses to engage in direct dialogue, policy recommendations, and development activities with Vietnamese authorities.
@@ -193,7 +193,7 @@ export function WhoWeAreSection() {
                 <div className="hover-elevate border-l-4 border-l-vietnam-red bg-transparent">
                   <div className="p-4">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-vietnam-red/10 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-vietnam-red/10  flex items-center justify-center">
                         <Users className="h-5 w-5 text-vietnam-red" />
                       </div>
                       <div className="flex-1">
@@ -210,7 +210,7 @@ export function WhoWeAreSection() {
                 <div className="hover-elevate border-l-4 border-l-golden-yellow bg-transparent">
                   <div className="p-4">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-golden-yellow/10 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-golden-yellow/10  flex items-center justify-center">
                         <Building2 className="h-5 w-5 text-golden-yellow" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -227,7 +227,7 @@ export function WhoWeAreSection() {
                 <div className="hover-elevate border-l-4 border-l-jade-green bg-transparent">
                   <div className="p-4">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 bg-jade-green/10 rounded-lg flex items-center justify-center">
+                      <div className="flex-shrink-0 w-10 h-10 bg-jade-green/10  flex items-center justify-center">
                         <Globe className="h-5 w-5 text-jade-green" />
                       </div>
                       <div className="flex-1">

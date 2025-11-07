@@ -52,7 +52,7 @@ export function JoinMovementSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start text-left">
-                    <div className="w-4 h-4 bg-accent/10 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-4 h-4 bg-accent/10 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <Check className="h-2.5 w-2.5 text-accent" />
                     </div>
                     <span className="text-muted-foreground text-sm leading-tight">{benefit}</span>
