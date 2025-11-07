@@ -1,213 +1,108 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Globe, MessageSquare, Shield, Star, Building2, CheckCircle } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function MembershipAccessSection() {
-  const accessPoints = [
-    {
-      icon: Globe,
-      title: "Global Professional Network",
-      description: "Senior Vietnamese executives across 16+ hubs and multinational corporations. Singapore, Canada, US, Europe, Asia-Pacific.",
-      features: ["16+ International Hubs", "Multinational Corporation Executives", "Cross-Industry Leadership Network"]
-    },
-    {
-      icon: MessageSquare,
-      title: "Government Policy Influence & Sector Leadership",
-      description: "Direct policy recommendations with Vietnamese authorities under Resolution 36-NQ/TW.",
-      features: ["Platform access to Vietnamese policy-makers", "Sector Committee Leadership", "National Priority Development"]
-    }
-  ]
-
   return (
     <section className="relative overflow-hidden">
-      {/* Header Section */}
-      <div className="py-12 md:py-14 bg-gradient-to-b from-gray-50 to-white relative">
-        <div className="absolute inset-0 lotus-pattern opacity-30" />
-        <div className="container mx-auto px-4 relative">
+      {/* Top Section - Benefits */}
+      <div className="py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-3 heading-primary">
-                Membership by
-                <span className="block text-vietnam-red">Referral Only</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed body-text mb-4">
-                Access to strengthen independent Vietnam through professional networks and direct government influence.
-              </p>
-              <div className="bg-vietnam-red/10 border-l-4 border-vietnam-red rounded-lg p-4 max-w-2xl mx-auto">
-                <p className="text-lg font-semibold text-vietnam-red">
-                  Member referral required for all applications
+
+            {/* Three Column Benefits */}
+            <div className="grid md:grid-cols-3 gap-12 mb-20">
+
+              {/* Global Network */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">
+                  Global Professional Network
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Senior Vietnamese executives across 16+ international hubs and multinational corporations spanning Singapore, Canada, US, Europe, and Asia-Pacific
                 </p>
               </div>
+
+              {/* Government Access */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">
+                  Government Policy Influence
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Direct platform to Vietnamese policy-makers with policy recommendations under Resolution 36-NQ/TW
+                </p>
+              </div>
+
+              {/* Sector Leadership */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">
+                  Sector Committee Leadership
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Chair specialized committees in Finance, ESG, Technology, Education, and Governance to drive strategic development
+                </p>
+              </div>
+
             </div>
+
+            {/* Sector Committees Grid */}
+            <div className="bg-gray-50 rounded-lg p-8">
+              <h4 className="text-xl font-bold text-center text-foreground mb-6">
+                Five Strategic Sector Committees
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+                <div className="bg-white border-2 border-vietnam-red/20 rounded-lg px-4 py-3 text-center">
+                  <span className="text-base font-semibold text-vietnam-red">Finance</span>
+                </div>
+                <div className="bg-white border-2 border-vietnam-red/20 rounded-lg px-4 py-3 text-center">
+                  <span className="text-base font-semibold text-vietnam-red">ESG</span>
+                </div>
+                <div className="bg-white border-2 border-vietnam-red/20 rounded-lg px-4 py-3 text-center">
+                  <span className="text-base font-semibold text-vietnam-red">Technology</span>
+                </div>
+                <div className="bg-white border-2 border-vietnam-red/20 rounded-lg px-4 py-3 text-center">
+                  <span className="text-base font-semibold text-vietnam-red">Education</span>
+                </div>
+                <div className="bg-white border-2 border-vietnam-red/20 rounded-lg px-4 py-3 text-center col-span-2 md:col-span-1">
+                  <span className="text-base font-semibold text-vietnam-red">Governance</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
-      {/* Access Points */}
-      <div className="space-y-0 bg-gradient-to-b from-white to-gray-50">
-            {accessPoints.map((access, index) => {
-              const IconComponent = access.icon
-              const isEven = index % 2 === 0
-              const isFirst = index === 0
-              const isLast = index === accessPoints.length - 1
-
-              return (
-                <div key={index} className="relative bg-gradient-to-b from-white to-gray-50">
-                  <div
-                    className={`${isFirst ? 'py-8' : index % 2 === 1 ? 'py-16' : 'py-12'} relative w-full overflow-hidden ${
-                      isFirst
-                        ? 'bg-white'
-                        : index % 2 === 1
-                          ? 'bg-black diagonal-top-bottom'
-                          : 'bg-white diagonal-bottom'
-                    }`}
-                  >
-                    <div className="container mx-auto px-4 relative z-10">
-                      <div className={`flex flex-col ${
-                        isEven ? 'lg:flex-row' : 'lg:flex-row'
-                      } items-center gap-8 lg:gap-12 max-w-7xl mx-auto`}>
-                        {/* Visual Element */}
-                        <div className="flex-1 relative">
-                          <div className={`relative space-y-6 ${
-                            index % 2 === 1 ? 'text-white' : 'text-foreground'
-                          }`}>
-
-                            {/* Features List */}
-                            <div className="space-y-4">
-                              {access.features.map((feature, featureIndex) => (
-                                <div key={featureIndex} className="flex items-center gap-4">
-                                  <div className={`w-2 h-2 rounded-full ${
-                                    index % 2 === 1 ? 'bg-white/80' : 'bg-vietnam-red'
-                                  }`} />
-                                  <span className={`text-lg font-medium ${
-                                    index % 2 === 1 ? 'text-white/90' : 'text-muted-foreground'
-                                  }`}>{feature}</span>
-                                </div>
-                              ))}
-
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="flex-1 space-y-4">
-                          <div className="space-y-3">
-                            <h3 className={`text-2xl md:text-3xl font-bold heading-secondary leading-tight ${
-                              index % 2 === 1 ? 'text-white drop-shadow-lg' : 'text-foreground'
-                            }`}>
-                              {access.title}
-                            </h3>
-                            <p className={`text-base leading-relaxed body-text ${
-                              index % 2 === 1 ? 'text-white drop-shadow-md' : 'text-muted-foreground'
-                            }`}>
-                              {access.description}
-                            </p>
-
-                            {/* Sector Leadership Text */}
-                            {index === 1 && (
-                              <div className="bg-white/15 rounded-lg p-4 border border-white/30 shadow-lg">
-                                <h4 className="text-xl font-bold text-amber-300 mb-3 text-center">Five Strategic Sector Committees</h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-center">
-                                  <div className="bg-amber-300/20 rounded-lg p-2">
-                                    <span className="text-amber-300 font-bold text-base">Finance</span>
-                                  </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-2">
-                                    <span className="text-amber-300 font-bold text-base">ESG</span>
-                                  </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-2">
-                                    <span className="text-amber-300 font-bold text-base">Technology</span>
-                                  </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-2">
-                                    <span className="text-amber-300 font-bold text-base">Education</span>
-                                  </div>
-                                  <div className="bg-amber-300/20 rounded-lg p-2 md:col-span-2">
-                                    <span className="text-amber-300 font-bold text-base">Governance</span>
-                                  </div>
-                                </div>
-                                <p className="text-white/90 mt-3 text-center text-base">
-                                  Lead policy initiatives that strengthen independent Vietnam's strategic sectors
-                                </p>
-                              </div>
-                            )}
-                          </div>
-
-                          {/* Subtle accent line */}
-                          <div className={`w-24 h-1 rounded-full ${
-                            index % 2 === 1
-                              ? 'bg-white/60'
-                              : 'bg-vietnam-red/40'
-                          }`}></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-      </div>
-
-      {/* Referral Requirement */}
-      <div className="py-12 bg-gradient-to-b from-gray-50 to-white">
+      {/* Bottom Section - Application Requirements */}
+      <div className="py-20 md:py-24 bg-black diagonal-top relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-              {/* Left Content */}
-              <div className="flex-1 space-y-5">
-                <div className="space-y-4">
-                  <h3 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-                    Membership by
-                    <span className="block text-vietnam-red underline">Referral Only</span>
-                  </h3>
+          <div className="max-w-5xl mx-auto text-center">
 
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                    Specialized network through member referrals only. Committed Vietnamese professionals dedicated to Vietnam's strategic development.
-                  </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Referral-Only Membership
+            </h2>
 
-                  <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-                    Members sponsor applicants aligned with strengthening Vietnam through global expertise and policy engagement.
-                  </p>
-                </div>
+            <p className="text-xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+              AKB maintains a specialized network through member referrals, ensuring committed professionals dedicated to Vietnam's strategic development
+            </p>
 
-                <div className="pt-4">
-                  <a href="/contact" className="inline-block">
-                    <Button
-                      size="lg"
-                      className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-10 py-5 text-lg hover-elevate"
-                    >
-                      Apply for Membership
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-                  <p className="text-muted-foreground mt-3 text-sm">
-                    Include your referring member's information in your application
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Benefits */}
-              <div className="flex-1 space-y-5">
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-xl font-bold text-foreground">Verified Professional Network</h4>
-                    <p className="text-base text-muted-foreground">Senior Vietnamese executives across industries and continents</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-xl font-bold text-foreground">Sector Committee Leadership</h4>
-                    <p className="text-base text-muted-foreground">Chair committees in Finance, ESG, Technology, Education, Governance</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="w-2 h-2 bg-vietnam-red rounded-full"></div>
-                    <h4 className="text-xl font-bold text-foreground">Specialized Global Access</h4>
-                    <p className="text-base text-muted-foreground">16+ international hubs and multinational corporations</p>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-10 max-w-2xl mx-auto">
+              <p className="text-lg text-white/95 leading-relaxed">
+                All applications require sponsorship from a current AKB member. Include your referring member's information when applying.
+              </p>
             </div>
+
+            <a href="/contact">
+              <Button
+                size="lg"
+                className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-12 py-7 text-xl"
+              >
+                Submit Application
+                <ArrowRight className="ml-2 h-6 w-6" />
+              </Button>
+            </a>
+
           </div>
         </div>
       </div>

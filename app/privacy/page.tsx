@@ -70,12 +70,12 @@ export default function PrivacyPage() {
         <div className="relative z-10">
       <div className="container mx-auto px-4 max-w-7xl lg:px-6">
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-6">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
+            <Link href="/" className="hover:text-foreground transition-colors">HOME</Link>
+            <span>/</span>
+            <span className="text-foreground">PRIVACY POLICY</span>
+          </div>
           <h1 className="text-2xl lg:text-4xl font-light text-foreground mb-4">Privacy Policy</h1>
           <p className="text-muted-foreground text-sm lg:text-base">Last updated: {new Date().toLocaleDateString()}</p>
         </div>
@@ -202,7 +202,7 @@ export default function PrivacyPage() {
               <div className="mb-6">
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Image
-                    src="/AKB.png"
+                    src="/AKB2.png"
                     alt="AKB Logo"
                     width={56}
                     height={56}

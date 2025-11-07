@@ -9,8 +9,18 @@ import { FooterSection } from '@/components/footer-section';
 export default function ActivitiesPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Activities section */}
-      <div className="pt-20">
+      {/* Activities section with integrated breadcrumb */}
+      <div className="pt-32 bg-black">
+        <div className="container mx-auto px-4 pb-4">
+          <div className="max-w-7xl mx-auto">
+            {/* Breadcrumb */}
+            <div className="flex items-center gap-2 text-sm text-gray-400">
+              <Link href="/" className="hover:text-white transition-colors">HOME</Link>
+              <span>/</span>
+              <span className="text-white">ACTIVITIES</span>
+            </div>
+          </div>
+        </div>
         <ActivitiesSection />
       </div>
 

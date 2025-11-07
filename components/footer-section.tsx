@@ -14,10 +14,10 @@ export function FooterSection() {
             {/* Organization Info */}
             <div className="flex items-center gap-3">
               <Image
-                src="/AKB.png"
+                src="/AKB2.png"
                 alt="AKB Logo"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="object-contain"
               />
               <div>

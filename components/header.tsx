@@ -36,7 +36,7 @@ export function Header() {
 
   return (
     <CardNav
-      logo="/AKB.png"
+      logo="/AKB2.png"
       logoAlt="Association of Professional Kiều Bào"
       items={items}
       baseColor="#fff"
