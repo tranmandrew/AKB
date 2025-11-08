@@ -126,7 +126,7 @@ export default function TermsPage() {
                 <section id="membership" className="mb-8 lg:mb-12">
                   <h2 className="text-xl lg:text-2xl font-medium text-foreground mb-3 lg:mb-4">3. Membership Requirements</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
-                    Membership in the Association is exclusively limited to distinguished Vietnamese professionals (Kiều Bào) who meet our stringent criteria:
+                    Membership in the Association is limited to distinguished Vietnamese professionals (Kiều Bào) who meet our stringent criteria:
                   </p>
                   <ul className="list-disc list-inside text-muted-foreground mb-4 space-y-2 text-sm lg:text-base">
                     <li>Vietnamese origin and demonstrated commitment to Vietnam's development</li>
@@ -193,7 +193,7 @@ export default function TermsPage() {
                 <section id="networking" className="mb-8 lg:mb-12">
                   <h2 className="text-xl lg:text-2xl font-medium text-foreground mb-3 lg:mb-4">8. Networking Events</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
-                    The Association organizes exclusive networking events, policy forums, and government engagement sessions. Participation in these events requires:
+                    The Association organizes specialized networking events, policy forums, and government engagement sessions. Participation in these events requires:
                   </p>
                   <ul className="list-disc list-inside text-muted-foreground mb-4 space-y-2 text-sm lg:text-base">
                     <li>Advance registration and confirmation of attendance</li>

@@ -206,7 +206,7 @@ export function ActivitiesSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="heading-primary text-2xl md:text-3xl text-foreground mb-4">
-              Ready to Shape <span className="text-vietnam-red">Vietnam's Future</span>?
+              Contribute to <span className="text-vietnam-red">Vietnam's Future</span>?
             </h3>
             <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed">
               Participate with a network of professional leaders driving meaningful change for Vietnam's development on the global stage

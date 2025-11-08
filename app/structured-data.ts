@@ -55,7 +55,7 @@ export const professionalOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Association of Professional Kiều Bào",
-  "description": "Exclusive network of distinguished Vietnamese professionals from leading global corporations, united to strengthen Vietnam's economic development and global integration.",
+  "description": "Specialized network of distinguished Vietnamese professionals from leading global corporations, united to strengthen Vietnam's economic development and global integration.",
   "serviceType": "Professional Networking and Development",
   "provider": {
     "@type": "Organization",
