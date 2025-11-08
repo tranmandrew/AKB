@@ -47,7 +47,7 @@ export function ValuePropositionSection() {
               Our Strategic <span className="heading-primary text-accent">Value Proposition</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              As recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, Kiều Bào are a vital resource for Vietnam's national development through three key areas
+              Kiều Bào are recognized as a vital resource for Vietnam's national development through three key areas
             </p>
           </div>
 

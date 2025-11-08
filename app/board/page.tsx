@@ -40,7 +40,7 @@ const boardMembers: BoardMember[] = [
     countryCode: "US",
     initials: "TN",
     description: "American-Vietnamese expert on circular economy (ESG) with The Alliance to End Plastic Waste (AEPW), covering Vietnam, Thailand, and China. His work with the Minister of Agriculture and Environment (VN) and Multi-national Organization (World Bank, UNDP, ADB, WEF) deploy capital and support policies that promote green development.",
-    profileImage: "/profiles/tam-nguyen.jpg",
+    profileImage: "/Tam.jpg",
     linkedinUrl: "https://www.linkedin.com/in/tamnguyen/"
   },
   {
@@ -200,7 +200,7 @@ function AdvisoryCommitteeSection() {
       countryCode: "DK",
       initials: "DT",
       description: "Chairman & Founder of GROUP GLOBAL ONE, Danish Kieu Bao, with over 35 years in ICT, Telecom, and Energy experience in Denmark, Germany, America, and Vietnam.",
-      profileImage: "/profiles/dr-thao.jpg",
+      profileImage: "/Thao.jpg",
       linkedinUrl: "https://www.linkedin.com/in/drthaodhngo/"
     },
     {
@@ -211,7 +211,7 @@ function AdvisoryCommitteeSection() {
       countryCode: "US",
       initials: "TT",
       description: "FinTech innovator with 20+ years of experience building technology driven financial platforms across the U.S., UK, EU, Asia, and Vietnam. Co-Founder of Acquired.com and CTO of Qunit Group, a global Fintech Company.",
-      profileImage: "/profiles/thy-tang.jpg",
+      profileImage: "/Thy.jpg",
       linkedinUrl: "https://www.linkedin.com/in/thytang/"
     },
     {
@@ -222,7 +222,7 @@ function AdvisoryCommitteeSection() {
       countryCode: "SG",
       initials: "JN",
       description: "Senior Strategic Advisor for Hakuhodo/DAC, served as Chair of the Interactive Advertising Bureau (IAB) Singapore and also currently on the Advisory Board of the Mobile Marketing Association (APAC), he is an expert in data analytics and marketing in consumer brands, online behaviour,  and advertising technology.",
-      profileImage: "/profiles/thy-tang.jpg",
+      profileImage: "/Joe.jpg",
       linkedinUrl: "https://www.linkedin.com/in/joenguyenht/"
     }
   ]

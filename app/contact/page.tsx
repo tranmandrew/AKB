@@ -36,7 +36,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Contact header with diagonal theme */}
-      <div className="relative py-12 pt-32 pb-16 overflow-hidden bg-black" style={{
+      <div className="relative pt-32 pb-16 overflow-hidden bg-black" style={{
         clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%)'
       }}>
         <div className="absolute inset-0 opacity-10" style={{
@@ -44,13 +44,14 @@ export default function ContactPage() {
           backgroundSize: '100px 100px'
         }}></div>
         <div className="relative z-10">
-          <div className="container mx-auto px-4 max-w-6xl">
+          <div className="container mx-auto px-4">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
+            <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
               <Link href="/" className="hover:text-white transition-colors">HOME</Link>
               <span>/</span>
               <span className="text-white">CONTACT</span>
             </div>
+            <div className="max-w-6xl mx-auto">
             <h1 className="heading-primary text-3xl md:text-4xl text-white mb-3">Get in Touch</h1>
             <p className="text-base text-white/90">
               Connect with AKB leadership for membership inquiries and strategic partnerships.
@@ -58,6 +59,7 @@ export default function ContactPage() {
             <p className="text-sm text-white/70 mt-1">
               Response within 48 hours • Professional guidance
             </p>
+            </div>
           </div>
         </div>
       </div>

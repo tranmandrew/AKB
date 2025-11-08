@@ -39,7 +39,7 @@ export function StrategicApproachSection() {
               Our Mandate: The Pillars of <span className="heading-primary text-accent">National Unity</span>
             </h2>
             <p className="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Our association operates in alignment with the Vietnamese government's landmark <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>. This policy establishes the foundational principles for engaging the Kiều Bào community as a vital component of the nation's future.
+              Our association operates in alignment with Vietnamese government policy recognizing Kiều Bào as an integral part of the national community and vital to the nation's future development.
             </p>
           </div>
 

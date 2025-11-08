@@ -182,7 +182,7 @@ export function OpportunitySection() {
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             Vietnam's rapid economic growth and global integration creates unprecedented opportunities for international
-            expertise and investment. Government <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip> recognizes Kiều Bào as an "inseparable part of
+            expertise and investment. Kiều Bào are recognized as an "inseparable part of
             Vietnamese national community."
           </p>
         </div>

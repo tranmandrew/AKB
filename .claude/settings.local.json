@@ -21,7 +21,11 @@
       "Bash(git checkout:*)",
       "Bash(pnpm install:*)",
       "WebFetch(domain:www.linkedin.com)",
-      "WebFetch(domain:vn.linkedin.com)"
+      "WebFetch(domain:vn.linkedin.com)",
+      "Bash(node -c:*)",
+      "Bash(if exist .next rmdir /s /q .next)",
+      "Bash(sort:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

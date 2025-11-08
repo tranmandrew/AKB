@@ -1,29 +1,27 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Linkedin, Instagram, Facebook } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { ResolutionTooltip } from '@/components/resolution-tooltip';
+import { FooterSection } from '@/components/footer-section';
+
+const SECTIONS = [
+  { id: 'collection', title: 'Information Collection' },
+  { id: 'usage', title: 'Information Usage' },
+  { id: 'sharing', title: 'Information Sharing' },
+  { id: 'government', title: 'Government Relations' },
+  { id: 'security', title: 'Data Security' },
+  { id: 'transfers', title: 'International Transfers' },
+  { id: 'rights', title: 'Your Privacy Rights' },
+  { id: 'cookies', title: 'Cookie Policy' },
+  { id: 'retention', title: 'Data Retention' },
+  { id: 'gdpr', title: 'GDPR Compliance' },
+  { id: 'changes', title: 'Policy Changes' },
+  { id: 'contact', title: 'Contact Information' },
+];
 
 export default function PrivacyPage() {
   const [activeSection, setActiveSection] = useState('collection');
-
-  const sections = [
-    { id: 'collection', title: 'Information Collection' },
-    { id: 'usage', title: 'Information Usage' },
-    { id: 'sharing', title: 'Information Sharing' },
-    { id: 'government', title: 'Government Relations' },
-    { id: 'security', title: 'Data Security' },
-    { id: 'transfers', title: 'International Transfers' },
-    { id: 'rights', title: 'Your Privacy Rights' },
-    { id: 'cookies', title: 'Cookie Policy' },
-    { id: 'retention', title: 'Data Retention' },
-    { id: 'gdpr', title: 'GDPR Compliance' },
-    { id: 'changes', title: 'Policy Changes' },
-    { id: 'contact', title: 'Contact Information' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +32,11 @@ export default function PrivacyPage() {
       // Check if we're at the bottom of the page
       if (window.scrollY + windowHeight >= documentHeight - 50) {
         // Set to the last section when at bottom
-        setActiveSection(sections[sections.length - 1].id);
+        setActiveSection(SECTIONS[SECTIONS.length - 1].id);
         return;
       }
 
-      for (const section of sections) {
+      for (const section of SECTIONS) {
         const element = document.getElementById(section.id);
         if (element) {
           const { offsetTop, offsetHeight } = element;
@@ -52,7 +50,7 @@ export default function PrivacyPage() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [sections]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -61,32 +59,33 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Professional privacy policy header background */}
-      <div className="relative py-12 pt-32 overflow-hidden">
+      <div className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-emerald-900/5 to-blue-900/5"></div>
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.05'%3E%3Cpath d='M20 20h40v40H20z' stroke='%23059669' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '80px 80px'
         }}></div>
         <div className="relative z-10">
-      <div className="container mx-auto px-4 max-w-7xl lg:px-6">
+      <div className="container mx-auto px-4">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <Link href="/" className="hover:text-white transition-colors">HOME</Link>
+          <span>/</span>
+          <span className="text-white">PRIVACY POLICY</span>
+        </div>
+
         <div className="mb-8">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-            <Link href="/" className="hover:text-foreground transition-colors">HOME</Link>
-            <span>/</span>
-            <span className="text-foreground">PRIVACY POLICY</span>
-          </div>
           <h1 className="text-2xl lg:text-4xl font-light text-foreground mb-4">Privacy Policy</h1>
           <p className="text-muted-foreground text-sm lg:text-base">Last updated: {new Date().toLocaleDateString()}</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          <div className="lg:w-80 lg:shrink-0">
-            <div className="lg:sticky lg:top-8 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <aside className="lg:w-80 lg:shrink-0">
+            <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
               <div className="bg-card border border-border rounded-lg p-4 lg:p-6">
                 <h3 className="font-medium text-foreground mb-4">Table of Contents</h3>
                 <nav className="space-y-2">
-                  {sections.map((section) => (
+                  {SECTIONS.map((section) => (
                     <button
                       key={section.id}
                       onClick={() => scrollToSection(section.id)}
@@ -192,82 +191,9 @@ export default function PrivacyPage() {
         </div>
       </div>
       </div>
-
-      {/* Footer */}
-      <div className="mt-16 pt-8 border-t border-border bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8">
-              {/* Organization Info */}
-              <div className="mb-6">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Image
-                    src="/AKB2.png"
-                    alt="AKB Logo"
-                    width={56}
-                    height={56}
-                    className="object-contain"
-                  />
-                  <h4 className="font-semibold text-foreground">Association of Professional Kiều Bào</h4>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                  Connecting Vietnamese professionals worldwide to advance Vietnam's development through expertise and global partnerships.
-                </p>
-              </div>
-
-              {/* Contact Button */}
-              <div className="mb-6">
-                <Link href="/contact">
-                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    Contact Us
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Social Media Links */}
-              <div>
-                <p className="text-sm font-medium text-foreground mb-3">Follow Our Journey</p>
-                <div className="flex justify-center gap-3">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-9 h-9 bg-singapore-blue/10 hover:bg-singapore-blue/20 rounded-lg text-singapore-blue hover:text-singapore-blue/80 transition-all duration-200 hover:scale-105"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-9 h-9 bg-pink-500/10 hover:bg-pink-500/20 rounded-lg text-pink-500 hover:text-pink-500/80 transition-all duration-200 hover:scale-105"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center w-9 h-9 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg text-blue-600 hover:text-blue-600/80 transition-all duration-200 hover:scale-105"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Copyright */}
-            <div className="text-center pt-6 border-t border-border">
-              <p className="text-muted-foreground text-sm mb-2">
-                © 2025 Association of Professional Kiều Bào. All rights reserved.
-              </p>
-              <div className="flex justify-center gap-4 text-xs text-muted-foreground">
-                <a href="/terms" className="hover:text-vietnam-red transition-colors">Terms of Service</a>
-                <span>•</span>
-                <a href="/privacy" className="hover:text-vietnam-red transition-colors">Privacy Policy</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      </div>
+
+      <FooterSection />
     </main>
   );
 }

@@ -22,15 +22,17 @@ export function JoinMovementSection() {
 
   return (
     <section id="join" className="relative py-16 md:py-20 overflow-hidden pt-32 z-10 scroll-mt-24">
-      {/* Hanoi Background Image */}
+      {/* Ha Long Bay Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/HanoiStock.jpeg"
-          alt="Hanoi cityscape"
+          src="/HaLong2.png"
+          alt="Ha Long Bay"
           fill
           className="object-cover"
           loading="lazy"
           sizes="100vw"
+          quality={75}
+          priority={false}
         />
       </div>
 
