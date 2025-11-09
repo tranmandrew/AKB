@@ -38,9 +38,6 @@ export function StrategicApproachSection() {
             <h2 className="heading-primary text-3xl md:text-5xl text-white mb-4 text-balance">
               Our Mandate: The Pillars of <span className="heading-primary text-accent">National Unity</span>
             </h2>
-            <p className="text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Our association operates in alignment with Vietnamese government policy recognizing Kiều Bào as an integral part of the national community and vital to the nation's future development.
-            </p>
           </div>
 
           {/* Pillars Container - Perfectly Centered */}

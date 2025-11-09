@@ -34,11 +34,11 @@ export function MembershipHeroSection() {
 
         <div className="max-w-5xl space-y-8">
           <div className="space-y-6">
-            <h1 className="heading-primary text-4xl md:text-5xl text-white mb-6 font-bold tracking-tight">
-              Membership
+            <h1 className="heading-primary text-4xl md:text-6xl text-white mb-6 font-bold tracking-tight">
+              Founding Membership
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              Be a part of a cohort of like-minded Kieu Bao and leaders working to support Vietnam's strategic development through policy influence, investments, capacity building and international relations.
+              Join an exclusive network of Vietnamese professional leaders shaping Vietnam's future on the global stage. Be part of a movement that connects expertise, influence, and opportunity.
             </p>
           </div>
 

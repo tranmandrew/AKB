@@ -11,7 +11,8 @@ export function Header() {
       textColor: "#fff",
       links: [
         { label: "Who We Are", href: "/#who-we-are", ariaLabel: "About our organization" },
-        { label: "Global Coverage", href: "/#geographic-coverage", ariaLabel: "Our global presence" }
+        { label: "Global Coverage", href: "/#geographic-coverage", ariaLabel: "Our global presence" },
+        { label: "Our Mandate", href: "/#strategy", ariaLabel: "Our mandate and pillars" }
       ]
     },
     {
@@ -21,7 +22,7 @@ export function Header() {
       links: [
         { label: "Membership", href: "/membership", ariaLabel: "Join our network" },
         { label: "Our Activities", href: "/activities", ariaLabel: "Our strategic activities" },
-        { label: "Board", href: "/board", ariaLabel: "Board members" }
+        { label: "Board & Advisory", href: "/board", ariaLabel: "Board and advisory members" }
       ]
     },
     {

@@ -7,79 +7,47 @@ import Image from "next/image"
 
 export function MembershipAccessSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-visible">
 
-      {/* Benefits Section */}
-      <div className="py-32 bg-white">
+      {/* Three Benefits Section */}
+      <div className="relative py-32 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-20">
+          <div className="max-w-6xl mx-auto">
 
             {/* Three Benefits Grid */}
-            <div className="grid md:grid-cols-3 gap-16">
+            <div className="grid md:grid-cols-3 gap-8">
 
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-foreground">
-                  Global Network
+              {/* Card 1: Government Access */}
+              <div className="bg-white border border-gray-200 group hover:shadow-lg transition-all duration-300 rounded-lg p-8 text-center h-full flex flex-col">
+                <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-vietnam-red mb-4 leading-tight">
+                  Government Access
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Senior Vietnamese executives across 16+ international hubs spanning Singapore, Canada, US, Europe, and Asia-Pacific
+                <p className="text-gray-700 leading-relaxed text-base flex-grow">
+                  Direct dialogue with Vietnamese ministries and policy-makers to influence development priorities
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-foreground">
-                  Policy Influence
+              {/* Card 2: Elite Network */}
+              <div className="bg-white border border-gray-200 group hover:shadow-lg transition-all duration-300 rounded-lg p-8 text-center h-full flex flex-col">
+                <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-vietnam-red mb-4 leading-tight">
+                  Elite Network
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Direct platform to Vietnamese policy-makers for strategic recommendations and national development initiatives
+                <p className="text-gray-700 leading-relaxed text-base flex-grow">
+                  Access to a curated network of senior professionals across leading global companies and institutions
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-foreground">
-                  Sector Leadership
+              {/* Card 3: Founding Legacy */}
+              <div className="bg-white border border-gray-200 group hover:shadow-lg transition-all duration-300 rounded-lg p-8 text-center h-full flex flex-col">
+                <h3 className="font-montserrat text-2xl md:text-3xl font-bold text-vietnam-red mb-4 leading-tight">
+                  Founding Legacy
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Chair specialized committees driving Finance, ESG, Technology, Education, and Governance initiatives
+                <p className="text-gray-700 leading-relaxed text-base flex-grow">
+                  Be recognized as a founding member shaping the future of Vietnamese diaspora leadership
                 </p>
               </div>
 
             </div>
-
-            {/* Sector Committees */}
-            <div className="border-t border-gray-200 pt-16">
-              <h4 className="text-2xl font-bold text-center text-foreground mb-12">
-                Strategic Sector Committees
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                {[
-                  { name: 'Finance', image: '/Finance.png' },
-                  { name: 'ESG', image: '/ESG.png' },
-                  { name: 'Technology', image: '/Conference.webp' },
-                  { name: 'Education', image: '/Government-of-Vietnam-banner.jpg' },
-                  { name: 'Governance', image: '/speech.png' }
-                ].map((sector) => (
-                  <Card key={sector.name} className="overflow-hidden border-2 border-gray-200 hover:border-vietnam-red transition-all duration-300 hover:shadow-lg">
-                    <CardContent className="p-0">
-                      {/* Image Container */}
-                      <div className="relative aspect-square w-full bg-gray-100">
-                        <Image
-                          src={sector.image}
-                          alt={sector.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      {/* Label */}
-                      <div className="p-4 text-center bg-white">
-                        <h5 className="text-lg font-semibold text-vietnam-red">{sector.name}</h5>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -87,14 +55,37 @@ export function MembershipAccessSection() {
       {/* Application Section */}
       <div className="py-32 bg-black diagonal-top">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div className="max-w-4xl mx-auto space-y-12">
 
             <div className="space-y-8">
-              <h2 className="text-5xl md:text-6xl font-bold text-white">
-                Referral Only
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                Who Should Apply?
               </h2>
+              <div className="space-y-6">
+                <p className="text-xl text-white/90 leading-relaxed">
+                  If you're a Vietnamese professional with:
+                </p>
+                <ul className="space-y-4 text-lg text-white/80">
+                  <li className="flex items-start gap-4">
+                    <span className="text-vietnam-red font-bold text-2xl mt-1">•</span>
+                    <span>Senior-level corporate experience</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-vietnam-red font-bold text-2xl mt-1">•</span>
+                    <span>Expertise relevant to Vietnam's development</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-vietnam-red font-bold text-2xl mt-1">•</span>
+                    <span>Commitment to contributing time and knowledge</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="text-vietnam-red font-bold text-2xl mt-1">•</span>
+                    <span>Referral from current member</span>
+                  </li>
+                </ul>
+              </div>
 
-              <p className="text-2xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-white/80 leading-relaxed pt-6 border-t border-white/20">
                 Membership requires sponsorship from a current AKB member to ensure alignment with Vietnam's strategic development goals
               </p>
             </div>
@@ -102,9 +93,9 @@ export function MembershipAccessSection() {
             <a href="/contact">
               <Button
                 size="lg"
-                className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-12 py-7 text-lg font-semibold"
+                className="bg-vietnam-red hover:bg-vietnam-red/90 text-white px-8 py-4 text-lg font-semibold"
               >
-                Submit Application
+                Apply Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>

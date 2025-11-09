@@ -1,6 +1,6 @@
 'use client'
 
-import { Handshake, Megaphone, Settings, Flag, Target, Users } from "lucide-react"
+import { Handshake, Megaphone, Settings, Flag, Target, Users, Globe, Lightbulb, Rocket } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
@@ -13,7 +13,7 @@ export function ActivitiesSection() {
     {
       icon: Handshake,
       title: "Strategic Policy Engagement",
-      description: "Direct dialogue with Vietnamese Ministries and government departments. Our members contribute new ideas, investment opportunities, and policy recommendations to champion Vietnam's strategic priorities and facilitate easier Kiều Bào integration.",
+      description: "High-level dialogue with Vietnamese Ministries and government departments, facilitating substantive knowledge sharing from our members' global expertise. We advocate for policies that champion Vietnam's strategic priorities and foster greater integration for Kiều Bào contributing to the nation.",
       accent: "vietnam-red",
       image: "/Government-of-Vietnam-banner.jpg"
     },
@@ -86,11 +86,11 @@ export function ActivitiesSection() {
   return (
     <>
       {/* Main Activities Section */}
-      <section id="activities" className="relative py-16 md:py-24 bg-black">
+      <section id="activities" className="relative py-0 md:py-0 bg-black -mt-8 md:-mt-12">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             {/* Header Section */}
-            <div className="text-center mb-12 md:mb-20">
+            <div className="text-center mb-8 md:mb-8">
               <h2 className="heading-primary text-3xl md:text-5xl text-white mb-4 text-balance">
                 Six Core <span className="text-vietnam-red">Activities</span>
               </h2>
@@ -104,7 +104,7 @@ export function ActivitiesSection() {
             {/* Desktop: Sticky Image + Scrolling Content Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               {/* Left: Scrolling Content */}
-              <div className="space-y-12 md:space-y-16 lg:space-y-20">
+              <div className="space-y-12 md:space-y-12 lg:space-y-12">
                 {activities.map((activity, index) => {
                   const IconComponent = activity.icon
                   const accentColor = activity.accent
@@ -115,27 +115,27 @@ export function ActivitiesSection() {
                       ref={(el) => {
                         activityRefs.current[index] = el
                       }}
-                      className="scroll-mt-32"
+                      className="scroll-mt-32 lg:h-[calc(100vh-12rem)]"
                     >
-                      <Card className={`border-2 transition-all duration-500 ${
+                      <Card className={`border-2 transition-all duration-500 h-full ${
                         activeIndex === index
                           ? 'border-vietnam-red shadow-xl scale-[1.02]'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}>
-                        <CardContent className="p-6 md:p-10">
+                        <CardContent className="p-6 md:p-10 h-full flex flex-col">
                           {/* Number Badge */}
                           <div className="flex items-center gap-4 mb-6">
-                            <div className={`w-14 h-14 md:w-16 md:h-16 bg-${accentColor}/10 rounded-2xl flex items-center justify-center border-2 border-${accentColor}/30 transition-all duration-300 ${
-                              activeIndex === index ? `bg-${accentColor}/20 border-${accentColor}` : ''
+                            <div className={`w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/10 rounded-2xl flex items-center justify-center border-2 border-vietnam-red/30 transition-all duration-300 ${
+                              activeIndex === index ? `bg-vietnam-red/20 border-vietnam-red` : ''
                             }`}>
-                              <span className={`text-2xl md:text-3xl font-bold text-${accentColor}`}>
+                              <span className={`text-2xl md:text-3xl font-bold text-vietnam-red`}>
                                 {index + 1}
                               </span>
                             </div>
-                            <div className={`flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-${accentColor}/10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                              activeIndex === index ? `bg-${accentColor}/20` : ''
+                            <div className={`flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-vietnam-red/10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                              activeIndex === index ? `bg-vietnam-red/20` : ''
                             }`}>
-                              <IconComponent className={`h-6 w-6 md:h-7 md:w-7 text-${accentColor}`} />
+                              <IconComponent className={`h-6 w-6 md:h-7 md:w-7 text-vietnam-red`} />
                             </div>
                           </div>
 
@@ -196,6 +196,66 @@ export function ActivitiesSection() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Network Highlights Section */}
+      <section className="relative bg-black py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1: Distinguished Global Network */}
+              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                  <div className="flex justify-center mb-6">
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
+                      <Globe className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
+                    </div>
+                  </div>
+                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
+                    A Distinguished Global Network
+                  </h3>
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
+                    Our members are accomplished leaders and professionals from key international hubs from North America, Western & Eastern Europe, and the Asia Pacific regions.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Card 2: Expertise Forged at Industry Leaders */}
+              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                  <div className="flex justify-center mb-6">
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
+                      <Lightbulb className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
+                    </div>
+                  </div>
+                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
+                    Expertise Forged at Industry Leaders
+                  </h3>
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
+                    We bring a wealth of collective knowledge from experiences at world-renowned corporations across technology, ESG, finance, consulting, and various other industry sectors.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Card 3: A Catalyst for National Progress */}
+              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
+                  <div className="flex justify-center mb-6">
+                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
+                      <Rocket className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
+                    </div>
+                  </div>
+                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
+                    A Catalyst for National Progress
+                  </h3>
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
+                    We aim to act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building to accelerate Vietnam's economic sovereignty and global competitiveness.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

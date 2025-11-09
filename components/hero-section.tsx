@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Globe, Users, TrendingUp } from "lucide-react"
 import Image from "next/image"
 import { Globe3D } from "./globe-3d"
-import { CorporateLogos } from "./corporate-logos"
 import { useEffect, useRef } from "react"
 
 export function HeroSection() {
