@@ -23,7 +23,7 @@ export function MembershipAccessSection() {
                   Government Access
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-base flex-grow">
-                  Direct dialogue with Vietnamese ministries and policy-makers to influence development priorities
+                  Platform access to Vietnamese policy-makers to influence development priorities
                 </p>
               </div>
 

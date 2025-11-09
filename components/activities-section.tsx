@@ -13,7 +13,7 @@ export function ActivitiesSection() {
     {
       icon: Handshake,
       title: "Strategic Policy Engagement",
-      description: "High-level dialogue with Vietnamese Ministries and government departments, facilitating substantive knowledge sharing from our members' global expertise. We advocate for policies that champion Vietnam's strategic priorities and foster greater integration for Kiều Bào contributing to the nation.",
+      description: "Platform access to Vietnamese policy-makers, facilitating substantive knowledge sharing from our members' global expertise. We advocate for policies that champion Vietnam's strategic priorities and foster greater integration for Kiều Bào contributing to the nation.",
       accent: "vietnam-red",
       image: "/Government-of-Vietnam-banner.jpg"
     },
@@ -196,66 +196,6 @@ export function ActivitiesSection() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Network Highlights Section */}
-      <section className="relative bg-black py-16 md:py-24 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Card 1: Distinguished Global Network */}
-              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
-                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
-                      <Globe className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
-                    </div>
-                  </div>
-                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
-                    A Distinguished Global Network
-                  </h3>
-                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
-                    Our members are accomplished leaders and professionals from key international hubs from North America, Western & Eastern Europe, and the Asia Pacific regions.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Card 2: Expertise Forged at Industry Leaders */}
-              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
-                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
-                      <Lightbulb className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
-                    </div>
-                  </div>
-                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
-                    Expertise Forged at Industry Leaders
-                  </h3>
-                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
-                    We bring a wealth of collective knowledge from experiences at world-renowned corporations across technology, ESG, finance, consulting, and various other industry sectors.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Card 3: A Catalyst for National Progress */}
-              <Card className="bg-white/10 border border-white/20 group hover:bg-white/15 hover:scale-105 transition-all duration-300">
-                <CardContent className="p-6 md:p-8 text-center h-full flex flex-col">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/20 rounded-xl flex items-center justify-center group-hover:bg-vietnam-red/30 transition-all duration-300">
-                      <Rocket className="h-7 w-7 md:h-8 md:w-8 text-vietnam-red" />
-                    </div>
-                  </div>
-                  <h3 className="heading-secondary text-lg md:text-xl font-semibold text-white mb-3 leading-tight">
-                    A Catalyst for National Progress
-                  </h3>
-                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
-                    We aim to act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building to accelerate Vietnam's economic sovereignty and global competitiveness.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
