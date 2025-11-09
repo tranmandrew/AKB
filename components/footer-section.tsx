@@ -4,8 +4,43 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Linkedin, Instagram, Facebook } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
 
 export function FooterSection() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setMessage('Subscribed!');
+        setEmail('');
+      } else {
+        setMessage(result.error || 'Error');
+      }
+    } catch (error) {
+      setMessage('Error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setMessage(''), 3000);
+    }
+  };
+
   return (
     <section className="py-8 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -62,12 +97,25 @@ export function FooterSection() {
             {/* Newsletter */}
             <div>
               <h5 className="font-montserrat text-sm font-medium text-foreground mb-2">Newsletter</h5>
-              <div className="flex gap-2">
-                <Input placeholder="Enter email" className="flex-1 h-8 text-xs" />
-                <Button size="sm" className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground h-8 px-3 text-xs">
-                  Subscribe
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <Input
+                  type="email"
+                  placeholder="Enter email"
+                  className="flex-1 h-8 text-xs"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isSubmitting}
+                  required
+                />
+                <Button
+                  type="submit"
+                  size="sm"
+                  className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground h-8 px-3 text-xs disabled:opacity-50"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? '...' : message || 'Subscribe'}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
 

@@ -11,26 +11,63 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
 
     const formData = new FormData(e.currentTarget);
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent('AKB Membership Application');
-    const body = encodeURIComponent(
-      `Name: ${formData.get('firstName')} ${formData.get('lastName')}\n` +
-      `Email: ${formData.get('email')}\n` +
-      `Phone: ${formData.get('phone')}\n` +
-      `LinkedIn Profile: ${formData.get('linkedInProfile')}\n\n` +
-      `Industry: ${formData.get('industry')}\n` +
-      `Area of Interest: ${formData.get('areaOfInterest')}\n` +
-      `Overseas Experience: ${formData.get('overseasExperience')}\n\n` +
-      `Referral Member: ${formData.get('referralMember')}\n\n` +
-      `Message:\n${formData.get('message')}`
-    );
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      linkedInProfile: formData.get('linkedInProfile'),
+      industry: formData.get('industry'),
+      areaOfInterest: formData.get('areaOfInterest'),
+      overseasExperience: formData.get('overseasExperience'),
+      referralMember: formData.get('referralMember'),
+      message: formData.get('message'),
+    };
 
-    window.location.href = `mailto:kimble@akieubao.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: result.message || 'Application submitted successfully!',
+        });
+        e.currentTarget.reset();
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: result.error || 'Failed to submit application. Please try again.',
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -230,12 +267,26 @@ export default function ContactPage() {
             </div>
           </div>
 
+          {/* Status Messages */}
+          {submitStatus.type && (
+            <div
+              className={`mt-6 p-4 rounded-lg ${
+                submitStatus.type === 'success'
+                  ? 'bg-green-50 border border-green-200 text-green-800'
+                  : 'bg-red-50 border border-red-200 text-red-800'
+              }`}
+            >
+              <p className="text-sm font-medium">{submitStatus.message}</p>
+            </div>
+          )}
+
           <div className="mt-8">
             <Button
               type="submit"
-              className="w-full font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white py-6 text-lg"
+              disabled={isSubmitting}
+              className="w-full font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Inquiry
+              {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
           </div>
         </form>

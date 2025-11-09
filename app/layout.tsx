@@ -90,9 +90,6 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png' }
     ]
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 }
 
 export default function RootLayout({
