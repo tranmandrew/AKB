@@ -227,7 +227,7 @@ export function GeographicCoverageSection() {
                 Independent Vietnam's Moment
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Vietnam's rapid economic growth and global integration creates unprecedented opportunities for international expertise and investment. Kiều Bào are recognized as an "inseparable part of Vietnamese national community."
+                Vietnam's rapid economic growth and global integration creates unprecedented opportunities for international expertise and investment.
               </p>
             </div>
 
