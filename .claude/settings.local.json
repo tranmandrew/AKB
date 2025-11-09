@@ -25,7 +25,9 @@
       "Bash(node -c:*)",
       "Bash(if exist .next rmdir /s /q .next)",
       "Bash(sort:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(test:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

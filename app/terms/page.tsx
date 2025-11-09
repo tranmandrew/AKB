@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { ResolutionTooltip } from '@/components/resolution-tooltip';
 import { FooterSection } from '@/components/footer-section';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 
 const SECTIONS = [
   { id: 'acceptance', title: 'Acceptance of Terms' },
@@ -21,38 +21,7 @@ const SECTIONS = [
 ];
 
 export default function TermsPage() {
-  const [activeSection, setActiveSection] = useState('acceptance');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      if (window.scrollY + windowHeight >= documentHeight - 50) {
-        setActiveSection(SECTIONS[SECTIONS.length - 1].id);
-        return;
-      }
-
-      for (const section of SECTIONS) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section.id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { activeSection, scrollToSection } = useScrollSpy(SECTIONS);
 
   return (
     <main className="min-h-screen bg-background">
@@ -116,7 +85,7 @@ export default function TermsPage() {
                     The Association of Professional Kiều Bào is a distinguished organization formally recognized by <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip> of the Politburo as an integral part of the Vietnamese national community. Our mission is to connect global Vietnamese excellence with Vietnam's strategic development.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
-                    We operate through 13 international hubs, bringing together Vietnamese professionals from leading multinational corporations including Google, Mastercard, UBS, Standard Chartered, Amazon, Microsoft, and other Fortune 500 companies.
+                    Our members are based across 16+ countries, bringing together Vietnamese professionals from leading multinational corporations including Google, Mastercard, UBS, Standard Chartered, Amazon, Microsoft, and other Fortune 500 companies.
                   </p>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
                     Our organization serves as a vital bridge for Vietnam's international affairs, leveraging collective expertise for Vietnam's robust growth and stability through three key resources: economic development, intellectual capital, and soft power diplomacy.
@@ -236,12 +205,12 @@ export default function TermsPage() {
                     For questions about these Terms of Service, membership applications, or Association activities, please contact us:
                   </p>
                   <ul className="list-none text-muted-foreground mb-4 space-y-2 text-sm lg:text-base">
-                    <li><strong>Email:</strong> info@akieubao.com</li>
+                    <li><strong>Email:</strong> kimble@akieubao.com</li>
                     <li><strong>Website:</strong> AKieuBao.com</li>
-                    <li><strong>LinkedIn:</strong></li>
+                    <li><strong>LinkedIn:</strong> Association of Professional Kiều Bào</li>
                   </ul>
                   <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
-                   
+                    We maintain presence across 16+ countries and welcome inquiries from qualified Vietnamese professionals worldwide.
                   </p>
                 </section>
               </div>

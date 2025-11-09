@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { ResolutionTooltip } from '@/components/resolution-tooltip';
 import { FooterSection } from '@/components/footer-section';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
 
 const SECTIONS = [
   { id: 'collection', title: 'Information Collection' },
@@ -21,44 +21,10 @@ const SECTIONS = [
 ];
 
 export default function PrivacyPage() {
-  const [activeSection, setActiveSection] = useState('collection');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      // Check if we're at the bottom of the page
-      if (window.scrollY + windowHeight >= documentHeight - 50) {
-        // Set to the last section when at bottom
-        setActiveSection(SECTIONS[SECTIONS.length - 1].id);
-        return;
-      }
-
-      for (const section of SECTIONS) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section.id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { activeSection, scrollToSection } = useScrollSpy(SECTIONS);
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Professional privacy policy header background */}
       <div className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 via-emerald-900/5 to-blue-900/5"></div>
         <div className="absolute inset-0 opacity-20" style={{
@@ -67,7 +33,6 @@ export default function PrivacyPage() {
         }}></div>
         <div className="relative z-10">
           <div className="container mx-auto px-4">
-            {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
               <Link href="/" className="hover:text-white transition-colors">HOME</Link>
               <span>/</span>
@@ -142,7 +107,7 @@ export default function PrivacyPage() {
                 <section id="transfers" className="mb-8 lg:mb-12">
                   <h2 className="text-xl lg:text-2xl font-medium text-foreground mb-3 lg:mb-4">6. International Transfers</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
-                    Given our global network spanning 13 international hubs, your information may be transferred internationally.
+                    Given our global network spanning 16+ countries, your information may be transferred internationally.
                   </p>
                 </section>
 
@@ -184,7 +149,7 @@ export default function PrivacyPage() {
                 <section id="contact" className="mb-8 lg:mb-12">
                   <h2 className="text-xl lg:text-2xl font-medium text-foreground mb-3 lg:mb-4">12. Contact Information</h2>
                   <p className="text-muted-foreground leading-relaxed mb-4 text-sm lg:text-base">
-                    For questions about this Privacy Policy, please contact us at contact@akieubao.com.
+                    For questions about this Privacy Policy, please contact us at kimble@akieubao.com.
                   </p>
                 </section>
               </div>

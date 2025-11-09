@@ -96,7 +96,7 @@ export function ActivitiesSection() {
               </h2>
               <div className="max-w-3xl mx-auto">
                 <p className="text-base md:text-lg text-white/80 leading-relaxed">
-                  Serving as Vietnam's strategic channel for global expertise and professional excellence across critical development sectors
+                  Building a strategic channel for global Vietnamese expertise and professional excellence across critical development sectors
                 </p>
               </div>
             </div>

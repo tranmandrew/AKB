@@ -176,13 +176,13 @@ export function WhoWeAreSection() {
                   <span className="heading-secondary text-vietnam-red">Independent Vietnam</span>
                 </h2>
                 <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to serve as a strategic channel leveraging collective expertise to strengthen independent Vietnam's sovereignty, economic development, and global influence.
+                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to build and serve as a strategic channel leveraging collective expertise to strengthen independent Vietnam's sovereignty, economic development, and global influence.
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-md border border-white/20  p-6 max-w-4xl mx-auto">
                   <h3 className="font-montserrat text-lg font-semibold text-golden-yellow mb-3 text-center">Our Strategic Channel</h3>
                   <p className="text-sm text-white/90 leading-relaxed text-center">
-                    We serve as a strategic channel, leveraging collective expertise from experiences with leading multinational corporations and local businesses to engage in direct dialogue, policy recommendations, and development activities with Vietnamese authorities.
+                    We aim to serve as a strategic channel, leveraging collective expertise from experiences with leading multinational corporations and local businesses to engage in direct dialogue, policy recommendations, and development activities with Vietnamese authorities.
                   </p>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export function WhoWeAreSection() {
                       <div className="flex-1">
                         <h3 className="font-montserrat text-lg font-semibold text-white mb-2">A Catalyst for National Progress</h3>
                         <p className="text-sm text-white/80 leading-relaxed">
-                          We act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building to accelerate Vietnam's economic sovereignty and global competitiveness.
+                          We aim to act as a strategic channel—connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building to accelerate Vietnam's economic sovereignty and global competitiveness.
                         </p>
                       </div>
                     </div>

@@ -31,21 +31,27 @@ export function FooterSection() {
             {/* Social Links - Centered */}
             <div className="flex justify-center gap-3">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/akieubao"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/akieubao"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/akieubao"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
                 aria-label="Facebook"
               >

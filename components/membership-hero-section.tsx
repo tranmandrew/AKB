@@ -11,8 +11,8 @@ export function MembershipHeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Presidential Palace.webp"
-          alt="Vietnamese Presidential Palace"
+          src="/Pagoda.jpg"
+          alt="Vietnamese Pagoda"
           fill
           className="object-cover"
           priority

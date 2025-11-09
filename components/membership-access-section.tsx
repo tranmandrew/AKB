@@ -54,10 +54,10 @@ export function MembershipAccessSection() {
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
                   { name: 'Finance', image: '/Finance.png' },
-                  { name: 'ESG', image: '/committees/esg.jpg' },
-                  { name: 'Technology', image: '/committees/technology.jpg' },
-                  { name: 'Education', image: '/committees/education.jpg' },
-                  { name: 'Governance', image: '/committees/governance.jpg' }
+                  { name: 'ESG', image: '/ESG.png' },
+                  { name: 'Technology', image: '/Conference.png' },
+                  { name: 'Education', image: '/Government-of-Vietnam-banner.jpg' },
+                  { name: 'Governance', image: '/speech.png' }
                 ].map((sector) => (
                   <Card key={sector.name} className="overflow-hidden border-2 border-gray-200 hover:border-vietnam-red transition-all duration-300 hover:shadow-lg">
                     <CardContent className="p-0">
