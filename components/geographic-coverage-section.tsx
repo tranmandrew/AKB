@@ -135,7 +135,7 @@ export function GeographicCoverageSection() {
             Geographic Coverage
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Connecting Vietnamese professionals worldwide through our extensive network of Kiều Bào communities across 16+ countries.
+            Connecting Vietnamese professionals across 16+ countries worldwide.
           </p>
         </div>
 

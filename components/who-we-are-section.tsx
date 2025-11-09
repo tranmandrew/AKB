@@ -161,6 +161,7 @@ export function WhoWeAreSection() {
             className="object-cover grayscale"
             loading="lazy"
             sizes="100vw"
+            quality={60}
           />
         </div>
 
@@ -176,7 +177,7 @@ export function WhoWeAreSection() {
                   <span className="heading-secondary text-vietnam-red">Independent Vietnam</span>
                 </h2>
                 <p className="text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals. Our mission is to build and serve as a strategic channel leveraging collective expertise to strengthen independent Vietnam's sovereignty, economic development, and global influence.
+                  Officially recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite the world's leading Kiều Bào professionals to build a stronger, more independent, and prosperous Vietnam.
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-md border border-white/20  p-6 max-w-4xl mx-auto">

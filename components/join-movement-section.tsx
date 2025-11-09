@@ -31,7 +31,7 @@ export function JoinMovementSection() {
           className="object-cover"
           loading="lazy"
           sizes="100vw"
-          quality={75}
+          quality={60}
           priority={false}
         />
       </div>

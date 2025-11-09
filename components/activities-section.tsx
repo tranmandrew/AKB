@@ -13,7 +13,7 @@ export function ActivitiesSection() {
     {
       icon: Handshake,
       title: "Strategic Policy Engagement",
-      description: "We foster direct, high-level dialogue with Vietnamese Ministries and government departments. Our members contribute new ideas, investment opportunities, and policy recommendations to champion Vietnam's strategic priorities and facilitate easier integration for Kiều Bào.",
+      description: "Direct dialogue with Vietnamese Ministries and government departments. Our members contribute new ideas, investment opportunities, and policy recommendations to champion Vietnam's strategic priorities and facilitate easier Kiều Bào integration.",
       accent: "vietnam-red",
       image: "/Government-of-Vietnam-banner.jpg"
     },

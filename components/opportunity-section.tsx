@@ -38,11 +38,11 @@ export function OpportunitySection() {
     },
     {
       icon: Users,
-      value: "13",
-      targetValue: 13,
-      label: "International Hubs",
+      value: "16+",
+      targetValue: 16,
+      label: "Countries",
       description: "Global network of Vietnamese professionals",
-      suffix: ""
+      suffix: "+"
     },
   ]
 
@@ -178,7 +178,7 @@ export function OpportunitySection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="heading-primary text-3xl md:text-5xl text-foreground mb-6 text-balance">
-            Vietnam's Moment is <span className="heading-primary text-accent">Now</span>
+            <span className="heading-primary text-accent">Independent Vietnam's</span> Moment
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             Vietnam's rapid economic growth and global integration creates unprecedented opportunities for international

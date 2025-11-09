@@ -8,19 +8,19 @@ export function StrategicApproachSection() {
       icon: Flag,
       title: "An Integral Part of the Nation",
       description:
-        "The government officially recognizes the Kiều Bào community as \"an inseparable part of the Vietnamese national community,\" fostering a spirit of inclusion and shared identity.",
+        "The government officially recognizes Kiều Bào as \"an inseparable part of the Vietnamese national community.\"",
     },
     {
       icon: Users,
       title: "A Force for Great National Unity",
       description:
-        "We are committed to the overarching goal of national unity (Đại Đoàn Kết Dân Tộc), encouraging all Vietnamese to look towards a common future of building a prosperous and strong Vietnam.",
+        "Committed to national unity (Đại Đoàn Kết Dân Tộc), encouraging all Vietnamese toward a common future of building a prosperous and strong Vietnam.",
     },
     {
       icon: DollarSign,
       title: "A Key Resource for Development",
       description:
-        "The government identifies the Kiều Bào community as a crucial resource across three key domains: Economic Capital, Intellectual & Tech Resources, and Diplomatic \"Soft Power\" as cultural ambassadors.",
+        "The government identifies Kiều Bào as a crucial resource: Economic Capital, Intellectual & Tech Resources, and Diplomatic \"Soft Power.\"",
     },
   ]
 

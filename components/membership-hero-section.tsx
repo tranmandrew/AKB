@@ -14,8 +14,10 @@ export function MembershipHeroSection() {
           src="/Pagoda.jpg"
           alt="Vietnamese Pagoda"
           fill
-          className="object-cover"
+          className="object-cover object-bottom"
           priority
+          quality={75}
+          sizes="100vw"
         />
       </div>
 
