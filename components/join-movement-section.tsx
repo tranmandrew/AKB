@@ -25,14 +25,15 @@ export function JoinMovementSection() {
       {/* Ha Long Bay Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/HaLong2.png"
+          src="/HaLong2.webp"
           alt="Ha Long Bay"
           fill
           className="object-cover"
           loading="lazy"
           sizes="100vw"
-          quality={60}
+          quality={80}
           priority={false}
+          unoptimized={false}
         />
       </div>
 

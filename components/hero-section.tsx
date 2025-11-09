@@ -58,13 +58,14 @@ export function HeroSection() {
       {/* Ho Chi Minh City Nighttime Skyline Background with Parallax */}
       <div ref={parallaxRef} className="absolute inset-0 z-0 will-change-transform">
         <Image
-          src="/Bitexco.png"
+          src="/Bitexco.webp"
           alt="Ho Chi Minh City nighttime skyline"
           fill
           className="object-cover"
           priority
-          quality={60}
+          quality={80}
           sizes="100vw"
+          unoptimized={false}
         />
       </div>
 

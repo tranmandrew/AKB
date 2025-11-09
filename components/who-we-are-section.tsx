@@ -155,13 +155,14 @@ export function WhoWeAreSection() {
         {/* Da Nang Golden Hands Bridge Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/DanangGolendHandsBridge.jpg"
+            src="/DanangGolendHandsBridge.webp"
             alt="Da Nang Golden Hands Bridge"
             fill
             className="object-cover grayscale"
             loading="lazy"
             sizes="100vw"
-            quality={60}
+            quality={80}
+            unoptimized={false}
           />
         </div>
 

@@ -55,7 +55,7 @@ export function MembershipAccessSection() {
                 {[
                   { name: 'Finance', image: '/Finance.png' },
                   { name: 'ESG', image: '/ESG.png' },
-                  { name: 'Technology', image: '/Conference.png' },
+                  { name: 'Technology', image: '/Conference.webp' },
                   { name: 'Education', image: '/Government-of-Vietnam-banner.jpg' },
                   { name: 'Governance', image: '/speech.png' }
                 ].map((sector) => (
