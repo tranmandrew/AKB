@@ -38,7 +38,7 @@ export function MembershipHeroSection() {
               Founding Membership
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              Join an exclusive network of Vietnamese professional leaders shaping Vietnam's future on the global stage. Be part of a movement that connects expertise, influence, and opportunity.
+              Be a part of a cohort of like-minded Kieu Bao and leaders working to support Vietnam's strategic development through policy influence, investments, capacity building and international relations.
             </p>
           </div>
 
