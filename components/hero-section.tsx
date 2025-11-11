@@ -81,7 +81,7 @@ export function HeroSection() {
             {/* Main headline - 2 lines only */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.2]"
                 style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
-              <span className="inline-block">Uniting Distinguished <span className="text-vietnam-red">Vietnamese</span> Professionals Worldwide</span>
+              <span className="inline-block">Uniting Distinguished <span className="text-white">Vietnamese</span> Professionals Worldwide</span>
               <br />
               <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-white/95 inline-block">
                 To Strengthen Vietnam's Future
