@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Linkedin, Facebook } from "lucide-react"
 import Link from "next/link"
 import { Flag } from "@/components/flag"
+import { useState } from "react"
 
 interface BoardMember {
   name: string
@@ -68,6 +69,12 @@ const boardMembers: BoardMember[] = [
 ]
 
 function BoardMembersSection() {
+  const [activeCard, setActiveCard] = useState<string | null>(null)
+
+  const toggleCard = (memberName: string) => {
+    setActiveCard(activeCard === memberName ? null : memberName)
+  }
+
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
@@ -77,7 +84,8 @@ function BoardMembersSection() {
             {boardMembers.map((member) => (
               <div
                 key={member.name}
-                className="group relative overflow-hidden bg-gray-800 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden bg-gray-800 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleCard(member.name)}
               >
                 {/* Image Container */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
@@ -100,8 +108,8 @@ function BoardMembersSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* Social Icons - Vertical Stack (only on hover) */}
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Social Icons - Vertical Stack (only on hover/active) */}
+                  <div className={`absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 transition-opacity duration-300 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                     {member.linkedinUrl && (
                       <a
                         href={member.linkedinUrl}
@@ -109,6 +117,7 @@ function BoardMembersSection() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-900/80 hover:bg-blue-600 rounded flex items-center justify-center text-white transition-colors duration-200"
                         aria-label={`${member.name}'s LinkedIn`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Linkedin className="w-5 h-5" />
                       </a>
@@ -120,6 +129,7 @@ function BoardMembersSection() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-900/80 hover:bg-gray-700 rounded flex items-center justify-center text-white transition-colors duration-200"
                         aria-label={`${member.name}'s Twitter`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -133,6 +143,7 @@ function BoardMembersSection() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-900/80 hover:bg-blue-700 rounded flex items-center justify-center text-white transition-colors duration-200"
                         aria-label={`${member.name}'s Facebook`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Facebook className="w-5 h-5" />
                       </a>
@@ -147,6 +158,7 @@ function BoardMembersSection() {
                       rel="noopener noreferrer"
                       className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
                       aria-label={`${member.name}'s LinkedIn profile`}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -170,7 +182,7 @@ function BoardMembersSection() {
                 </div>
 
                 {/* Hover Description Overlay */}
-                <div className="absolute inset-0 bg-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col overflow-hidden">
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
@@ -191,6 +203,12 @@ function BoardMembersSection() {
 }
 
 function AdvisoryCommitteeSection() {
+  const [activeCard, setActiveCard] = useState<string | null>(null)
+
+  const toggleCard = (memberName: string) => {
+    setActiveCard(activeCard === memberName ? null : memberName)
+  }
+
   const advisoryMembers = [
     {
       name: "Dr. Ngô Dương Hoàng Thao",
@@ -244,7 +262,8 @@ function AdvisoryCommitteeSection() {
             {advisoryMembers.map((member) => (
               <div
                 key={member.name}
-                className="group relative overflow-hidden bg-gray-900 hover:transform hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden bg-gray-900 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer"
+                onClick={() => toggleCard(member.name)}
               >
                 {/* Image Container */}
                 <div className="relative aspect-[3/4] w-full overflow-hidden">
@@ -267,8 +286,8 @@ function AdvisoryCommitteeSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* Social Icons - Vertical Stack (only on hover) */}
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Social Icons - Vertical Stack (only on hover/active) */}
+                  <div className={`absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 transition-opacity duration-300 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                     {member.linkedinUrl && (
                       <a
                         href={member.linkedinUrl}
@@ -276,6 +295,7 @@ function AdvisoryCommitteeSection() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gray-900/80 hover:bg-blue-600 rounded flex items-center justify-center text-white transition-colors duration-200"
                         aria-label={`${member.name}'s LinkedIn`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Linkedin className="w-5 h-5" />
                       </a>
@@ -290,6 +310,7 @@ function AdvisoryCommitteeSection() {
                       rel="noopener noreferrer"
                       className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
                       aria-label={`${member.name}'s LinkedIn profile`}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -313,7 +334,7 @@ function AdvisoryCommitteeSection() {
                 </div>
 
                 {/* Hover Description Overlay */}
-                <div className="absolute inset-0 bg-black/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col overflow-hidden">
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
