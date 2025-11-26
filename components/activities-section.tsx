@@ -168,7 +168,7 @@ export function ActivitiesSection() {
 
               {/* Right: Sticky Image Panel (Desktop Only) */}
               <div className="hidden lg:block sticky top-32 h-[calc(100vh-12rem)]">
-                <div className="relative w-full h-full rounded-l-2xl overflow-hidden shadow-2xl border-l-4 border-y-4 border-gray-200">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-200">
                   {activities.map((activity, index) => (
                     <div
                       key={index}
