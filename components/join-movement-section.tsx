@@ -74,7 +74,7 @@ export function JoinMovementSection() {
           </Card>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/membership">
+            <a href="/contact">
               <Button
                 size="lg"
                 className="font-montserrat bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
@@ -83,13 +83,13 @@ export function JoinMovementSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href="/contact">
+            <a href="/membership">
               <Button
                 variant="outline"
                 size="lg"
                 className="font-montserrat px-8 py-6 text-lg bg-white text-black border-white hover:bg-white/90"
               >
-                Schedule a Consultation
+                Learn More
               </Button>
             </a>
           </div>

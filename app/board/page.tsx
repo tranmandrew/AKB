@@ -84,7 +84,7 @@ function BoardMembersSection() {
             {boardMembers.map((member) => (
               <div
                 key={member.name}
-                className="group relative overflow-hidden bg-gray-800 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden bg-gray-800 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer shadow-[0_-8px_16px_rgba(0,0,0,0.3),0_8px_16px_rgba(0,0,0,0.3)]"
                 onClick={() => toggleCard(member.name)}
               >
                 {/* Image Container */}
@@ -171,7 +171,7 @@ function BoardMembersSection() {
                     <h3 className="text-white font-bold text-xl mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-[#FF6B6B] text-sm font-medium uppercase tracking-wide">
+                    <p className="text-[#FF6B6B] text-xs font-medium uppercase tracking-wide">
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
@@ -186,7 +186,151 @@ function BoardMembersSection() {
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-[#FF6B6B] text-xs font-medium mb-3 uppercase tracking-wide">
+                  <p className="text-[#FF6B6B] text-[10px] font-medium mb-3 uppercase tracking-wide leading-tight">
+                    {member.title}
+                  </p>
+                  <p className="text-gray-300 text-xs leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function BoardMembersSecondRowSection() {
+  const [activeCard, setActiveCard] = useState<string | null>(null)
+
+  const toggleCard = (memberName: string) => {
+    setActiveCard(activeCard === memberName ? null : memberName)
+  }
+
+  const boardMembersRow2 = [
+    {
+      name: "John Vu",
+      title: "American Founding Member",
+      country: "United States",
+      countryFlag: "🇺🇸",
+      countryCode: "US",
+      initials: "JV",
+      description: "Associate Partner at CL2B, a leading circular economy and sustainability consultancy in Ho Chi Minh City. Specializes in building sustainable supply chains for international brands across Vietnam and Southeast Asia. Manages SVK (Saigon Viet Kieus), a community of 6,000+ overseas Vietnamese returnees. Former Vice Chair of AmCham Vietnam's ESG Committee.",
+      profileImage: "/JohnVu.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/johnvu22/"
+    },
+    {
+      name: "Danh Bui",
+      title: "American Founding Member",
+      country: "United States",
+      countryFlag: "🇺🇸",
+      countryCode: "US",
+      initials: "DB",
+      description: "Business Development Manager at CADDi with expertise in supply chain management and AI platform solutions. Former Quality and Lean Leader at Simpson Strong-Tie, with extensive engineering and BIM experience. Lean Six Sigma Green Belt certified with strong focus on problem-solving and innovation.",
+      profileImage: "/DanhBui.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/danhcbui/"
+    },
+    {
+      name: "Thang Ha",
+      title: "Chinese Founding Member",
+      country: "China",
+      countryFlag: "🇨🇳",
+      countryCode: "CN",
+      initials: "TH",
+      description: "Business Representative for CreditTech at Ant International, spearheading lending business in Vietnam. Over 13 years of proven track record in fintech, digital banking, and strategic partnerships. Former Head of Partnership at TNEX and Business Strategy Head at TIKI. MBA and PMP certified, with expertise in e-commerce finance, digital lending, and supply chain financing across Southeast Asia.",
+      profileImage: "/ThangHa.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/thangha/"
+    }
+  ]
+
+  return (
+    <section className="py-10 bg-black">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Responsive Grid: Same as board members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {boardMembersRow2.map((member) => (
+              <div
+                key={member.name}
+                className="group relative overflow-hidden bg-gray-800 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer shadow-[0_-8px_16px_rgba(0,0,0,0.3),0_8px_16px_rgba(0,0,0,0.3)]"
+                onClick={() => toggleCard(member.name)}
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden">
+                  {/* Profile Image */}
+                  {member.profileImage ? (
+                    <Image
+                      src={member.profileImage}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                      <div className="text-6xl font-bold text-white/20">
+                        {member.initials}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Dark overlay gradient at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+                  {/* Social Icons - Vertical Stack (only on hover/active) */}
+                  <div className={`absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 transition-opacity duration-300 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                    {member.linkedinUrl && (
+                      <a
+                        href={member.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-gray-900/80 hover:bg-blue-600 rounded flex items-center justify-center text-white transition-colors duration-200"
+                        aria-label={`${member.name}'s LinkedIn`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+
+                  {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
+                  {member.linkedinUrl && (
+                    <a
+                      href={member.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
+                      aria-label={`${member.name}'s LinkedIn profile`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  )}
+
+                  {/* Content Overlay - Bottom Left */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 pr-16">
+                    <h3 className="text-white font-bold text-xl mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-[#FF6B6B] text-xs font-medium uppercase tracking-wide">
+                      {member.title}
+                    </p>
+                    <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
+                      <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      <span>{member.country}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hover Description Overlay */}
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#FF6B6B] text-[10px] font-medium mb-3 uppercase tracking-wide leading-tight">
                     {member.title}
                   </p>
                   <p className="text-gray-300 text-xs leading-relaxed">
@@ -262,7 +406,7 @@ function AdvisoryCommitteeSection() {
             {advisoryMembers.map((member) => (
               <div
                 key={member.name}
-                className="group relative overflow-hidden bg-gray-900 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer"
+                className="group relative overflow-hidden bg-gray-900 md:hover:transform md:hover:scale-105 transition-all duration-300 cursor-pointer shadow-[0_-8px_16px_rgba(0,0,0,0.3),0_8px_16px_rgba(0,0,0,0.3)]"
                 onClick={() => toggleCard(member.name)}
               >
                 {/* Image Container */}
@@ -406,6 +550,7 @@ export default function BoardPage() {
       </section>
 
       <BoardMembersSection />
+      <BoardMembersSecondRowSection />
       <AdvisoryCommitteeSection />
       <FooterSection />
     </main>

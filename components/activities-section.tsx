@@ -122,7 +122,7 @@ export function ActivitiesSection() {
                           ? 'border-vietnam-red shadow-xl scale-[1.02]'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}>
-                        <CardContent className="p-6 md:p-10 h-full flex flex-col">
+                        <CardContent className="p-6 md:p-8 lg:p-10 h-full flex flex-col justify-center">
                           {/* Number Badge */}
                           <div className="flex items-center gap-4 mb-6">
                             <div className={`w-14 h-14 md:w-16 md:h-16 bg-vietnam-red/10 rounded-2xl flex items-center justify-center border-2 border-vietnam-red/30 transition-all duration-300 ${
@@ -140,11 +140,11 @@ export function ActivitiesSection() {
                           </div>
 
                           {/* Content */}
-                          <div>
-                            <h3 className="heading-secondary text-xl md:text-2xl lg:text-3xl font-semibold text-foreground mb-4 leading-tight">
+                          <div className="flex-1">
+                            <h3 className="heading-secondary text-2xl md:text-3xl lg:text-3xl font-semibold text-foreground mb-5 leading-tight">
                               {activity.title}
                             </h3>
-                            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+                            <p className="text-muted-foreground leading-relaxed text-base md:text-lg lg:text-xl">
                               {activity.description}
                             </p>
                           </div>
@@ -168,7 +168,7 @@ export function ActivitiesSection() {
 
               {/* Right: Sticky Image Panel (Desktop Only) */}
               <div className="hidden lg:block sticky top-32 h-[calc(100vh-12rem)]">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-200">
+                <div className="relative w-full h-full rounded-l-2xl overflow-hidden shadow-2xl border-l-4 border-y-4 border-gray-200">
                   {activities.map((activity, index) => (
                     <div
                       key={index}
