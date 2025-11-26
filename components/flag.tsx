@@ -94,6 +94,18 @@ export function Flag({ countryCode, className = 'w-6 h-4', title }: FlagProps) {
           <circle cx="13" cy="5.5" r="0.6"/>
         </g>
       </svg>
+    ),
+    CN: (
+      <svg viewBox="0 0 36 24" className={className} title={title}>
+        <rect width="36" height="24" fill="#DE2910"/>
+        <g fill="#FFDE00">
+          <polygon points="6,3 7.2,6.5 10.8,6.5 7.8,8.7 9,12.2 6,10 3,12.2 4.2,8.7 1.2,6.5 4.8,6.5" transform="translate(0,0)"/>
+          <polygon points="14,2 14.5,3.5 16,3.5 14.8,4.3 15.3,5.8 14,4.8 12.7,5.8 13.2,4.3 12,3.5 13.5,3.5" transform="translate(0,0)"/>
+          <polygon points="17,5 17.5,6.5 19,6.5 17.8,7.3 18.3,8.8 17,7.8 15.7,8.8 16.2,7.3 15,6.5 16.5,6.5" transform="translate(0,0)"/>
+          <polygon points="17,10 17.5,11.5 19,11.5 17.8,12.3 18.3,13.8 17,12.8 15.7,13.8 16.2,12.3 15,11.5 16.5,11.5" transform="translate(0,0)"/>
+          <polygon points="14,13 14.5,14.5 16,14.5 14.8,15.3 15.3,16.8 14,15.8 12.7,16.8 13.2,15.3 12,14.5 13.5,14.5" transform="translate(0,0)"/>
+        </g>
+      </svg>
     )
   }
 

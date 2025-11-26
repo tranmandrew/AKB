@@ -123,7 +123,7 @@ export function WhoWeAreSection() {
                   <span className="heading-secondary text-vietnam-red font-bold">Independent Vietnam</span>
                 </h2>
                 <p className="text-base md:text-lg text-white/90 max-w-4xl mx-auto leading-relaxed mb-6">
-                Recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite leading Kiều Bào professionals to build a stronger, more independent, and prosperous Vietnam.
+                  Recognized by the Vietnamese government as an "inseparable part of the Vietnamese national community" under <ResolutionTooltip>Resolution 36-NQ/TW</ResolutionTooltip>, we unite leading Kiều Bào professionals to build a stronger, more independent, and prosperous Vietnam.
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-md border border-white/20  p-6">
@@ -147,7 +147,7 @@ export function WhoWeAreSection() {
                     A Distinguished Global Network
                   </h3>
                   <p className="text-white/80 leading-relaxed text-sm md:text-base flex-grow">
-                  Our members are accomplished leaders and professionals from key international hubs across North America, Western & Eastern Europe, and the Asia Pacific regions.
+                    Our members are accomplished leaders and professionals from key international hubs across North America, Western & Eastern Europe, and the Asia Pacific regions.
                   </p>
                 </div>
 
@@ -177,7 +177,7 @@ export function WhoWeAreSection() {
                     A Catalyst for National Progress
                   </h3>
                   <p className="text-white/80 leading-relaxed text-sm md:text-base flex-grow">
-                  Connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building that accelerate Vietnam's economic sovereignty and global competitiveness.
+                    Connecting global insights with local opportunities to drive policy dialogue, foster international cooperation, investments, and capacity building that accelerate Vietnam's economic sovereignty and global competitiveness.
                   </p>
                 </div>
               </div>
@@ -189,17 +189,15 @@ export function WhoWeAreSection() {
       {/* Strategic Partnerships Section - Full Width */}
       <section
         ref={partnersRef}
-        className={`bg-stone-100 py-8 px-4 w-full transition-all duration-1000 ease-out ${
-          isVisible
+        className={`bg-stone-100 py-8 px-4 w-full transition-all duration-1000 ease-out ${isVisible
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-10'
-        }`}
+          }`}
       >
         <div className="container mx-auto">
           <div className="max-w-5xl mx-auto text-center">
-            <h2 className={`heading-primary text-2xl md:text-3xl mb-6 tracking-tight transition-all duration-1000 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
+            <h2 className={`heading-primary text-2xl md:text-3xl mb-6 tracking-tight transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
               <GradientText
                 colors={["#EB2300", "#EAFF00", "#EB2300", "#EB2300", "#EB2300", "#EB2300", "#EB2300"]}
                 animationSpeed={3.5}
@@ -213,9 +211,8 @@ export function WhoWeAreSection() {
               {chambers.map((chamber, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-center transition-all duration-1000 ease-out ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
+                  className={`flex items-center justify-center transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    }`}
                   style={{ transitionDelay: `${200 + index * 150}ms` }}
                 >
                   <Image
@@ -223,9 +220,8 @@ export function WhoWeAreSection() {
                     alt={chamber.alt}
                     width={500}
                     height={300}
-                    className={`object-contain transition-opacity duration-300 hover:opacity-80 ${
-                      chamber.name === 'EuroCham' ? 'h-56 w-auto' : 'h-48 w-auto'
-                    }`}
+                    className={`object-contain transition-opacity duration-300 hover:opacity-80 ${chamber.name === 'EuroCham' ? 'h-56 w-auto' : 'h-48 w-auto'
+                      }`}
                   />
                 </div>
               ))}
