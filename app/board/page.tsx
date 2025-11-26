@@ -34,13 +34,24 @@ const boardMembers: BoardMember[] = [
     linkedinUrl: "https://www.linkedin.com/in/kimblengo/"
   },
   {
+    name: "Corina Trang Luong",
+    title: "Romanian Founding Member",
+    country: "Romania",
+    countryFlag: "🇷🇴",
+    countryCode: "RO",
+    initials: "CTL",
+    description: "Romanian-Vietnamese seasoned business professional with over a decade of experience across the marketing, advertising, and technology sectors. She has built a dynamic career spanning multiple markets—including Europe, Southeast Asia, and Vietnam—driving growth and innovation for both global tech companies and startups. Her expertise lies in go-to-market strategy, digital media, and navigating fast-changing, high-growth markets.",
+    profileImage: "/Corina.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/corinatrangluong/"
+  },
+  {
     name: "Tam Nguyen",
     title: "American Founding Member",
     country: "United States",
     countryFlag: "🇺🇸",
     countryCode: "US",
     initials: "TN",
-    description: "American-Vietnamese expert on circular economy (ESG) with The Alliance to End Plastic Waste (AEPW), covering Vietnam, Thailand, and China. His work with the Minister of Agriculture and Environment (VN) and Multi-national Organization (World Bank, UNDP, ADB, WEF) deploy capital and support policies that promote green development.",
+    description: "American-Vietnamese expert on circular economy (ESG) with The Alliance to End Plastic Waters (AEPW), covering Vietnam, Thailand, and China. His work with the Minister of Agriculture and Environment (VN) and Multi-national Organization (World Bank, UNDP, ADB, WEF) deploy capital and support policies that promote green development.",
     profileImage: "/Tam.jpg",
     linkedinUrl: "https://www.linkedin.com/in/tamnguyen/"
   },
@@ -56,15 +67,15 @@ const boardMembers: BoardMember[] = [
     linkedinUrl: "https://www.linkedin.com/in/alexhothanh/"
   },
   {
-    name: "Corina Trang Luong",
-    title: "Romanian Founding Member",
-    country: "Romania",
-    countryFlag: "🇷🇴",
-    countryCode: "RO",
-    initials: "CTL",
-    description: "Romanian-Vietnamese seasoned business professional with over a decade of experience across the marketing, advertising, and technology sectors. She has built a dynamic career spanning multiple markets—including Europe, Southeast Asia, and Vietnam—driving growth and innovation for both global tech companies and startups. Her expertise lies in go-to-market strategy, digital media, and navigating fast-changing, high-growth markets.",
-    profileImage: "/Corina.jpg",
-    linkedinUrl: "https://www.linkedin.com/in/corinatrangluong/"
+    name: "Gia Thi Nguyen",
+    title: "Singaporean Founding Member",
+    country: "Singapore",
+    countryFlag: "🇸🇬",
+    countryCode: "SG",
+    initials: "GTN",
+    description: "20+ years working globally for German conglomerates Siemens and SAP in 7 countries, solving complex challenges by bringing People, Process, Applications and Data together. Former CIO, CFO, Head of Operational Excellence and Head of Service Business. Experience across all business stages from start-up, hyper growth, maturity, restructuring, acquisition and divestment.",
+    profileImage: "/GiaThi.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/teawiththi/"
   }
 ]
 
@@ -79,8 +90,8 @@ function BoardMembersSection() {
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Responsive Grid: 4 cols on xl, 3 on lg, 2 on md, 1 on sm */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Responsive Grid: 5 cols on xl, 3 on lg, 2 on md, 1 on sm */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {boardMembers.map((member) => (
               <div
                 key={member.name}
@@ -156,7 +167,7 @@ function BoardMembersSection() {
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
+                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -249,8 +260,8 @@ function BoardMembersSecondRowSection() {
     <section className="py-10 bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Responsive Grid: Same as board members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Responsive Grid: 5 cols on xl, 3 on lg, 2 on md, 1 on sm */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {boardMembersRow2.map((member) => (
               <div
                 key={member.name}
@@ -300,7 +311,7 @@ function BoardMembersSecondRowSection() {
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
+                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -401,8 +412,8 @@ function AdvisoryCommitteeSection() {
               Experienced leaders providing strategic guidance to AKB's mission and activities
             </p>
           </div>
-          {/* Responsive Grid: Same as board members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Responsive Grid: 5 cols on xl, 3 on lg, 2 on md, 1 on sm */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {advisoryMembers.map((member) => (
               <div
                 key={member.name}
@@ -452,7 +463,7 @@ function AdvisoryCommitteeSection() {
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-black flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 shadow-lg"
+                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
