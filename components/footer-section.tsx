@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Linkedin, Instagram, Facebook } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import Image from "next/image"
 
 export function FooterSection() {
@@ -34,28 +34,10 @@ export function FooterSection() {
                 href="https://www.linkedin.com/company/akieubao"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
+                className="flex items-center justify-center w-8 h-8 hover:opacity-80 transition-all duration-200"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a
-                href="https://www.instagram.com/akieubao"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a
-                href="https://www.facebook.com/akieubao"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-8 h-8 bg-white hover:bg-gray-50 rounded-lg text-gray-600 hover:text-gray-800 transition-all duration-200"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-4 w-4" />
+                <Linkedin className="h-4 w-4 text-foreground" />
               </a>
             </div>
 
