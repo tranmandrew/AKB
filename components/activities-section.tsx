@@ -117,7 +117,7 @@ export function ActivitiesSection() {
                       }}
                       className="scroll-mt-32 lg:h-[calc(100vh-12rem)]"
                     >
-                      <Card className={`border-2 transition-all duration-500 h-full ${
+                      <Card className={`border-2 transition-all duration-500 h-full rounded-2xl ${
                         activeIndex === index
                           ? 'border-vietnam-red shadow-xl scale-[1.02]'
                           : 'border-gray-200 hover:border-gray-300'
