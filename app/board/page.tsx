@@ -167,7 +167,7 @@ function BoardMembersSection() {
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -178,11 +178,11 @@ function BoardMembersSection() {
                   )}
 
                   {/* Content Overlay - Bottom Left */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 pr-16">
-                    <h3 className="text-white font-bold text-xl mb-1">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white font-bold text-lg mb-1 line-clamp-2">
                       {member.name}
                     </h3>
-                    <p className="text-[#FF6B6B] text-xs font-medium uppercase tracking-wide">
+                    <p className="text-[#FF6B6B] text-[10px] font-medium uppercase tracking-wide line-clamp-2">
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
@@ -193,14 +193,14 @@ function BoardMembersSection() {
                 </div>
 
                 {/* Hover Description Overlay */}
-                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
                   <p className="text-[#FF6B6B] text-[10px] font-medium mb-3 uppercase tracking-wide leading-tight">
                     {member.title}
                   </p>
-                  <p className="text-gray-300 text-xs leading-relaxed">
+                  <p className="text-gray-300 text-[10px] leading-relaxed">
                     {member.description}
                   </p>
                 </div>
@@ -289,29 +289,13 @@ function BoardMembersSecondRowSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* Social Icons - Vertical Stack (only on hover/active) */}
-                  <div className={`absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 transition-opacity duration-300 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
-                    {member.linkedinUrl && (
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-900/80 hover:bg-blue-600 rounded flex items-center justify-center text-white transition-colors duration-200"
-                        aria-label={`${member.name}'s LinkedIn`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-
                   {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
                   {member.linkedinUrl && (
                     <a
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -322,11 +306,11 @@ function BoardMembersSecondRowSection() {
                   )}
 
                   {/* Content Overlay - Bottom Left */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 pr-16">
-                    <h3 className="text-white font-bold text-xl mb-1">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white font-bold text-lg mb-1 line-clamp-2">
                       {member.name}
                     </h3>
-                    <p className="text-[#FF6B6B] text-xs font-medium uppercase tracking-wide">
+                    <p className="text-[#FF6B6B] text-[10px] font-medium uppercase tracking-wide line-clamp-2">
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
@@ -337,14 +321,14 @@ function BoardMembersSecondRowSection() {
                 </div>
 
                 {/* Hover Description Overlay */}
-                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
                   <p className="text-[#FF6B6B] text-[10px] font-medium mb-3 uppercase tracking-wide leading-tight">
                     {member.title}
                   </p>
-                  <p className="text-gray-300 text-xs leading-relaxed">
+                  <p className="text-gray-300 text-[10px] leading-relaxed">
                     {member.description}
                   </p>
                 </div>
@@ -394,7 +378,7 @@ function AdvisoryCommitteeSection() {
       countryFlag: "🇸🇬",
       countryCode: "SG",
       initials: "JN",
-      description: "Senior Strategic Advisor for Hakuhodo/DAC, served as Chair of the Interactive Advertising Bureau (IAB) Singapore and also currently on the Advisory Board of the Mobile Marketing Association (APAC), he is an expert in data analytics and marketing in consumer brands, online behaviour,  and advertising technology.",
+      description: "Senior Strategic Advisor for Hakuhodo/DAC, served as Chair of the Interactive Advertising Bureau (IAB) Singapore and also currently on the Advisory Board of the Mobile Marketing Association (APAC), he is an expert in data analytics and marketing in consumer brands, online behaviour,\nand advertising technology.",
       profileImage: "/Joe.jpg",
       linkedinUrl: "https://www.linkedin.com/in/joenguyenht/"
     }
@@ -408,7 +392,7 @@ function AdvisoryCommitteeSection() {
             <h2 className="heading-primary text-3xl md:text-4xl text-white mb-3 font-bold tracking-tight">
               ADVISORY COMMITTEE
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-4xl mx-auto whitespace-nowrap">
               Experienced leaders providing strategic guidance to AKB's mission and activities
             </p>
           </div>
@@ -441,29 +425,13 @@ function AdvisoryCommitteeSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* Social Icons - Vertical Stack (only on hover/active) */}
-                  <div className={`absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 transition-opacity duration-300 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
-                    {member.linkedinUrl && (
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-900/80 hover:bg-blue-600 rounded flex items-center justify-center text-white transition-colors duration-200"
-                        aria-label={`${member.name}'s LinkedIn`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-
                   {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
                   {member.linkedinUrl && (
                     <a
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-12 h-12 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -474,11 +442,11 @@ function AdvisoryCommitteeSection() {
                   )}
 
                   {/* Content Overlay - Bottom Left */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 pr-16">
-                    <h3 className="text-white font-bold text-xl mb-1">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white font-bold text-lg mb-1 line-clamp-2">
                       {member.name}
                     </h3>
-                    <p className="text-[#FFB84D] text-sm font-medium uppercase tracking-wide">
+                    <p className="text-[#FF6B6B] text-[10px] font-medium uppercase tracking-wide line-clamp-2">
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
@@ -489,14 +457,14 @@ function AdvisoryCommitteeSection() {
                 </div>
 
                 {/* Hover Description Overlay */}
-                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col overflow-hidden ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
+                <div className={`absolute inset-0 bg-black/95 transition-opacity duration-300 p-6 flex flex-col ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
                   <h3 className="text-white font-bold text-lg mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-[#FFB84D] text-xs font-medium mb-3 uppercase tracking-wide">
+                  <p className="text-[#FF6B6B] text-[10px] font-medium mb-3 uppercase tracking-wide leading-tight">
                     {member.title}
                   </p>
-                  <p className="text-gray-300 text-xs leading-relaxed">
+                  <p className="text-gray-300 text-[10px] leading-relaxed">
                     {member.description}
                   </p>
                 </div>

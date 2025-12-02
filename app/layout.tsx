@@ -25,8 +25,8 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://akb-vietnam.org'),
   title: {
-    default: "Association of Professional Kiều Bào | Connecting Vietnamese Excellence Globally",
-    template: "%s | AKB - Association of Professional Kiều Bào"
+    default: "AKB | Connecting Vietnamese Excellence Globally",
+    template: "%s | AKB"
   },
   description:
     "Distinguished Vietnamese diaspora professionals network driving Vietnam's development. Join leaders from Google, Mastercard, UBS, and Fortune 500 companies in strategic partnerships with Vietnamese government.",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: "Distinguished network of Vietnamese professionals driving Vietnam's global development through strategic partnerships and expertise.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/AKB2Clear.png",
         width: 1200,
         height: 630,
         alt: "AKB - Association of Professional Kiều Bào"
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Association of Professional Kiều Bào",
     description: "Distinguished Vietnamese professionals driving Vietnam's global development",
-    images: ["/og-image.png"]
+    images: ["/AKB2Clear.png"]
   },
   robots: {
     index: true,
