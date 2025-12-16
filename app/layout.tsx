@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Noto_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { organizationSchema, websiteSchema, professionalOrganizationSchema } from "./structured-data"
@@ -120,6 +121,7 @@ export default function RootLayout({
         <Header />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
