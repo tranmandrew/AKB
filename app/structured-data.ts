@@ -12,20 +12,6 @@ export const organizationSchema = {
     "@type": "Place",
     "name": "Global"
   },
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "EuroCham Vietnam"
-    },
-    {
-      "@type": "Organization",
-      "name": "BeluxCham Vietnam"
-    },
-    {
-      "@type": "Organization",
-      "name": "Singapore Chamber of Commerce Vietnam"
-    }
-  ],
   "knowsAbout": [
     "Business Development",
     "Technology Transfer",
