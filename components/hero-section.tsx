@@ -95,7 +95,7 @@ export function HeroSection() {
                   size="lg"
                   className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-10 md:px-12 py-6 md:py-7 text-lg md:text-xl font-semibold shadow-2xl transition-all duration-300 hover:scale-105"
                 >
-                  Apply for Membership
+                  Learn More
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
