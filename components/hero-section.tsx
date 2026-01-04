@@ -89,14 +89,23 @@ export function HeroSection() {
             </h1>
 
             {/* CTA */}
-            <div className="pt-4">
+            <div className="pt-4 flex flex-wrap gap-4 items-center">
               <a href="/membership" className="inline-block">
                 <Button
                   size="lg"
                   className="font-montserrat bg-vietnam-red hover:bg-vietnam-red/90 text-white px-10 md:px-12 py-6 md:py-7 text-lg md:text-xl font-semibold shadow-2xl transition-all duration-300 hover:scale-105"
                 >
-                  Learn More
+                  Apply for Membership
                   <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <a href="#who-we-are" className="inline-block">
+                <Button
+                  variant="outline"
+                  size="default"
+                  className="font-montserrat bg-white/10 hover:bg-white/20 text-white border-white/30 px-6 py-5 text-base font-medium backdrop-blur-sm transition-all duration-300"
+                >
+                  Learn More
                 </Button>
               </a>
             </div>
