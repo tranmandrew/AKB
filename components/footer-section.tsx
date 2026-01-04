@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export function FooterSection() {
   return (
-    <section className="py-8 bg-muted/30">
+    <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-4">
