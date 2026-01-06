@@ -186,7 +186,11 @@ function BoardMembersSection() {
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
-                      <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      {member.countryCode === "GLOBAL" ? (
+                        <span className="text-lg">🌍</span>
+                      ) : (
+                        <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      )}
                       <span>{member.country}</span>
                     </div>
                   </div>
@@ -253,6 +257,18 @@ function BoardMembersSecondRowSection() {
       description: "Business Representative for CreditTech at Ant International, spearheading lending business in Vietnam. Over 13 years of proven track record in fintech, digital banking, and strategic partnerships. Former Head of Partnership at TNEX and Business Strategy Head at TIKI. MBA and PMP certified, with expertise in e-commerce finance, digital lending, and supply chain financing across Southeast Asia.",
       profileImage: "/ThangHa.jpg",
       linkedinUrl: "https://www.linkedin.com/in/thangha/"
+    },
+    {
+      name: "Lan P. Nguyen",
+      title: "American Founding Member",
+      country: "United States",
+      countryFlag: "🇺🇸",
+      countryCode: "US",
+      initials: "LPN",
+      description: "Vietnamese-American lawyer at Baker McKenzie, representing and advising leading Vietnamese conglomerates and global multinational companies in high profile projects and matters. Lecturer at Diplomatic Academy of Vietnam and Professor at City University of Seattle in MBA joint program with the Banking Academy of Vietnam.",
+      profileImage: "/LanNguyen.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/lannguyenesq/",
+      objectPosition: "center top"
     }
   ]
 
@@ -277,6 +293,7 @@ function BoardMembersSecondRowSection() {
                       alt={member.name}
                       fill
                       className="object-cover"
+                      style={{ objectPosition: member.objectPosition || 'center' }}
                     />
                   ) : (
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
@@ -314,7 +331,11 @@ function BoardMembersSecondRowSection() {
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
-                      <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      {member.countryCode === "GLOBAL" ? (
+                        <span className="text-lg">🌍</span>
+                      ) : (
+                        <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      )}
                       <span>{member.country}</span>
                     </div>
                   </div>
@@ -450,7 +471,11 @@ function AdvisoryCommitteeSection() {
                       {member.title}
                     </p>
                     <div className="flex items-center gap-2 mt-2 text-gray-300 text-xs">
-                      <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      {member.countryCode === "GLOBAL" ? (
+                        <span className="text-lg">🌍</span>
+                      ) : (
+                        <Flag countryCode={member.countryCode} className="w-6 h-4" title={member.country} />
+                      )}
                       <span>{member.country}</span>
                     </div>
                   </div>

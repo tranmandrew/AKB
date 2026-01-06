@@ -396,7 +396,7 @@ const CardNav: React.FC<CardNavProps> = memo(({
                 ))}
               </div>
             </div>
-          ))}
+          ))}2
         </div>
       </nav>
     </div>
