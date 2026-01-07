@@ -421,7 +421,7 @@ function AdvisoryCommitteeSection() {
       countryFlag: "🇻🇳",
       countryCode: "VN",
       initials: "LTN",
-      description: "Senior Vietnamese diplomat with extensive foreign affairs experience. Former Director General of Foreign Press Center, Department of Information & Press, and Ministry Spokesperson. Served as Deputy Consul General in Osaka and Ambassador to Australia and Denmark. Vice Chairman of State Committee for Overseas Vietnamese, driving policies and initiatives strengthening connections with diaspora communities and promoting international cooperation and development.",
+      description: "Veteran Vietnamese diplomat with extensive foreign affairs experience. Former Director General of Foreign Press Center, Department of Information & Press, and Ministry Spokesperson. Served as Deputy Consul General in Osaka and Ambassador to Australia and Denmark. Previous Vice Chairman of State Committee for Overseas Vietnamese, driving policies and initiatives strengthening connections with diaspora communities and promoting international cooperation and development.",
       profileImage: "/LuongThanh.jpg"
     }
   ]
