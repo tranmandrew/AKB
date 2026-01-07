@@ -106,6 +106,34 @@ export function Flag({ countryCode, className = 'w-6 h-4', title }: FlagProps) {
           <polygon points="14,13 14.5,14.5 16,14.5 14.8,15.3 15.3,16.8 14,15.8 12.7,16.8 13.2,15.3 12,14.5 13.5,14.5" transform="translate(0,0)"/>
         </g>
       </svg>
+    ),
+    TH: (
+      <svg viewBox="0 0 36 24" className={className} title={title}>
+        <rect width="36" height="24" fill="#FFFFFF"/>
+        <rect y="0" width="36" height="4" fill="#A51931"/>
+        <rect y="4" width="36" height="4" fill="#FFFFFF"/>
+        <rect y="8" width="36" height="8" fill="#2D2A4A"/>
+        <rect y="16" width="36" height="4" fill="#FFFFFF"/>
+        <rect y="20" width="36" height="4" fill="#A51931"/>
+      </svg>
+    ),
+    VN: (
+      <svg viewBox="0 0 36 24" className={className} title={title}>
+        <rect width="36" height="24" fill="#DA251D"/>
+        <polygon points="18,6 19.5,10.5 24.3,10.5 20.4,13.3 22,17.8 18,15 14,17.8 15.6,13.3 11.7,10.5 16.5,10.5" fill="#FFFF00"/>
+      </svg>
+    ),
+    HK: (
+      <svg viewBox="0 0 36 24" className={className} title={title}>
+        <rect width="36" height="24" fill="#DE2910"/>
+        <g fill="#FFFFFF">
+          <path d="M18,8 L19,10 L21,10 L19.5,11.5 L20.5,13.5 L18,12 L15.5,13.5 L16.5,11.5 L15,10 L17,10 Z"/>
+          <ellipse cx="12" cy="9" rx="1.5" ry="2.5" transform="rotate(-30 12 9)"/>
+          <ellipse cx="24" cy="9" rx="1.5" ry="2.5" transform="rotate(30 24 9)"/>
+          <ellipse cx="14" cy="15" rx="1.5" ry="2.5" transform="rotate(-60 14 15)"/>
+          <ellipse cx="22" cy="15" rx="1.5" ry="2.5" transform="rotate(60 22 15)"/>
+        </g>
+      </svg>
     )
   }
 

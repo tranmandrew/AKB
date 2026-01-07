@@ -161,13 +161,13 @@ function BoardMembersSection() {
                     )}
                   </div>
 
-                  {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
+                  {/* LinkedIn Icon - Bottom Right Corner (visible on hover) */}
                   {member.linkedinUrl && (
                     <a
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className={`absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -269,6 +269,17 @@ function BoardMembersSecondRowSection() {
       profileImage: "/LanNguyen.jpg",
       linkedinUrl: "https://www.linkedin.com/in/lannguyenesq/",
       objectPosition: "center top"
+    },
+    {
+      name: "Duy Quang Bui",
+      title: "Founding Member",
+      country: "Hong Kong",
+      countryFlag: "🇭🇰",
+      countryCode: "HK",
+      initials: "DQB",
+      description: "Senior investment executive with 16 years in investment & financial management across Southeast Asia, APAC, and Global markets. Provides capital and capacity building for portfolio companies in Financial Institutions, Climate Finance (renewable energy, efficiency, adaptation), Gender-balance investing, Financial Inclusion, Fintech, Climate-smart Agriculture, Healthcare, Education, and Real Estate. Born and raised in Vietnam with significant experience across Asia and Europe.",
+      profileImage: "/Duy.jpg",
+      linkedinUrl: "https://www.linkedin.com/in/bqduy"
     }
   ]
 
@@ -306,13 +317,13 @@ function BoardMembersSecondRowSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
+                  {/* LinkedIn Icon - Bottom Right Corner (visible on hover) */}
                   {member.linkedinUrl && (
                     <a
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className={`absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -402,6 +413,16 @@ function AdvisoryCommitteeSection() {
       description: "Senior Strategic Advisor for Hakuhodo/DAC, served as Chair of the Interactive Advertising Bureau (IAB) Singapore and also currently on the Advisory Board of the Mobile Marketing Association (APAC), he is an expert in data analytics and marketing in consumer brands, online behaviour,\nand advertising technology.",
       profileImage: "/Joe.jpg",
       linkedinUrl: "https://www.linkedin.com/in/joenguyenht/"
+    },
+    {
+      name: "Lương Thanh Nghị",
+      title: "Advisory Committee Member",
+      country: "Vietnam",
+      countryFlag: "🇻🇳",
+      countryCode: "VN",
+      initials: "LTN",
+      description: "Senior Vietnamese diplomat with extensive foreign affairs experience. Former Director General of Foreign Press Center, Department of Information & Press, and Ministry Spokesperson. Served as Deputy Consul General in Osaka and Ambassador to Australia and Denmark. Vice Chairman of State Committee for Overseas Vietnamese, driving policies and initiatives strengthening connections with diaspora communities and promoting international cooperation and development.",
+      profileImage: "/LuongThanh.jpg"
     }
   ]
 
@@ -446,13 +467,13 @@ function AdvisoryCommitteeSection() {
                   {/* Dark overlay gradient at bottom */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-                  {/* LinkedIn Icon - Bottom Right Corner (always visible) */}
+                  {/* LinkedIn Icon - Bottom Right Corner (visible on hover) */}
                   {member.linkedinUrl && (
                     <a
                       href={member.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10"
+                      className={`absolute bottom-0 right-0 w-10 h-10 bg-transparent flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 z-10 ${activeCard === member.name ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}
                       aria-label={`${member.name}'s LinkedIn profile`}
                       onClick={(e) => e.stopPropagation()}
                     >
