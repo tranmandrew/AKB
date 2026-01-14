@@ -259,18 +259,6 @@ function BoardMembersSecondRowSection() {
       linkedinUrl: "https://www.linkedin.com/in/thangha/"
     },
     {
-      name: "Lan P. Nguyen",
-      title: "American Founding Member",
-      country: "United States",
-      countryFlag: "🇺🇸",
-      countryCode: "US",
-      initials: "LPN",
-      description: "Vietnamese-American lawyer at Baker McKenzie, representing and advising leading Vietnamese conglomerates and global multinational companies in high profile projects and matters. Lecturer at Diplomatic Academy of Vietnam and Professor at City University of Seattle in MBA joint program with the Banking Academy of Vietnam.",
-      profileImage: "/LanNguyen.jpg",
-      linkedinUrl: "https://www.linkedin.com/in/lannguyenesq/",
-      objectPosition: "center top"
-    },
-    {
       name: "Duy Quang Bui",
       title: "Founding Member",
       country: "Hong Kong",
